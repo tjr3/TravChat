@@ -175,12 +175,12 @@
 		CE2614FE1D248708001098BF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				CE2615521D25B078001098BF /* Message+CoreDataProperties.swift */,
-				CE2615531D25B078001098BF /* Message.swift */,
-				CE2615461D25B004001098BF /* Thread+CoreDataProperties.swift */,
 				CE2615471D25B004001098BF /* Thread.swift */,
-				CE2615481D25B004001098BF /* SyncableObject+CoreDataProperties.swift */,
+				CE2615461D25B004001098BF /* Thread+CoreDataProperties.swift */,
+				CE2615531D25B078001098BF /* Message.swift */,
+				CE2615521D25B078001098BF /* Message+CoreDataProperties.swift */,
 				CE2615491D25B004001098BF /* SyncableObject.swift */,
+				CE2615481D25B004001098BF /* SyncableObject+CoreDataProperties.swift */,
 				CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */,
 				CE2614FF1D248768001098BF /* Stack.swift */,
 			);

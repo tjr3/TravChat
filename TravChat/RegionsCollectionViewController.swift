@@ -26,20 +26,14 @@ class RegionsCollectionViewController: UICollectionViewController {
     }
     
     func configureView() {
-//        if let navBarFont = UIFont(name: "SF-UI-Display-Thin.otf", size: 35.0) {
-//            let navBarAttributesDictionary: [NSObject: AnyObject]? = [
-//                NSForegroundColorAttributeName: UIColor.blackColor(),
-//                NSFontAttributeName: navBarFont
-//            ]
-//            guard let attributeDict = navBarAttributesDictionary as? [String: AnyObject] else { return }
-//            navigationController?.navigationBar.titleTextAttributes = attributeDict
-//        }
-        
-        guard let font = UIFont(name: "SF-UI-Display-Thin.otf", size: 35.0) else { return }
-        UINavigationBar.appearance().titleTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.blackColor(),
-            NSFontAttributeName: font
-        ]
+        if let navBarFont = UIFont(name: "PingFangHK-Thin", size: 28.0) {
+            let navBarAttributesDictionary: [NSObject: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.blackColor(),
+                NSFontAttributeName: navBarFont
+            ]
+            guard let attributeDict = navBarAttributesDictionary as? [String: AnyObject] else { return }
+            navigationController?.navigationBar.titleTextAttributes = attributeDict
+        }
     }
 
     /*

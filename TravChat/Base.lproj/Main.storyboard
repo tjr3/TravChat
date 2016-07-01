@@ -176,7 +176,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixt-nB-zCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910.5" y="332.5"/>
+            <point key="canvasLocation" x="1524.5" y="332.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YhX-OF-beM">
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGG-Kt-6MQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2437.5" y="332.5"/>
+            <point key="canvasLocation" x="1995.5" y="332.5"/>
         </scene>
         <!--Regions-->
         <scene sceneID="eB9-1c-Su1">
@@ -215,12 +215,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfX-CT-kin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="333"/>
+            <point key="canvasLocation" x="925" y="333"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Private Chats-->
         <scene sceneID="baC-cY-4ZB">
             <objects>
-                <tableViewController id="aOj-bu-MVF" sceneMemberID="viewController">
+                <tableViewController id="aOj-bu-MVF" customClass="PrivateChatTableViewController" customModule="TravChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oft-Q7-HqS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,12 +253,14 @@
                             <outlet property="delegate" destination="aOj-bu-MVF" id="nPQ-fe-uw9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NvC-ax-QZX"/>
+                    <navigationItem key="navigationItem" title="Private Chats" id="pPn-gY-Gpj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0VJ-76-KYj"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yv3-CK-zXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="1113"/>
+            <point key="canvasLocation" x="1524.5" y="1126.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NDk-dH-sn0">
@@ -298,7 +300,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEQ-zH-A4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="1113"/>
+            <point key="canvasLocation" x="925" y="1115"/>
         </scene>
     </scenes>
     <resources>

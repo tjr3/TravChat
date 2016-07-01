@@ -12,12 +12,27 @@ class PrivateChatTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureView()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func configureView() {
+        
+        if let navBar = UIFont(name: "PingFangHK-Thin", size: 28.0) {
+            let navBarAttributesDicitonary: [NSObject: AnyObject]? = [
+                NSForegroundColorAttributeName: UIColor.blackColor(),
+                NSFontAttributeName: navBar
+            ]
+            
+            guard let altributeDict = navBarAttributesDicitonary as? [String: AnyObject] else { return }
+            navigationController?.navigationBar.titleTextAttributes = altributeDict
+        }
     }
 
     override func didReceiveMemoryWarning() {

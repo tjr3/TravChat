@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE2614C81D24403E001098BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2614C71D24403E001098BF /* AppDelegate.swift */; };
+		CE2614CD1D24403E001098BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2614CB1D24403E001098BF /* Main.storyboard */; };
+		CE2614CF1D24403E001098BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE2614CE1D24403E001098BF /* Assets.xcassets */; };
+		CE2614D21D24403E001098BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE2614D01D24403E001098BF /* LaunchScreen.storyboard */; };
+		CE2614DD1D24403F001098BF /* TravChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2614DC1D24403F001098BF /* TravChatTests.swift */; };
+		CE2614E81D24403F001098BF /* TravChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2614E71D24403F001098BF /* TravChatUITests.swift */; };
+		CE2614F61D247362001098BF /* Thread Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2614F51D247362001098BF /* Thread Controller.swift */; };
+		CE2614F91D2486D3001098BF /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2614F81D2486D3001098BF /* CloudKitManagedObject.swift */; };
+		CE2614FC1D2486FB001098BF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */; };
+		CE2615001D248768001098BF /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2614FF1D248768001098BF /* Stack.swift */; };
+		CE2615021D2487EC001098BF /* RegionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */; };
+		CE2615051D24886A001098BF /* PrivateChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */; };
+		CE2615071D248A3A001098BF /* ConversationThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */; };
+		CE26154C1D25B004001098BF /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615461D25B004001098BF /* Thread+CoreDataProperties.swift */; };
+		CE26154D1D25B004001098BF /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615471D25B004001098BF /* Thread.swift */; };
+		CE26154E1D25B004001098BF /* SyncableObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615481D25B004001098BF /* SyncableObject+CoreDataProperties.swift */; };
+		CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615491D25B004001098BF /* SyncableObject.swift */; };
+		CE2615541D25B078001098BF /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615521D25B078001098BF /* Message+CoreDataProperties.swift */; };
+		CE2615551D25B078001098BF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615531D25B078001098BF /* Message.swift */; };
+		CE2615571D25E7D1001098BF /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE2614D91D24403F001098BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2614BC1D24403E001098BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE2614C31D24403E001098BF;
+			remoteInfo = TravChat;
+		};
+		CE2614E41D24403F001098BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE2614BC1D24403E001098BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE2614C31D24403E001098BF;
+			remoteInfo = TravChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE2614C41D24403E001098BF /* TravChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2614C71D24403E001098BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE2614CC1D24403E001098BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE2614CE1D24403E001098BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE2614D11D24403E001098BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE2614D31D24403E001098BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE2614D81D24403F001098BF /* TravChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2614DC1D24403F001098BF /* TravChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravChatTests.swift; sourceTree = "<group>"; };
+		CE2614DE1D24403F001098BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE2614E31D24403F001098BF /* TravChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE2614E71D24403F001098BF /* TravChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravChatUITests.swift; sourceTree = "<group>"; };
+		CE2614E91D24403F001098BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE2614F51D247362001098BF /* Thread Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread Controller.swift"; sourceTree = "<group>"; };
+		CE2614F81D2486D3001098BF /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
+		CE2614FB1D2486FB001098BF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		CE2614FF1D248768001098BF /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsCollectionViewController.swift; sourceTree = "<group>"; };
+		CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateChatTableViewController.swift; sourceTree = "<group>"; };
+		CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationThreadViewController.swift; sourceTree = "<group>"; };
+		CE2615461D25B004001098BF /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE2615471D25B004001098BF /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		CE2615481D25B004001098BF /* SyncableObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyncableObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE2615491D25B004001098BF /* SyncableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncableObject.swift; sourceTree = "<group>"; };
+		CE2615521D25B078001098BF /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE2615531D25B078001098BF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE2614C11D24403E001098BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2614D51D24403F001098BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2614E01D24403F001098BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE2614BB1D24403E001098BF = {
+			isa = PBXGroup;
+			children = (
+				CE2614C61D24403E001098BF /* TravChat */,
+				CE2614DB1D24403F001098BF /* TravChatTests */,
+				CE2614E61D24403F001098BF /* TravChatUITests */,
+				CE2614C51D24403E001098BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE2614C51D24403E001098BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE2614C41D24403E001098BF /* TravChat.app */,
+				CE2614D81D24403F001098BF /* TravChatTests.xctest */,
+				CE2614E31D24403F001098BF /* TravChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE2614C61D24403E001098BF /* TravChat */ = {
+			isa = PBXGroup;
+			children = (
+				CE2614C71D24403E001098BF /* AppDelegate.swift */,
+				CE2614F81D2486D3001098BF /* CloudKitManagedObject.swift */,
+				CE2614FD1D2486FF001098BF /* Model */,
+				CE2614F71D247366001098BF /* Controller */,
+				CE2615031D2487F1001098BF /* View Controllers */,
+				CE2614CB1D24403E001098BF /* Main.storyboard */,
+				CE2614CE1D24403E001098BF /* Assets.xcassets */,
+				CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */,
+				CE2614D01D24403E001098BF /* LaunchScreen.storyboard */,
+				CE2614D31D24403E001098BF /* Info.plist */,
+			);
+			path = TravChat;
+			sourceTree = "<group>";
+		};
+		CE2614DB1D24403F001098BF /* TravChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE2614DC1D24403F001098BF /* TravChatTests.swift */,
+				CE2614DE1D24403F001098BF /* Info.plist */,
+			);
+			path = TravChatTests;
+			sourceTree = "<group>";
+		};
+		CE2614E61D24403F001098BF /* TravChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE2614E71D24403F001098BF /* TravChatUITests.swift */,
+				CE2614E91D24403F001098BF /* Info.plist */,
+			);
+			path = TravChatUITests;
+			sourceTree = "<group>";
+		};
+		CE2614F71D247366001098BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE2614F51D247362001098BF /* Thread Controller.swift */,
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		CE2614FD1D2486FF001098BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE2614FE1D248708001098BF /* CoreData */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CE2614FE1D248708001098BF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CE2615521D25B078001098BF /* Message+CoreDataProperties.swift */,
+				CE2615531D25B078001098BF /* Message.swift */,
+				CE2615461D25B004001098BF /* Thread+CoreDataProperties.swift */,
+				CE2615471D25B004001098BF /* Thread.swift */,
+				CE2615481D25B004001098BF /* SyncableObject+CoreDataProperties.swift */,
+				CE2615491D25B004001098BF /* SyncableObject.swift */,
+				CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */,
+				CE2614FF1D248768001098BF /* Stack.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		CE2615031D2487F1001098BF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */,
+				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
+				CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE2614C31D24403E001098BF /* TravChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE2614EC1D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChat" */;
+			buildPhases = (
+				CE2614C01D24403E001098BF /* Sources */,
+				CE2614C11D24403E001098BF /* Frameworks */,
+				CE2614C21D24403E001098BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TravChat;
+			productName = TravChat;
+			productReference = CE2614C41D24403E001098BF /* TravChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE2614D71D24403F001098BF /* TravChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE2614EF1D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChatTests" */;
+			buildPhases = (
+				CE2614D41D24403F001098BF /* Sources */,
+				CE2614D51D24403F001098BF /* Frameworks */,
+				CE2614D61D24403F001098BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE2614DA1D24403F001098BF /* PBXTargetDependency */,
+			);
+			name = TravChatTests;
+			productName = TravChatTests;
+			productReference = CE2614D81D24403F001098BF /* TravChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE2614E21D24403F001098BF /* TravChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE2614F21D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChatUITests" */;
+			buildPhases = (
+				CE2614DF1D24403F001098BF /* Sources */,
+				CE2614E01D24403F001098BF /* Frameworks */,
+				CE2614E11D24403F001098BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE2614E51D24403F001098BF /* PBXTargetDependency */,
+			);
+			name = TravChatUITests;
+			productName = TravChatUITests;
+			productReference = CE2614E31D24403F001098BF /* TravChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE2614BC1D24403E001098BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Tyler;
+				TargetAttributes = {
+					CE2614C31D24403E001098BF = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CE2614D71D24403F001098BF = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = CE2614C31D24403E001098BF;
+					};
+					CE2614E21D24403F001098BF = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = CE2614C31D24403E001098BF;
+					};
+				};
+			};
+			buildConfigurationList = CE2614BF1D24403E001098BF /* Build configuration list for PBXProject "TravChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE2614BB1D24403E001098BF;
+			productRefGroup = CE2614C51D24403E001098BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE2614C31D24403E001098BF /* TravChat */,
+				CE2614D71D24403F001098BF /* TravChatTests */,
+				CE2614E21D24403F001098BF /* TravChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE2614C21D24403E001098BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE2615571D25E7D1001098BF /* SF-UI-Display-Thin.otf in Resources */,
+				CE2614D21D24403E001098BF /* LaunchScreen.storyboard in Resources */,
+				CE2614CF1D24403E001098BF /* Assets.xcassets in Resources */,
+				CE2614CD1D24403E001098BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2614D61D24403F001098BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2614E11D24403F001098BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE2614C01D24403E001098BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE2614F61D247362001098BF /* Thread Controller.swift in Sources */,
+				CE26154D1D25B004001098BF /* Thread.swift in Sources */,
+				CE2615001D248768001098BF /* Stack.swift in Sources */,
+				CE2614F91D2486D3001098BF /* CloudKitManagedObject.swift in Sources */,
+				CE2615071D248A3A001098BF /* ConversationThreadViewController.swift in Sources */,
+				CE2614C81D24403E001098BF /* AppDelegate.swift in Sources */,
+				CE2615541D25B078001098BF /* Message+CoreDataProperties.swift in Sources */,
+				CE2615021D2487EC001098BF /* RegionsCollectionViewController.swift in Sources */,
+				CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */,
+				CE26154E1D25B004001098BF /* SyncableObject+CoreDataProperties.swift in Sources */,
+				CE2615051D24886A001098BF /* PrivateChatTableViewController.swift in Sources */,
+				CE2614FC1D2486FB001098BF /* Model.xcdatamodeld in Sources */,
+				CE26154C1D25B004001098BF /* Thread+CoreDataProperties.swift in Sources */,
+				CE2615551D25B078001098BF /* Message.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2614D41D24403F001098BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE2614DD1D24403F001098BF /* TravChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE2614DF1D24403F001098BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE2614E81D24403F001098BF /* TravChatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE2614DA1D24403F001098BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE2614C31D24403E001098BF /* TravChat */;
+			targetProxy = CE2614D91D24403F001098BF /* PBXContainerItemProxy */;
+		};
+		CE2614E51D24403F001098BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE2614C31D24403E001098BF /* TravChat */;
+			targetProxy = CE2614E41D24403F001098BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE2614CB1D24403E001098BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE2614CC1D24403E001098BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE2614D01D24403E001098BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE2614D11D24403E001098BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE2614EA1D24403F001098BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE2614EB1D24403F001098BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE2614ED1D24403F001098BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TravChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE2614EE1D24403F001098BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TravChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CE2614F01D24403F001098BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TravChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravChat.app/TravChat";
+			};
+			name = Debug;
+		};
+		CE2614F11D24403F001098BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TravChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravChat.app/TravChat";
+			};
+			name = Release;
+		};
+		CE2614F31D24403F001098BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TravChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TravChat;
+			};
+			name = Debug;
+		};
+		CE2614F41D24403F001098BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TravChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TravChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE2614BF1D24403E001098BF /* Build configuration list for PBXProject "TravChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE2614EA1D24403F001098BF /* Debug */,
+				CE2614EB1D24403F001098BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE2614EC1D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE2614ED1D24403F001098BF /* Debug */,
+				CE2614EE1D24403F001098BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE2614EF1D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE2614F01D24403F001098BF /* Debug */,
+				CE2614F11D24403F001098BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE2614F21D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE2614F31D24403F001098BF /* Debug */,
+				CE2614F41D24403F001098BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE2614FB1D2486FB001098BF /* Model.xcdatamodel */,
+			);
+			currentVersion = CE2614FB1D2486FB001098BF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CE2614BC1D24403E001098BF /* Project object */;
+}

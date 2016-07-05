@@ -28,6 +28,7 @@ class Message: SyncableObject {
         self.displayName = displayName
         self.timestamp = timestamp
         self.recordName = recordName
+        self.thread = thread
     }
     
     // MARK: CloudKitManagedObject
@@ -41,22 +42,27 @@ class Message: SyncableObject {
         
         record[Message.timestampKey] = timestamp
         record[Message.displayNameKey] = displayName
-        record[Message.threadKey] = self.thread.name
+
         
-        return record
-    }
+        guard let thread = thread,
+            let threadRecord = thread.cloudKitRecord else { fatalError("Message does not have a thread relationship") }
+        record[Message.threadKey] = thread.name
+        
+        record[Message.typeKey] = CKReference(record: threadRecord, action: .DeleteSelf)
+        
+            return record
+        }
+
     
-    convenience init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience required init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
-        guard let timestamp = record.creationDate,
-            let  message = record[Message.typeKey] as? CKAsset else { return nil }
+        guard let timestamp = record.creationDate else { return nil }
         
         guard let entity = NSEntityDescription.entityForName(Message.typeKey, inManagedObjectContext: context) else { fatalError("Error: Core Data failed to create entity from entity description.") }
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.timestamp = timestamp
         self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
-        self.message = String(message)
         self.recordName = record.recordID.recordName
     }
 }

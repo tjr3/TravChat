@@ -6,7 +6,8 @@
 //  Copyright © 2016 Tyler. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 class ThreadController {
     

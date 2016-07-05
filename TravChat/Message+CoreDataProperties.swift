@@ -16,6 +16,6 @@ extension Message {
 
     @NSManaged var message: String
     @NSManaged var displayName: String?
-    @NSManaged var thread: Thread
+    @NSManaged var thread: Thread?
 
 }

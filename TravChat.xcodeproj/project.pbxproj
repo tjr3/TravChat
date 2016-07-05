@@ -21,15 +21,15 @@
 		CE2615071D248A3A001098BF /* ConversationThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */; };
 		CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615491D25B004001098BF /* SyncableObject.swift */; };
 		CE2615571D25E7D1001098BF /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */; };
-		CE26155F1D26E9E4001098BF /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26155A1D26E9E4001098BF /* UserInformation.swift */; };
-		CE2615681D272762001098BF /* UserInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615641D272762001098BF /* UserInformation+CoreDataProperties.swift */; };
 		CE26156D1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */; };
 		CE2615771D2C1C75001098BF /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615761D2C1C75001098BF /* CloudKitManager.swift */; };
 		CE2615791D2C1CA8001098BF /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615781D2C1CA8001098BF /* CloudKitManagedObject.swift */; };
-		CE2615811D2C242D001098BF /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26157D1D2C242D001098BF /* Thread+CoreDataProperties.swift */; };
-		CE2615821D2C242D001098BF /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26157E1D2C242D001098BF /* Thread.swift */; };
 		CE2615851D2C2531001098BF /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */; };
 		CE2615861D2C2531001098BF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615841D2C2531001098BF /* Message.swift */; };
+		CE2615891D2C3020001098BF /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615871D2C3020001098BF /* Thread+CoreDataProperties.swift */; };
+		CE26158A1D2C3020001098BF /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615881D2C3020001098BF /* Thread.swift */; };
+		CE26158D1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */; };
+		CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158C1D2C3CC0001098BF /* UserInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,15 +70,15 @@
 		CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationThreadViewController.swift; sourceTree = "<group>"; };
 		CE2615491D25B004001098BF /* SyncableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncableObject.swift; sourceTree = "<group>"; };
 		CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
-		CE26155A1D26E9E4001098BF /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
-		CE2615641D272762001098BF /* UserInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyncableObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE2615761D2C1C75001098BF /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		CE2615781D2C1CA8001098BF /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
-		CE26157D1D2C242D001098BF /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CE26157E1D2C242D001098BF /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE2615841D2C2531001098BF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CE2615871D2C3020001098BF /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE2615881D2C3020001098BF /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE26158C1D2C3CC0001098BF /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,10 +184,10 @@
 			children = (
 				CE2615841D2C2531001098BF /* Message.swift */,
 				CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */,
-				CE26157E1D2C242D001098BF /* Thread.swift */,
-				CE26157D1D2C242D001098BF /* Thread+CoreDataProperties.swift */,
-				CE26155A1D26E9E4001098BF /* UserInformation.swift */,
-				CE2615641D272762001098BF /* UserInformation+CoreDataProperties.swift */,
+				CE2615881D2C3020001098BF /* Thread.swift */,
+				CE2615871D2C3020001098BF /* Thread+CoreDataProperties.swift */,
+				CE26158C1D2C3CC0001098BF /* UserInformation.swift */,
+				CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */,
 				CE2615491D25B004001098BF /* SyncableObject.swift */,
 				CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */,
 				CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */,
@@ -346,21 +346,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */,
 				CE2614F61D247362001098BF /* Thread Controller.swift in Sources */,
-				CE26155F1D26E9E4001098BF /* UserInformation.swift in Sources */,
-				CE2615681D272762001098BF /* UserInformation+CoreDataProperties.swift in Sources */,
 				CE2615861D2C2531001098BF /* Message.swift in Sources */,
 				CE2615791D2C1CA8001098BF /* CloudKitManagedObject.swift in Sources */,
+				CE26158D1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift in Sources */,
 				CE2615771D2C1C75001098BF /* CloudKitManager.swift in Sources */,
 				CE26156D1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift in Sources */,
 				CE2615851D2C2531001098BF /* Message+CoreDataProperties.swift in Sources */,
 				CE2615001D248768001098BF /* Stack.swift in Sources */,
 				CE2615071D248A3A001098BF /* ConversationThreadViewController.swift in Sources */,
 				CE2614C81D24403E001098BF /* AppDelegate.swift in Sources */,
+				CE26158A1D2C3020001098BF /* Thread.swift in Sources */,
 				CE2615021D2487EC001098BF /* RegionsCollectionViewController.swift in Sources */,
-				CE2615821D2C242D001098BF /* Thread.swift in Sources */,
 				CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */,
-				CE2615811D2C242D001098BF /* Thread+CoreDataProperties.swift in Sources */,
+				CE2615891D2C3020001098BF /* Thread+CoreDataProperties.swift in Sources */,
 				CE2615051D24886A001098BF /* PrivateChatTableViewController.swift in Sources */,
 				CE2614FC1D2486FB001098BF /* Model.xcdatamodeld in Sources */,
 			);

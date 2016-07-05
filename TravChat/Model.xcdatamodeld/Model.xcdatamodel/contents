@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
-    <entity name="Message" representedClassName=".Message" parentEntity="Thread" syncable="YES">
+    <entity name="Message" representedClassName=".Message" parentEntity="SyncableObject" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="message" attributeType="String" syncable="YES"/>
         <relationship name="thread" maxCount="1" deletionRule="Nullify" destinationEntity="Thread" inverseName="messages" inverseEntity="Thread" syncable="YES"/>
     </entity>
@@ -9,13 +10,20 @@
         <attribute name="recordName" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" attributeType="Date" syncable="YES"/>
     </entity>
-    <entity name="Thread" representedClassName=".Thread" syncable="YES">
+    <entity name="Thread" representedClassName=".Thread" parentEntity="SyncableObject" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Message" inverseName="thread" inverseEntity="Message" syncable="YES"/>
+        <relationship name="userInformations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserInformation" inverseName="thread" inverseEntity="UserInformation" syncable="YES"/>
+    </entity>
+    <entity name="UserInformation" representedClassName=".UserInformation" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="thread" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Thread" inverseName="userInformations" inverseEntity="Thread" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="SyncableObject" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="Thread" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="Message" positionX="394" positionY="-193" width="128" height="88"/>
+        <element name="SyncableObject" positionX="-72" positionY="90" width="128" height="90"/>
+        <element name="Thread" positionX="-90" positionY="-153" width="128" height="88"/>
+        <element name="UserInformation" positionX="259" positionY="-18" width="128" height="88"/>
     </elements>
 </model>

@@ -13,26 +13,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92287660256410253" green="0.92287660256410253" blue="0.92287660256410253" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="10" id="IPf-BR-iyE">
-                            <size key="itemSize" width="170" height="170"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="12" minY="12" maxX="12" maxY="12"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="IPf-BR-iyE">
+                            <size key="itemSize" width="180" height="180"/>
+                            <size key="headerReferenceSize" width="0.0" height="15"/>
+                            <size key="footerReferenceSize" width="0.0" height="15"/>
+                            <inset key="sectionInset" minX="18" minY="10" maxX="18" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ywK-Iz-B8r" userLabel="Africa">
-                                <rect key="frame" x="12" y="76" width="170" height="170"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="regionCell" id="ywK-Iz-B8r" userLabel="Africa" customClass="RegionsCollectionViewCell" customModule="TravChat" customModuleProvider="target">
+                                <rect key="frame" x="98" y="89" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-dw-DwS">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="35"/>
-                                            <state key="normal" title="Africa" backgroundImage="Africa">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-dw-DwS">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <state key="normal">
                                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="regionButtonTapped" destination="ywK-Iz-B8r" eventType="touchUpInside" id="4nv-zz-Vr0"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -43,129 +47,19 @@
                                     <constraint firstAttribute="bottom" secondItem="dAO-dw-DwS" secondAttribute="bottom" id="npT-MY-pk8"/>
                                     <constraint firstItem="dAO-dw-DwS" firstAttribute="top" secondItem="ywK-Iz-B8r" secondAttribute="top" id="qho-A8-NU6"/>
                                 </constraints>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="L1I-ii-8zI" userLabel="Asia">
-                                <rect key="frame" x="193" y="76" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiA-xh-45S">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="35"/>
-                                            <state key="normal" title="Asia" backgroundImage="Asia">
-                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="kiA-xh-45S" firstAttribute="leading" secondItem="L1I-ii-8zI" secondAttribute="leading" id="YqX-Kc-Uf1"/>
-                                    <constraint firstItem="kiA-xh-45S" firstAttribute="top" secondItem="L1I-ii-8zI" secondAttribute="top" id="gbT-e9-RWR"/>
-                                    <constraint firstAttribute="bottom" secondItem="kiA-xh-45S" secondAttribute="bottom" id="t0f-xw-ZJj"/>
-                                    <constraint firstAttribute="trailing" secondItem="kiA-xh-45S" secondAttribute="trailing" id="tfs-Do-NEh"/>
-                                </constraints>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3su-7o-Mf7" userLabel="Australia">
-                                <rect key="frame" x="12" y="258" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkM-1z-f5r">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
-                                            <state key="normal" title="Australia" backgroundImage="Australia">
-                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="fkM-1z-f5r" firstAttribute="top" secondItem="3su-7o-Mf7" secondAttribute="top" id="LOc-72-xK8"/>
-                                    <constraint firstItem="fkM-1z-f5r" firstAttribute="leading" secondItem="3su-7o-Mf7" secondAttribute="leading" id="YDl-TM-orf"/>
-                                    <constraint firstAttribute="trailing" secondItem="fkM-1z-f5r" secondAttribute="trailing" id="awp-QI-Lbu"/>
-                                    <constraint firstAttribute="bottom" secondItem="fkM-1z-f5r" secondAttribute="bottom" id="ikP-Gb-g00"/>
-                                </constraints>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fXF-VY-3aq" userLabel="Europe">
-                                <rect key="frame" x="193" y="258" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1n-31-fqE">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="35"/>
-                                            <state key="normal" title="Europe" backgroundImage="Europe">
-                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="H1n-31-fqE" firstAttribute="top" secondItem="fXF-VY-3aq" secondAttribute="top" id="MtQ-gP-nJg"/>
-                                    <constraint firstItem="H1n-31-fqE" firstAttribute="leading" secondItem="fXF-VY-3aq" secondAttribute="leading" id="O18-Lz-Yee"/>
-                                    <constraint firstAttribute="bottom" secondItem="H1n-31-fqE" secondAttribute="bottom" id="icV-rz-Z7q"/>
-                                    <constraint firstAttribute="trailing" secondItem="H1n-31-fqE" secondAttribute="trailing" id="qYa-pu-BU2"/>
-                                </constraints>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GgC-5b-2Bg" userLabel="North America">
-                                <rect key="frame" x="12" y="440" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="890-PL-dl2">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
-                                            <state key="normal" title=" North America" backgroundImage="NorthAmerica">
-                                                <attributedString key="attributedTitle"/>
-                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="890-PL-dl2" secondAttribute="bottom" id="80S-BG-HQL"/>
-                                    <constraint firstItem="890-PL-dl2" firstAttribute="leading" secondItem="GgC-5b-2Bg" secondAttribute="leading" id="8ID-r3-u76"/>
-                                    <constraint firstItem="890-PL-dl2" firstAttribute="top" secondItem="GgC-5b-2Bg" secondAttribute="top" id="uCT-gw-cjh"/>
-                                    <constraint firstAttribute="trailing" secondItem="890-PL-dl2" secondAttribute="trailing" id="vZj-2s-Cod"/>
-                                </constraints>
-                            </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OgH-rQ-NjZ" userLabel="South America">
-                                <rect key="frame" x="193" y="440" width="170" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bpi-f6-Ymb">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
-                                            <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="29"/>
-                                            <state key="normal" title=" South America" backgroundImage="SouthAmerica">
-                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="Bpi-f6-Ymb" firstAttribute="leading" secondItem="OgH-rQ-NjZ" secondAttribute="leading" id="Fxq-pY-qXz"/>
-                                    <constraint firstAttribute="bottom" secondItem="Bpi-f6-Ymb" secondAttribute="bottom" id="YPM-CW-DqH"/>
-                                    <constraint firstItem="Bpi-f6-Ymb" firstAttribute="top" secondItem="OgH-rQ-NjZ" secondAttribute="top" id="bIm-R0-ze6"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bpi-f6-Ymb" secondAttribute="trailing" id="jOI-Ks-gAn"/>
-                                </constraints>
+                                <connections>
+                                    <outlet property="regionButton" destination="dAO-dw-DwS" id="Qcm-qe-4cO"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cgz-ar-faG">
+                            <rect key="frame" x="0.0" y="64" width="375" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="f7n-Fj-8I2">
+                            <rect key="frame" x="0.0" y="279" width="375" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="W0d-wP-F2d" id="Waj-Oq-Zmz"/>
                             <outlet property="delegate" destination="W0d-wP-F2d" id="I7r-p8-WIt"/>
@@ -173,15 +67,18 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="TravChat" id="XYS-Ft-1ga" propertyAccessControl="all"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="76x-bE-9BE" kind="show" identifier="toRegionChatSegue" id="oBb-0u-w6e"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixt-nB-zCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1524.5" y="332.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Conversation Thread View Controller-->
         <scene sceneID="YhX-OF-beM">
             <objects>
-                <viewController id="76x-bE-9BE" sceneMemberID="viewController">
+                <viewController id="76x-bE-9BE" customClass="ConversationThreadViewController" customModule="TravChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6aa-K8-rgM"/>
                         <viewControllerLayoutGuide type="bottom" id="Xgn-24-Ifn"/>
@@ -189,13 +86,89 @@
                     <view key="view" contentMode="scaleToFill" id="G7R-jx-C3B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Te2-Dm-hvo">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ExQ-YI-m0U">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDP-kE-8OC">
+                                        <rect key="frame" x="339" y="0.0" width="36" height="30"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonTapped:" destination="76x-bE-9BE" eventType="touchUpInside" id="0kr-Vy-hnI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cDP-kE-8OC" secondAttribute="trailing" constant="5" id="LX7-8a-UOW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LX7-8a-UOW"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Itg-gs-6ce">
+                                <rect key="frame" x="0.0" y="64" width="375" height="525"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" textLabel="WZl-yh-Wpj" detailTextLabel="bml-zR-rzR" style="IBUITableViewCellStyleSubtitle" id="L79-h1-7JN">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L79-h1-7JN" id="8NY-5W-klr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WZl-yh-Wpj">
+                                                    <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bml-zR-rzR">
+                                                    <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="76x-bE-9BE" id="k0Z-v1-Dwk"/>
+                                    <outlet property="delegate" destination="76x-bE-9BE" id="MVB-OA-Xad"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Te2-Dm-hvo" firstAttribute="leading" secondItem="G7R-jx-C3B" secondAttribute="leading" id="BU3-bh-fD8"/>
+                            <constraint firstAttribute="trailing" secondItem="Te2-Dm-hvo" secondAttribute="trailing" id="Bwe-L3-eKx"/>
+                            <constraint firstItem="Itg-gs-6ce" firstAttribute="leading" secondItem="G7R-jx-C3B" secondAttribute="leading" id="DsW-A7-rJX"/>
+                            <constraint firstItem="Te2-Dm-hvo" firstAttribute="centerX" secondItem="G7R-jx-C3B" secondAttribute="centerX" id="HuD-dj-Cs8"/>
+                            <constraint firstItem="Xgn-24-Ifn" firstAttribute="top" secondItem="Itg-gs-6ce" secondAttribute="bottom" constant="29" id="bJU-ng-AmP"/>
+                            <constraint firstItem="Te2-Dm-hvo" firstAttribute="top" secondItem="6aa-K8-rgM" secondAttribute="bottom" constant="524" id="dmh-SL-n9Z"/>
+                            <constraint firstItem="Itg-gs-6ce" firstAttribute="top" secondItem="6aa-K8-rgM" secondAttribute="bottom" id="ktL-LY-Lik"/>
+                            <constraint firstItem="Xgn-24-Ifn" firstAttribute="top" secondItem="Te2-Dm-hvo" secondAttribute="bottom" id="xxM-nI-myp"/>
+                            <constraint firstAttribute="trailing" secondItem="Itg-gs-6ce" secondAttribute="trailing" id="zwu-SK-bSC"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="conversationTableView" destination="Itg-gs-6ce" id="0Aq-h4-l5e"/>
+                        <outlet property="messageTextField" destination="ExQ-YI-m0U" id="eYN-Z8-KfN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGG-Kt-6MQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1995.5" y="332.5"/>
+            <point key="canvasLocation" x="2036.5" y="332.5"/>
         </scene>
         <!--Regions-->
         <scene sceneID="eB9-1c-Su1">
@@ -215,7 +188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QfX-CT-kin" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="333"/>
+            <point key="canvasLocation" x="969" y="333"/>
         </scene>
         <!--Private Chats-->
         <scene sceneID="baC-cY-4ZB">
@@ -230,22 +203,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fAf-cN-TVT" id="6Pa-6y-M4f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFx-GO-uXW">
-                                            <rect key="frame" x="8" y="8" width="359" height="27.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
-                                        </textField>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="VFx-GO-uXW" secondAttribute="trailing" constant="8" id="7rT-cq-BuA"/>
-                                        <constraint firstAttribute="bottom" secondItem="VFx-GO-uXW" secondAttribute="bottom" constant="8" id="Atm-8Y-kqW"/>
-                                        <constraint firstItem="VFx-GO-uXW" firstAttribute="top" secondItem="6Pa-6y-M4f" secondAttribute="top" constant="8" id="IdX-UA-kRU"/>
-                                        <constraint firstItem="VFx-GO-uXW" firstAttribute="leading" secondItem="6Pa-6y-M4f" secondAttribute="leading" constant="8" id="gkT-6V-lNE"/>
-                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -304,13 +266,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Africa" width="716" height="661"/>
-        <image name="Asia" width="467" height="364"/>
-        <image name="Australia" width="400" height="400"/>
         <image name="Chat" width="24" height="22"/>
-        <image name="Europe" width="455" height="434"/>
         <image name="Grid" width="22" height="22"/>
-        <image name="NorthAmerica" width="489" height="557"/>
-        <image name="SouthAmerica" width="344" height="347"/>
     </resources>
 </document>

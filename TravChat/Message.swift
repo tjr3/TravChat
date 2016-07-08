@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import CloudKit
 
-class Message: SyncableObject {
+class Message: SyncableObject, CloudKitManagedObject {
     
     static let typeKey = "Message"
     static let displayNameKey = "displayName"

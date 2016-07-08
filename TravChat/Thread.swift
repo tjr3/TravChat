@@ -2,7 +2,7 @@
 //  Thread.swift
 //  TravChat
 //
-//  Created by Tyler on 7/5/16.
+//  Created by Tyler on 7/6/16.
 //  Copyright © 2016 Tyler. All rights reserved.
 //
 
@@ -11,22 +11,24 @@ import CoreData
 import CloudKit
 
 
-class Thread: SyncableObject {
-
+class Thread: SyncableObject, CloudKitManagedObject {
+    
     static let typeKey = "Thread"
     static let nameKey = "name"
+    static let oneToOneKey = "oneToOne"
     static let messageKey = "messages"
     static let timestampKey = "timestamp"
     
-    convenience init(thread: Thread, message: NSSet = NSSet(), name: String, userInformation: NSSet = NSSet(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(message: NSSet = NSSet(), name: String, oneToOne: Bool = false, userInformation: NSSet = NSSet(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
         guard let entity = NSEntityDescription.entityForName(Thread.typeKey, inManagedObjectContext: context) else { fatalError("Error: Core Data failed to create an entity from entity description.") }
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.messages = message
-        self.name = name
+        self.name = name ?? ""
         self.userInformations = userInformation
+        self.oneToOne = oneToOne
         self.recordName = recordName
         
     }
@@ -42,7 +44,7 @@ class Thread: SyncableObject {
         
         record[Thread.timestampKey] = timestamp
         record[Thread.nameKey] = name
-
+        record[Thread.oneToOneKey] = oneToOne
         
         return record
     }
@@ -55,7 +57,6 @@ class Thread: SyncableObject {
         
         self.recordName = record.recordID.recordName
         self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
-    
+        
     }
 }
-

@@ -20,16 +20,18 @@
 		CE2615051D24886A001098BF /* PrivateChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */; };
 		CE2615071D248A3A001098BF /* ConversationThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */; };
 		CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615491D25B004001098BF /* SyncableObject.swift */; };
-		CE2615571D25E7D1001098BF /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */; };
 		CE26156D1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */; };
 		CE2615771D2C1C75001098BF /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615761D2C1C75001098BF /* CloudKitManager.swift */; };
 		CE2615791D2C1CA8001098BF /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615781D2C1CA8001098BF /* CloudKitManagedObject.swift */; };
 		CE2615851D2C2531001098BF /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */; };
 		CE2615861D2C2531001098BF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615841D2C2531001098BF /* Message.swift */; };
-		CE2615891D2C3020001098BF /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615871D2C3020001098BF /* Thread+CoreDataProperties.swift */; };
-		CE26158A1D2C3020001098BF /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615881D2C3020001098BF /* Thread.swift */; };
 		CE26158D1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */; };
 		CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158C1D2C3CC0001098BF /* UserInformation.swift */; };
+		CEAC77081D2D9E690064BDA1 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC77061D2D9E690064BDA1 /* Thread.swift */; };
+		CEAC770C1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */; };
+		CEAC770E1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */; };
+		CEAC77111D2DB4860064BDA1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAC77101D2DB4860064BDA1 /* CloudKit.framework */; };
+		CEAC77131D2DBF1B0064BDA1 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC77121D2DBF1B0064BDA1 /* Regions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,16 +71,19 @@
 		CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateChatTableViewController.swift; sourceTree = "<group>"; };
 		CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationThreadViewController.swift; sourceTree = "<group>"; };
 		CE2615491D25B004001098BF /* SyncableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncableObject.swift; sourceTree = "<group>"; };
-		CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
 		CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyncableObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE2615761D2C1C75001098BF /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		CE2615781D2C1CA8001098BF /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
 		CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE2615841D2C2531001098BF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		CE2615871D2C3020001098BF /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CE2615881D2C3020001098BF /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE26158C1D2C3CC0001098BF /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		CEAC77061D2D9E690064BDA1 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEAC770F1D2DB4220064BDA1 /* TravChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TravChat.entitlements; sourceTree = "<group>"; };
+		CEAC77101D2DB4860064BDA1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		CEAC77121D2DBF1B0064BDA1 /* Regions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAC77111D2DB4860064BDA1 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +115,7 @@
 		CE2614BB1D24403E001098BF = {
 			isa = PBXGroup;
 			children = (
+				CEAC77101D2DB4860064BDA1 /* CloudKit.framework */,
 				CE2614C61D24403E001098BF /* TravChat */,
 				CE2614DB1D24403F001098BF /* TravChatTests */,
 				CE2614E61D24403F001098BF /* TravChatUITests */,
@@ -129,6 +136,7 @@
 		CE2614C61D24403E001098BF /* TravChat */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC770F1D2DB4220064BDA1 /* TravChat.entitlements */,
 				CE2614C71D24403E001098BF /* AppDelegate.swift */,
 				CE2615761D2C1C75001098BF /* CloudKitManager.swift */,
 				CE2614FD1D2486FF001098BF /* Model */,
@@ -137,7 +145,6 @@
 				CE26157A1D2C1CAE001098BF /* Protocols */,
 				CE2614CB1D24403E001098BF /* Main.storyboard */,
 				CE2614CE1D24403E001098BF /* Assets.xcassets */,
-				CE2615561D25E7D1001098BF /* SF-UI-Display-Thin.otf */,
 				CE2614D01D24403E001098BF /* LaunchScreen.storyboard */,
 				CE2614D31D24403E001098BF /* Info.plist */,
 			);
@@ -182,10 +189,10 @@
 		CE2614FE1D248708001098BF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */,
+				CEAC77061D2D9E690064BDA1 /* Thread.swift */,
 				CE2615841D2C2531001098BF /* Message.swift */,
 				CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */,
-				CE2615881D2C3020001098BF /* Thread.swift */,
-				CE2615871D2C3020001098BF /* Thread+CoreDataProperties.swift */,
 				CE26158C1D2C3CC0001098BF /* UserInformation.swift */,
 				CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */,
 				CE2615491D25B004001098BF /* SyncableObject.swift */,
@@ -199,6 +206,8 @@
 		CE2615031D2487F1001098BF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC77121D2DBF1B0064BDA1 /* Regions.swift */,
+				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
 				CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */,
 				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
 				CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */,
@@ -282,6 +291,12 @@
 				TargetAttributes = {
 					CE2614C31D24403E001098BF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6WAXYB4E4V;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					CE2614D71D24403F001098BF = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -318,7 +333,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2615571D25E7D1001098BF /* SF-UI-Display-Thin.otf in Resources */,
 				CE2614D21D24403E001098BF /* LaunchScreen.storyboard in Resources */,
 				CE2614CF1D24403E001098BF /* Assets.xcassets in Resources */,
 				CE2614CD1D24403E001098BF /* Main.storyboard in Resources */,
@@ -350,6 +364,8 @@
 				CE2614F61D247362001098BF /* Thread Controller.swift in Sources */,
 				CE2615861D2C2531001098BF /* Message.swift in Sources */,
 				CE2615791D2C1CA8001098BF /* CloudKitManagedObject.swift in Sources */,
+				CEAC770E1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift in Sources */,
+				CEAC770C1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift in Sources */,
 				CE26158D1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift in Sources */,
 				CE2615771D2C1C75001098BF /* CloudKitManager.swift in Sources */,
 				CE26156D1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift in Sources */,
@@ -357,10 +373,10 @@
 				CE2615001D248768001098BF /* Stack.swift in Sources */,
 				CE2615071D248A3A001098BF /* ConversationThreadViewController.swift in Sources */,
 				CE2614C81D24403E001098BF /* AppDelegate.swift in Sources */,
-				CE26158A1D2C3020001098BF /* Thread.swift in Sources */,
+				CEAC77081D2D9E690064BDA1 /* Thread.swift in Sources */,
 				CE2615021D2487EC001098BF /* RegionsCollectionViewController.swift in Sources */,
 				CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */,
-				CE2615891D2C3020001098BF /* Thread+CoreDataProperties.swift in Sources */,
+				CEAC77131D2DBF1B0064BDA1 /* Regions.swift in Sources */,
 				CE2615051D24886A001098BF /* PrivateChatTableViewController.swift in Sources */,
 				CE2614FC1D2486FB001098BF /* Model.xcdatamodeld in Sources */,
 			);
@@ -506,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TravChat/TravChat.entitlements;
 				INFOPLIST_FILE = TravChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChat;
@@ -517,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TravChat/TravChat.entitlements;
 				INFOPLIST_FILE = TravChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChat;
@@ -589,6 +607,7 @@
 				CE2614EE1D24403F001098BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE2614EF1D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChatTests" */ = {
 			isa = XCConfigurationList;
@@ -597,6 +616,7 @@
 				CE2614F11D24403F001098BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE2614F21D24403F001098BF /* Build configuration list for PBXNativeTarget "TravChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -605,6 +625,7 @@
 				CE2614F41D24403F001098BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

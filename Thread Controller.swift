@@ -13,9 +13,18 @@ class ThreadController {
     
     static let sharedController = ThreadController()
     
-    var cloudKitManager = CloudKitManager()
+    var cloudKitManager: CloudKitManager
     
     var isSyncing: Bool = false
+    
+    var africa: Thread!
+    var asia: Thread!
+    var australia: Thread!
+    var europe: Thread!
+    var northAmerica: Thread!
+    var southAmerica: Thread!
+    
+    var regionsArray = ["Africa", "Asia", "Australia", "Europe", "North America", "South America"]
     
     var messages: [Message] {
         let fetchRequest = NSFetchRequest(entityName: Message.typeKey)
@@ -28,30 +37,81 @@ class ThreadController {
     }
     
     init () {
-        
+    
         self.cloudKitManager = CloudKitManager()
-        
         performFullSync()
-        
-        
+        createRegions()
     }
     
     //MARK: - Thread -
     
-    func createThread() {
-        
+    func createRegions() {
+        self.africa = Thread(name: "Africa")
+        self.asia = Thread(name: "Asia")
+        self.australia = Thread(name: "Australia")
+        self.europe = Thread(name: "Europe")
+        self.northAmerica = Thread(name: "North America")
+        self.southAmerica = Thread(name: "South America")
     }
     
-    func deleteThread() {
+    func createOneToOneChat(users: [UserInformation]) { // array of users as parameter,
         
+        let oneToOneThread = Thread(message: NSSet(), name: "", oneToOne: true, userInformation: NSSet(array: users))
+        
+        saveContext()
+        
+        if let oneToOneThreadRecord = oneToOneThread.cloudKitRecord {
+            
+            cloudKitManager.saveRecord(oneToOneThreadRecord, completion: { (record, error) in
+                if let record = record {
+                    oneToOneThread.update(record)
+                }
+            })
+        }
     }
     
-    func addMessageToThread() {
+    func deleteThread(thread: Thread) { // exactly as Timeline.
         
+        if let recordID = thread.cloudKitRecordID {
+            cloudKitManager.deleteRecordWithID(recordID, completion: { (recordID, error) in
+                
+                if let error = error {
+                    print("\(error.localizedDescription)")
+                }
+            })
+        }
+        
+        thread.managedObjectContext?.deleteObject(thread)
+        
+        saveContext()
     }
     
-    func removeMessageFromThread() {
+    func addMessageToThread(message: String, thread: Thread, user: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
         
+        let message = Message(thread: thread, message: message, displayName: user)
+        
+        saveContext()
+        
+        if let completion = completion {
+            completion(success: true)
+        }
+        
+        if let messageRecord = message.cloudKitRecord {
+            
+            cloudKitManager.saveRecord(messageRecord, completion: { (record, error) in
+                if let record = record {
+                    message.update(record)
+                }
+            })
+        }
+    }
+    
+    func removeMessageFromThread(thread: Thread, message: Message, user: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
+        
+        
+        
+        thread.managedObjectContext?.deleteObject(message)
+        saveContext()
     }
     
     // MARK: Syncable Records -
@@ -110,13 +170,13 @@ class ThreadController {
     func fetchNewRecords(type: String, completion: (() -> Void)?) {
         
         let referencesToExclude = syncedRecords(type).flatMap({ $0.cloudKitReference})
-        var prediate = NSPredicate(format: "NOT(recordID IN %@", argumentArray: [referencesToExclude])
+//        var prediate = NSPredicate(format: "NOT(recordID IN %@", argumentArray: [referencesToExclude])
         
         if referencesToExclude.isEmpty {
-            prediate = NSPredicate(value: true)
+//            prediate = NSPredicate(value: true)
         }
         
-        cloudKitManager.fetchRecordsWithType(type, predicate: prediate, recordFetchedBlock: { (record) in
+        cloudKitManager.fetchRecordsWithType(type, recordFetchedBlock: { (record) in
             
             switch type {
                 

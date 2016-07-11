@@ -54,13 +54,7 @@ class createUsernameViewController: UIViewController {
         
         self.displayName = displayName
         
-        
-        
-        
-        
-        
-        
-        
+        UserController.sharedController.createUser(displayName)
     }
     
     // MARK: - Action Button -

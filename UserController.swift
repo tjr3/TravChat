@@ -21,10 +21,15 @@ class UserController {
         self.cloudKitManager = CloudKitManager()
     }
     
+    var currentUser: UserInformation? {
+        
+        return
+    }
+    
     // MARK: - Method Signatures -
     
-    func createUser(firstName: String, lastName: String) {
-        let displayName = UserInformation(firstName: firstName, lastName: lastName, thread: nil, context: Stack.sharedStack.managedObjectContext)
+    func createUser(displayName: String) {
+        let displayName = UserInformation(displayName: displayName, thread: nil, context: Stack.sharedStack.managedObjectContext)
         
         saveContext()
         

@@ -25,11 +25,11 @@
 		CE2615791D2C1CA8001098BF /* CloudKitManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615781D2C1CA8001098BF /* CloudKitManagedObject.swift */; };
 		CE2615851D2C2531001098BF /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */; };
 		CE2615861D2C2531001098BF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615841D2C2531001098BF /* Message.swift */; };
-		CE26158D1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */; };
 		CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158C1D2C3CC0001098BF /* UserInformation.swift */; };
 		CE8DB1C31D31E747003B6126 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */; };
 		CE8DB1C51D31E876003B6126 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB1C41D31E876003B6126 /* UserController.swift */; };
 		CE8DB2061D340934003B6126 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB2051D340934003B6126 /* DateFormatter.swift */; };
+		CE8DB2091D345870003B6126 /* UserInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB2081D345870003B6126 /* UserInformation+CoreDataProperties.swift */; };
 		CEAC77081D2D9E690064BDA1 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC77061D2D9E690064BDA1 /* Thread.swift */; };
 		CEAC770C1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */; };
 		CEAC770E1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */; };
@@ -79,11 +79,11 @@
 		CE2615781D2C1CA8001098BF /* CloudKitManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManagedObject.swift; sourceTree = "<group>"; };
 		CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE2615841D2C2531001098BF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE26158C1D2C3CC0001098BF /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		CE8DB1C41D31E876003B6126 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		CE8DB2051D340934003B6126 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		CE8DB2081D345870003B6126 /* UserInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CEAC77061D2D9E690064BDA1 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 				CE2615841D2C2531001098BF /* Message.swift */,
 				CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */,
 				CE26158C1D2C3CC0001098BF /* UserInformation.swift */,
-				CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */,
+				CE8DB2081D345870003B6126 /* UserInformation+CoreDataProperties.swift */,
 				CE2615491D25B004001098BF /* SyncableObject.swift */,
 				CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */,
 				CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */,
@@ -385,11 +385,11 @@
 				CE2615791D2C1CA8001098BF /* CloudKitManagedObject.swift in Sources */,
 				CEAC770E1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift in Sources */,
 				CEAC770C1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift in Sources */,
-				CE26158D1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift in Sources */,
 				CE2615771D2C1C75001098BF /* CloudKitManager.swift in Sources */,
 				CE26156D1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift in Sources */,
 				CE2615851D2C2531001098BF /* Message+CoreDataProperties.swift in Sources */,
 				CE2615001D248768001098BF /* Stack.swift in Sources */,
+				CE8DB2091D345870003B6126 /* UserInformation+CoreDataProperties.swift in Sources */,
 				CE2615071D248A3A001098BF /* ConversationThreadViewController.swift in Sources */,
 				CE2614C81D24403E001098BF /* AppDelegate.swift in Sources */,
 				CEAC77081D2D9E690064BDA1 /* Thread.swift in Sources */,

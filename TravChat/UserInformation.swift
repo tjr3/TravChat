@@ -13,20 +13,18 @@ import CloudKit
 class UserInformation: SyncableObject, CloudKitManagedObject{
 
     static let typeKey = "UserInformation"
-    static let firstNameKey = "firstName"
-    static let lastNameKey = "lastName"
+    static let displayNameKey = "displayName"
     static let threadKey = "thread"
     
     static var currentUser = UserInformation.threadKey
     
-    convenience init(firstName: String, lastName: String, thread: NSSet?, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(displayName: String, thread: NSSet?, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
         guard let entity = NSEntityDescription.entityForName(UserInformation.typeKey, inManagedObjectContext: context) else { fatalError("Error: Core Data failed to create entity from entity description.") }
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
-        self.firstName = firstName
-        self.lastName = lastName
+        self.displayName = displayName
         self.thread = thread
     }
     
@@ -39,8 +37,7 @@ class UserInformation: SyncableObject, CloudKitManagedObject{
         let recordID = CKRecordID(recordName: recordName)
         let record = CKRecord(recordType: recordType, recordID: recordID)
         
-        record[UserInformation.firstNameKey] = firstName
-        record[UserInformation.lastNameKey] = lastName
+        record[UserInformation.displayNameKey] = displayName
         
         return record
     }

@@ -2,7 +2,7 @@
 //  UserInformation+CoreDataProperties.swift
 //  TravChat
 //
-//  Created by Tyler on 7/5/16.
+//  Created by Tyler on 7/11/16.
 //  Copyright © 2016 Tyler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,7 @@ import CoreData
 
 extension UserInformation {
 
-    @NSManaged var firstName: String?
-    @NSManaged var lastName: String?
+    @NSManaged var displayName: String?
     @NSManaged var thread: NSSet?
 
 }

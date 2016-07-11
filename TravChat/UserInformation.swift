@@ -10,13 +10,16 @@ import Foundation
 import CoreData
 import CloudKit
 
-class UserInformation: SyncableObject {
+class UserInformation: SyncableObject, CloudKitManagedObject{
 
     static let typeKey = "UserInformation"
     static let firstNameKey = "firstName"
     static let lastNameKey = "lastName"
+    static let threadKey = "thread"
     
-    convenience init(userInformation: UserInformation, firstName: String, lastName: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    static var currentUser = UserInformation.threadKey
+    
+    convenience init(firstName: String, lastName: String, thread: NSSet?, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
         guard let entity = NSEntityDescription.entityForName(UserInformation.typeKey, inManagedObjectContext: context) else { fatalError("Error: Core Data failed to create entity from entity description.") }
         
@@ -24,6 +27,7 @@ class UserInformation: SyncableObject {
         
         self.firstName = firstName
         self.lastName = lastName
+        self.thread = thread
     }
     
     // MARK: CloudKitManagedObject

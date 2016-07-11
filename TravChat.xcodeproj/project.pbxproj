@@ -27,6 +27,9 @@
 		CE2615861D2C2531001098BF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615841D2C2531001098BF /* Message.swift */; };
 		CE26158D1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */; };
 		CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158C1D2C3CC0001098BF /* UserInformation.swift */; };
+		CE8DB1C31D31E747003B6126 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */; };
+		CE8DB1C51D31E876003B6126 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB1C41D31E876003B6126 /* UserController.swift */; };
+		CE8DB2061D340934003B6126 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB2051D340934003B6126 /* DateFormatter.swift */; };
 		CEAC77081D2D9E690064BDA1 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC77061D2D9E690064BDA1 /* Thread.swift */; };
 		CEAC770C1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */; };
 		CEAC770E1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */; };
@@ -78,6 +81,9 @@
 		CE2615841D2C2531001098BF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CE26158B1D2C3CC0001098BF /* UserInformation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE26158C1D2C3CC0001098BF /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
+		CE8DB1C41D31E876003B6126 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		CE8DB2051D340934003B6126 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		CEAC77061D2D9E690064BDA1 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -140,7 +146,7 @@
 				CE2614C71D24403E001098BF /* AppDelegate.swift */,
 				CE2615761D2C1C75001098BF /* CloudKitManager.swift */,
 				CE2614FD1D2486FF001098BF /* Model */,
-				CE2614F71D247366001098BF /* Controller */,
+				CE2614F71D247366001098BF /* Controllers */,
 				CE2615031D2487F1001098BF /* View Controllers */,
 				CE26157A1D2C1CAE001098BF /* Protocols */,
 				CE2614CB1D24403E001098BF /* Main.storyboard */,
@@ -169,12 +175,14 @@
 			path = TravChatUITests;
 			sourceTree = "<group>";
 		};
-		CE2614F71D247366001098BF /* Controller */ = {
+		CE2614F71D247366001098BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE8DB1C41D31E876003B6126 /* UserController.swift */,
 				CE2614F51D247362001098BF /* Thread Controller.swift */,
+				CE8DB2071D344833003B6126 /* Other Controllers */,
 			);
-			name = Controller;
+			name = Controllers;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -189,8 +197,8 @@
 		CE2614FE1D248708001098BF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */,
 				CEAC77061D2D9E690064BDA1 /* Thread.swift */,
+				CEAC770B1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift */,
 				CE2615841D2C2531001098BF /* Message.swift */,
 				CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */,
 				CE26158C1D2C3CC0001098BF /* UserInformation.swift */,
@@ -207,8 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				CEAC77121D2DBF1B0064BDA1 /* Regions.swift */,
-				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
+				CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */,
 				CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */,
+				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
 				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
 				CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */,
 			);
@@ -221,6 +230,15 @@
 				CE2615781D2C1CA8001098BF /* CloudKitManagedObject.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		CE8DB2071D344833003B6126 /* Other Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE8DB2051D340934003B6126 /* DateFormatter.swift */,
+			);
+			name = "Other Controllers";
+			path = TravChat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8DB1C31D31E747003B6126 /* CreateUsernameViewController.swift in Sources */,
 				CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */,
 				CE2614F61D247362001098BF /* Thread Controller.swift in Sources */,
 				CE2615861D2C2531001098BF /* Message.swift in Sources */,
@@ -375,8 +394,10 @@
 				CE2614C81D24403E001098BF /* AppDelegate.swift in Sources */,
 				CEAC77081D2D9E690064BDA1 /* Thread.swift in Sources */,
 				CE2615021D2487EC001098BF /* RegionsCollectionViewController.swift in Sources */,
+				CE8DB2061D340934003B6126 /* DateFormatter.swift in Sources */,
 				CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */,
 				CEAC77131D2DBF1B0064BDA1 /* Regions.swift in Sources */,
+				CE8DB1C51D31E876003B6126 /* UserController.swift in Sources */,
 				CE2615051D24886A001098BF /* PrivateChatTableViewController.swift in Sources */,
 				CE2614FC1D2486FB001098BF /* Model.xcdatamodeld in Sources */,
 			);

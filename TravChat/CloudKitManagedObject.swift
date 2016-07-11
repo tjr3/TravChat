@@ -48,7 +48,7 @@ extension CloudKitManagedObject {
         self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
         
         do {
-            try? Stack.sharedStack.managedObjectContext.save()
+            try Stack.sharedStack.managedObjectContext.save()
         } catch {
             print("Unable to save Managed Object Context: \(error)")
         }

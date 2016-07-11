@@ -14,8 +14,9 @@ class ThreadController {
     static let sharedController = ThreadController()
     
     var cloudKitManager: CloudKitManager
-    
     var isSyncing: Bool = false
+    
+    // MARK: - Thread Creation -
     
     var africa: Thread!
     var asia: Thread!
@@ -32,18 +33,16 @@ class ThreadController {
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         let results = (try? Stack.sharedStack.managedObjectContext.executeRequest(fetchRequest)) as? [Message] ?? []
-        
         return results
     }
     
     init () {
-    
         self.cloudKitManager = CloudKitManager()
         performFullSync()
         createRegions()
     }
     
-    //MARK: - Thread -
+    //MARK: - Threads -
     
     func createRegions() {
         self.africa = Thread(name: "Africa")
@@ -53,6 +52,8 @@ class ThreadController {
         self.northAmerica = Thread(name: "North America")
         self.southAmerica = Thread(name: "South America")
     }
+    
+    // MARK: - Method Signatures -
     
     func createOneToOneChat(users: [UserInformation]) { // array of users as parameter,
         
@@ -86,9 +87,9 @@ class ThreadController {
         saveContext()
     }
     
-    func addMessageToThread(message: String, thread: Thread, user: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
+    func addMessageToThread(message: String, thread: Thread, displayName: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
         
-        let message = Message(thread: thread, message: message, displayName: user)
+        let message = Message(thread: thread, message: message, displayName: displayName)
         
         saveContext()
         
@@ -106,15 +107,13 @@ class ThreadController {
         }
     }
     
-    func removeMessageFromThread(thread: Thread, message: Message, user: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
-        
-        
+    func removeMessageFromThread(thread: Thread, message: Message, displayName: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
         
         thread.managedObjectContext?.deleteObject(message)
         saveContext()
     }
     
-    // MARK: Syncable Records -
+    // MARK: - Syncable Records -
     
     func syncedRecords(type: String) -> [CloudKitManagedObject] { // this just shows you which records are synced between cloudkit and core data
         let fetchRequest = NSFetchRequest(entityName: type)
@@ -165,7 +164,7 @@ class ThreadController {
         }
     }
     
-    // MARK: Fetch Records -
+    // MARK: - Fetch Records -
     
     func fetchNewRecords(type: String, completion: (() -> Void)?) {
         
@@ -228,7 +227,7 @@ class ThreadController {
         }
     }
     
-    // MARK: Save Content -
+    // MARK: - Save Content -
     
     func saveContext() {
         

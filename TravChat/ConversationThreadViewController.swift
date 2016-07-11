@@ -9,10 +9,11 @@
 import UIKit
 
 class ConversationThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var conversationRegion: Region?
     var thread: Thread?
-    var messages = [Message]()
+    var messages: [Message] = []
+//    var user = UserInformation?
     
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var conversationTableView: UITableView!
@@ -25,22 +26,30 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         self.title = region.name
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Action Buttons -
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-        
+//        guard let messageText = messageTextField.text,
+//        thread = self.thread,
+//        user = else { return }
+//        ThreadController.sharedController.addMessageToThread(messageText, thread: <#T##Thread#>, user: <#T##String#>, completion: <#T##((success: Bool) -> Void)?##((success: Bool) -> Void)?##(success: Bool) -> Void#>)
+//    }
+    }
+    
+    @IBAction func nameTapped(sender: AnyObject) {
+        presentAlertController()
+        // if cancel, return else { return segue with identifier }
+        performSegueWithIdentifier("toPrivateChat", sender: self)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,20 +61,32 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
         
         let message = messages[indexPath.row]
-        cell.textLabel?.text = message.displayName
+        cell.textLabel?.text = "\(message.displayName) \(message.timestamp.dateFormat())"
         cell.detailTextLabel?.text = message.message
         
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func presentAlertController() {
+        
+        let alertController = UIAlertController(title: "Private Chat?", message: "Do you want start a new privetate chat with \(UserInformation.firstNameKey) \(UserInformation.lastNameKey)?", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let createAction = UIAlertAction(title: "Yes", style: .Default, handler: nil)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(createAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -16,6 +16,7 @@ class Message: SyncableObject, CloudKitManagedObject {
     static let displayNameKey = "displayName"
     static let threadKey = "thread"
     static let timestampKey = "timestamp"
+    // talk to parker about sender and reciever cell. Check on current user sending mesage. message is 
     
     convenience init(thread: Thread, message: String, displayName: String, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         

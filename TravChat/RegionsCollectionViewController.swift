@@ -28,7 +28,7 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
     }
     
     func configureView() {
-        if let navBarFont = UIFont(name: "PingFangHK-Medium", size: 28.0) {
+        if let navBarFont = UIFont(name: "PingFangHK-Thin", size: 28.0) {
             let navBarAttributesDictionary: [NSObject: AnyObject]? = [
                 NSForegroundColorAttributeName: UIColor.blackColor(),
                 NSFontAttributeName: navBarFont

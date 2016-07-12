@@ -8,7 +8,7 @@
         <!--Create Username View Controller-->
         <scene sceneID="Ihb-eb-es4">
             <objects>
-                <viewController id="NSA-87-H2s" customClass="createUsernameViewController" customModule="TravChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signin" id="NSA-87-H2s" customClass="createUsernameViewController" customModule="TravChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwc-SL-JMZ"/>
                         <viewControllerLayoutGuide type="bottom" id="Jc3-rl-ObH"/>
@@ -23,7 +23,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QAz-ga-pPJ">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="33"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6O-qW-ccu" userLabel="Last name:">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6O-qW-ccu" userLabel="First Name Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="89" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -49,7 +49,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnp-MO-KPa">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnp-MO-KPa">
                                                 <rect key="frame" x="94" y="0.0" width="266" height="33"/>
                                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,14 +63,15 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-CT-ceG">
-                                <rect key="frame" x="162" y="449" width="50" height="30"/>
+                                <rect key="frame" x="113" y="449" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LUw-pT-fbl"/>
-                                    <constraint firstAttribute="width" constant="50" id="qGk-bD-Ibr"/>
+                                    <constraint firstAttribute="width" constant="150" id="qGk-bD-Ibr"/>
                                 </constraints>
-                                <state key="normal" title="Create"/>
+                                <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createButtonTapped:" destination="NSA-87-H2s" eventType="touchUpInside" id="gX7-hq-D5M"/>
+                                    <segue destination="aXy-mG-wuo" kind="show" id="2YT-iG-awi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign into TravChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-U6-Jhb">

@@ -18,11 +18,15 @@ class createUsernameViewController: UIViewController {
     // MARK: - Outlets -
     
     @IBOutlet weak var signInLabel: UILabel!
+    
     @IBOutlet weak var firstNameLabel: UILabel!
+    
     @IBOutlet weak var lastNameLabel: UILabel!
+    
     @IBOutlet weak var firstNameTextField: UITextField!
+    
     @IBOutlet weak var lastNameTextField: UITextField!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +34,6 @@ class createUsernameViewController: UIViewController {
         configureView()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func configureView() {
         guard signInLabel != nil else { return }
@@ -46,6 +47,7 @@ class createUsernameViewController: UIViewController {
         _ = UIColor.blackColor()
     }
     
+    
     func createUser() {
         let firstName = firstNameTextField.text
         let lastName = lastNameTextField.text
@@ -56,11 +58,17 @@ class createUsernameViewController: UIViewController {
         
         UserController.sharedController.createUser(displayName)
     }
-    
+
+
     // MARK: - Action Button -
     
     @IBAction func createButtonTapped(sender: AnyObject) {
         
+        if let displayName = displayName {
+        _ = UserInformation(displayName: displayName, thread: nil)
+        }
+        
+        UserController.sharedController.saveContext()
     }
     
     /*

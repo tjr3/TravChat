@@ -22,8 +22,12 @@ class UserController {
     }
     
     var currentUser: UserInformation? {
-        
-        return
+        let request = NSFetchRequest(entityName: "UserInformation")
+        do {
+            return try Stack.sharedStack.managedObjectContext.executeFetchRequest(request) as? UserInformation
+        } catch {
+            return nil
+        }
     }
     
     // MARK: - Method Signatures -
@@ -42,7 +46,6 @@ class UserController {
             })
         }
     }
-    
     
     func deleteUser(user: UserInformation) {
         if let recordID = user.cloudKitRecordID {

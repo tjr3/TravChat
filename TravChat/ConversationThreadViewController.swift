@@ -31,19 +31,30 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         super.didReceiveMemoryWarning()
     }
     
+    enum UIActionSheetStyle : Int {
+        case Automatic
+        case Default
+        case BlackTranslucent
+        case BlackOpaque
+    }
+    
     // MARK: - Action Buttons -
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-//        guard let messageText = messageTextField.text,
-//        thread = self.thread,
-//        user = else { return }
-//        ThreadController.sharedController.addMessageToThread(messageText, thread: <#T##Thread#>, user: <#T##String#>, completion: <#T##((success: Bool) -> Void)?##((success: Bool) -> Void)?##(success: Bool) -> Void#>)
-//    }
+    guard let messageText = messageTextField.text,
+        thread = self.thread else { return }
+    let user = UserInformation.displayNameKey
+        ThreadController.sharedController.addMessageToThread(messageText, thread: thread, displayName: user) { (success) in
+            if let completion = completion {
+                completion(success: true)
+            }
+        }
     }
     
     @IBAction func nameTapped(sender: AnyObject) {
         presentAlertController()
-        // if cancel, return else { return segue with identifier }
+        
+        // TODO: if cancel, return else { return segue with identifier }, create segue if DM is selected.
         performSegueWithIdentifier("toPrivateChat", sender: self)
     }
     
@@ -68,15 +79,18 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     }
     
     func presentAlertController() {
+        let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)
+    
         
-        let alertController = UIAlertController(title: "Private Chat?", message: "Do you want start a new privetate chat with \(UserInformation.firstNameKey) \(UserInformation.lastNameKey)?", preferredStyle: .Alert)
-        
+        let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default, handler: nil) // Add code in the handler to set button functionalility
+        let reportAction = UIAlertAction(title: "Report", style: .Default, handler: nil) // Add code in the handler to set button functionalility
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        let createAction = UIAlertAction(title: "Yes", style: .Default, handler: nil)
         
-        alertController.addAction(cancelAction)
-        alertController.addAction(createAction)
-        presentViewController(alertController, animated: true, completion: nil)
+        actionSheet.addAction(directMessageAction)
+        actionSheet.addAction(reportAction)
+        actionSheet.addAction(cancelAction)
+        
+        presentViewController(actionSheet, animated: true, completion: nil)
     }
     
     /*

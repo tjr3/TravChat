@@ -43,8 +43,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     @IBAction func sendButtonTapped(sender: AnyObject) {
         
     guard let messageText = messageTextField.text,
-        thread = self.thread else { return }
-    let user = UserInformation.currentUser
+       user = UserInformation.currentUser else { return }
         ThreadController.sharedController.addMessageToThread(messageText, thread: thread, displayName: user) { (success) in
             if success == true {
                 print(messageText) 

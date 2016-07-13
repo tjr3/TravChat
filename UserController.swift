@@ -12,6 +12,8 @@ import CloudKit
 
 class UserController {
     
+    private var kDisplayName = "displayName"
+    
     static let sharedController = UserController()
     
     let cloudKitManager: CloudKitManager
@@ -21,6 +23,8 @@ class UserController {
         self.cloudKitManager = CloudKitManager()
     }
     
+    var userInformation: UserInformation?
+    
     var currentUser: UserInformation? {
         let request = NSFetchRequest(entityName: "UserInformation")
         do {
@@ -28,20 +32,37 @@ class UserController {
         } catch {
             return nil
         }
+        
     }
+    
+//    var saveCurrentUser: UserInformation? {
+//        get {
+//            let userDisplayName = NSFetchRequest(entityName: "UserInformation")
+//            let userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kDisplayName) as? [String : AnyObject]
+//            return UserInformation(displayName: userDictionary, context: Stack.sharedStack.managedObjectContext)
+//
+//            return UserInformation?
+//        }
+//        set {
+//            
+//        }
+//    }
     
     // MARK: - Method Signatures -
     
     func createUser(displayName: String) {
         
-        let displayName = UserInformation(displayName: displayName, thread: nil, context: Stack.sharedStack.managedObjectContext)
+        let newUser = UserInformation(displayName: displayName, context: Stack.sharedStack.managedObjectContext)
         saveContext()
         
-        if let displayNameRecord = displayName.cloudKitRecord {
+        if let displayNameRecord = newUser.cloudKitRecord {
+            
             
             cloudKitManager.saveRecord(displayNameRecord, completion: { (record, error) in
                 if let record = record {
-                    displayName.update(record)
+                    newUser.update(record)
+                    
+                    print(displayNameRecord)
                 }
             })
         }

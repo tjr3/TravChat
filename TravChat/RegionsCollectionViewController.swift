@@ -18,8 +18,6 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
         super.viewDidLoad()
         
         configureView()
-        
-       print("\(UserInformation.currentUser)")
     }
     
     override func didReceiveMemoryWarning() {

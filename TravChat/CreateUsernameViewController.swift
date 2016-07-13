@@ -65,8 +65,10 @@ class createUsernameViewController: UIViewController {
     @IBAction func createButtonTapped(sender: AnyObject) {
         
         if let displayName = displayName {
-        _ = UserInformation(displayName: displayName, thread: nil)
+        _ = UserInformation(displayName: displayName)
         }
+        
+        createUser()
         
         UserController.sharedController.saveContext()
     }

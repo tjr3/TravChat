@@ -13,7 +13,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     var conversationRegion: Region?
     var thread: Thread?
     var messages: [Message] = []
-
+    
     
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var conversationTableView: UITableView!
@@ -24,6 +24,13 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         
         guard let region = conversationRegion else { return }
         self.title = region.name
+        thread = Thread(name: "Africa")
+        let firstMessage = Message(thread: thread!, message: "I love France.", displayName: "Alan", timestamp: NSDate())
+        thread = Thread(name: "Asia")
+        let secondMessage = Message(thread: thread!, message: "Go To Sendai!", displayName: "ty Rob", timestamp: NSDate())
+        messages.append(firstMessage)
+        messages.append(secondMessage)
+        
         
     }
     
@@ -31,24 +38,17 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         super.didReceiveMemoryWarning()
     }
     
-    enum UIActionSheetStyle : Int {
-        case Automatic
-        case Default
-        case BlackTranslucent
-        case BlackOpaque
-    }
-    
     // MARK: - Action Buttons -
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
         
-    guard let messageText = messageTextField.text,
-       user = UserInformation.currentUser else { return }
-        ThreadController.sharedController.addMessageToThread(messageText, thread: thread, displayName: user) { (success) in
-            if success == true {
-                print(messageText) 
-            }
-        }
+//    guard let messageText = messageTextField.text,
+//       user = UserInformation.currentUser else { return }
+//        ThreadController.sharedController.addMessageToThread(messageText, thread: thread, displayName: user) { (success) in
+//            if success == true {
+//                print(messageText) 
+//            }
+//        }
     }
     
     @IBAction func nameTapped(sender: AnyObject) {
@@ -72,7 +72,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
         
         let message = messages[indexPath.row]
-        cell.textLabel?.text = "\(message.displayName) \(message.timestamp.dateFormat())"
+        cell.textLabel?.text = "    \(message.displayName ?? "")         \(message.timestamp.dateFormat())"
         cell.detailTextLabel?.text = message.message
         
         return cell

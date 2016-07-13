@@ -31,7 +31,6 @@ class RegionsCollectionViewCell: UICollectionViewCell {
         style.alignment = NSTextAlignment.Center
         let attributedString = NSAttributedString(string: name, attributes: [ NSForegroundColorAttributeName: UIColor.blackColor(), NSParagraphStyleAttributeName: style ])
         regionButton.setAttributedTitle(attributedString, forState: .Normal)
-//        regionButton.imageView?.image = image
     }
     
     

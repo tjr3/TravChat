@@ -11,8 +11,8 @@ import Foundation
 extension NSDate {
     func dateFormat() -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .ShortStyle
         dateFormatter.timeStyle = .ShortStyle
+        dateFormatter.dateStyle = .ShortStyle
         
         return dateFormatter.stringFromDate(self)
     }

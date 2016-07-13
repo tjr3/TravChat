@@ -17,13 +17,15 @@ class UserInformation: SyncableObject, CloudKitManagedObject{
     
     static var currentUserDisplayName = UserInformation.displayNameKey
     
-    convenience init(displayName: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(displayName: String, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
         guard let entity = NSEntityDescription.entityForName(UserInformation.typeKey, inManagedObjectContext: context) else { fatalError("Error: Core Data failed to create entity from entity description.") }
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.displayName = displayName
+        self.timestamp = timestamp
+        self.recordName = self.nameForManagedObject()
     }
     
   

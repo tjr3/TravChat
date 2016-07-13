@@ -33,8 +33,8 @@ class UserController {
     // MARK: - Method Signatures -
     
     func createUser(displayName: String) {
-        let displayName = UserInformation(displayName: displayName, thread: nil, context: Stack.sharedStack.managedObjectContext)
         
+        let displayName = UserInformation(displayName: displayName, thread: nil, context: Stack.sharedStack.managedObjectContext)
         saveContext()
         
         if let displayNameRecord = displayName.cloudKitRecord {
@@ -58,16 +58,8 @@ class UserController {
         }
         
         user.managedObjectContext?.deleteObject(user)
-        
         saveContext()
     }
-    
-    // TODO: Finish blockUser func; ask Andrew for help
-    //    func blockUser(user: UserInformation) {
-    //        if let recordID = user.cloudKitRecordID {
-    //            cloudKitManager.
-    //        }
-    //    }
     
     func removeUserFromThread(thread: Thread, user: UserInformation, completion: ((success: Bool) -> Void)?) {
         

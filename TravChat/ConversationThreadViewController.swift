@@ -13,7 +13,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     var conversationRegion: Region?
     var thread: Thread?
     var messages: [Message] = []
-//    var user = UserInformation?
+
     
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var conversationTableView: UITableView!
@@ -41,12 +41,13 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     // MARK: - Action Buttons -
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
+        
     guard let messageText = messageTextField.text,
         thread = self.thread else { return }
-    let user = UserInformation.displayNameKey
+    let user = UserInformation.currentUser
         ThreadController.sharedController.addMessageToThread(messageText, thread: thread, displayName: user) { (success) in
-            if let completion = completion {
-                completion(success: true)
+            if success == true {
+                print(messageText) 
             }
         }
     }

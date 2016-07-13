@@ -17,6 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-U6-Jhb">
+                                <rect key="frame" x="117" y="208" width="141" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NRe-G5-5Co"/>
+                                    <constraint firstAttribute="width" constant="141" id="eJf-s5-y4m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zMK-Zr-tgs">
                                 <rect key="frame" x="8" y="297" width="359" height="75"/>
                                 <subviews>
@@ -63,7 +73,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-CT-ceG">
-                                <rect key="frame" x="113" y="449" width="150" height="30"/>
+                                <rect key="frame" x="112" y="449" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LUw-pT-fbl"/>
                                     <constraint firstAttribute="width" constant="150" id="qGk-bD-Ibr"/>
@@ -74,13 +84,13 @@
                                     <segue destination="aXy-mG-wuo" kind="show" id="2YT-iG-awi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign into TravChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-U6-Jhb">
-                                <rect key="frame" x="117" y="188" width="141" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TravChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZER-su-djS">
+                                <rect key="frame" x="66" y="120" width="242" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="NRe-G5-5Co"/>
-                                    <constraint firstAttribute="width" constant="141" id="eJf-s5-y4m"/>
+                                    <constraint firstAttribute="height" constant="21" id="Zin-08-z0G"/>
+                                    <constraint firstAttribute="width" constant="242" id="Zps-RB-Ls3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -89,12 +99,20 @@
                         <constraints>
                             <constraint firstItem="UMq-U6-Jhb" firstAttribute="centerX" secondItem="c7I-Wl-BM0" secondAttribute="centerX" id="5Qw-72-1TW"/>
                             <constraint firstItem="1a7-CT-ceG" firstAttribute="centerX" secondItem="c7I-Wl-BM0" secondAttribute="centerX" id="6pv-1o-g8O"/>
+                            <constraint firstItem="ZER-su-djS" firstAttribute="centerX" secondItem="c7I-Wl-BM0" secondAttribute="centerX" id="9pZ-Md-8PX"/>
                             <constraint firstItem="zMK-Zr-tgs" firstAttribute="leading" secondItem="c7I-Wl-BM0" secondAttribute="leading" constant="8" id="Ebl-gm-N7W"/>
                             <constraint firstItem="UMq-U6-Jhb" firstAttribute="top" secondItem="c7I-Wl-BM0" secondAttribute="top" constant="188" id="F4h-9Z-uT7"/>
                             <constraint firstItem="zMK-Zr-tgs" firstAttribute="centerX" secondItem="c7I-Wl-BM0" secondAttribute="centerX" id="box-pg-EMb"/>
                             <constraint firstItem="zMK-Zr-tgs" firstAttribute="centerY" secondItem="c7I-Wl-BM0" secondAttribute="centerY" constant="1" id="dfl-fY-xPV"/>
                             <constraint firstItem="Jc3-rl-ObH" firstAttribute="top" secondItem="1a7-CT-ceG" secondAttribute="bottom" constant="188" id="eUR-yp-rBC"/>
+                            <constraint firstItem="ZER-su-djS" firstAttribute="top" secondItem="nwc-SL-JMZ" secondAttribute="bottom" constant="100" id="n9I-oH-2fA"/>
+                            <constraint firstItem="UMq-U6-Jhb" firstAttribute="top" secondItem="ZER-su-djS" secondAttribute="bottom" constant="67" id="oQa-b1-efw"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="F4h-9Z-uT7"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -125,7 +143,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="regionCell" id="ywK-Iz-B8r" userLabel="Africa" customClass="RegionsCollectionViewCell" customModule="TravChat" customModuleProvider="target">
-                                <rect key="frame" x="98" y="89" width="180" height="180"/>
+                                <rect key="frame" x="97.5" y="89" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
@@ -351,7 +369,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fAf-cN-TVT" id="6Pa-6y-M4f">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>

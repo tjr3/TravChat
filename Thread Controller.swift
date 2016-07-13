@@ -58,7 +58,6 @@ class ThreadController {
     func createOneToOneChat(users: [UserInformation]) { // array of users as parameter,
         
         let oneToOneThread = Thread(message: NSSet(), name: "", oneToOne: true, userInformation: NSSet(array: users))
-        
         saveContext()
         
         if let oneToOneThreadRecord = oneToOneThread.cloudKitRecord {
@@ -81,16 +80,14 @@ class ThreadController {
                 }
             })
         }
-        
         thread.managedObjectContext?.deleteObject(thread)
-        
         saveContext()
     }
+    
     
     func addMessageToThread(message: String, thread: Thread, displayName: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
         
         let message = Message(thread: thread, message: message, displayName: displayName)
-        
         saveContext()
         
         if let completion = completion {
@@ -143,6 +140,7 @@ class ThreadController {
             if let completion = completion {
                 completion()
             }
+            
         } else {
             isSyncing = true
             

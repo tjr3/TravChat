@@ -164,7 +164,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cgz-ar-faG">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionView" id="cgz-ar-faG">
                             <rect key="frame" x="0.0" y="64" width="375" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>

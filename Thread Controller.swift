@@ -59,14 +59,20 @@ class ThreadController {
             self.northAmerica = Thread(name: "North America")
             self.southAmerica = Thread(name: "South America")
             
-            addMessageToThread("Europe", thread: self.europe, displayName: "Alan", completion: nil)
+            // TODO: MockData - Delete when no longer needed.
+            addMessageToThread("Sendia is Amazing", thread: self.asia, displayName: "TLARbot", completion: nil)
+            addMessageToThread("Ghana", thread: self.africa, displayName: "RmackayAllDay", completion: nil)
+            addMessageToThread("Brisbane", thread: self.australia, displayName: "ShelbyFlen", completion: nil)
+            addMessageToThread("Genoa", thread: self.europe, displayName: "JWebb", completion: nil)
+            addMessageToThread("Lake Powell!! ", thread: self.northAmerica, displayName: "J_CENTS", completion: nil)
+            addMessageToThread("Bolivia", thread: self.southAmerica, displayName: "Prodg", completion: nil)
             saveContext()
         }
     }
     
     // MARK: - Method Signatures -
     
-    func createOneToOneChat(users: [UserInformation]) { // array of users as parameter,
+    func createOneToOneChat(users: [UserInformation]) {
         
         let oneToOneThread = Thread(message: NSSet(), name: "", oneToOne: true, userInformation: NSSet(array: users))
         saveContext()
@@ -81,7 +87,7 @@ class ThreadController {
         }
     }
     
-    func deleteThread(thread: Thread) { // exactly as Timeline.
+    func deleteThread(thread: Thread) {
         
         if let recordID = thread.cloudKitRecordID {
             cloudKitManager.deleteRecordWithID(recordID, completion: { (recordID, error) in
@@ -129,7 +135,7 @@ class ThreadController {
         
         fetchRequest.predicate = predicate
         
-        let results = (try? Stack.sharedStack.managedObjectContext.executeRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
+        let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
         
         return results
     }
@@ -140,7 +146,7 @@ class ThreadController {
         
         fetchRequest.predicate = predicate
         
-        let results = (try? Stack.sharedStack.managedObjectContext.executeRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
+        let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
         
         return results
     }

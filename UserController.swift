@@ -96,7 +96,7 @@ class UserController {
         
         fetchRequest.predicate = predicate
         
-        let results = (try? Stack.sharedStack.managedObjectContext.executeRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
+        let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
         return results
     }
     
@@ -106,7 +106,7 @@ class UserController {
         
         fetchRequest.predicate = predicate
         
-        let results = (try? Stack.sharedStack.managedObjectContext.executeRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
+        let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
         return results
     }
     

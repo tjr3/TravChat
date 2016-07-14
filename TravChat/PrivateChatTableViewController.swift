@@ -39,16 +39,16 @@ class PrivateChatTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    // MARK: - Action Buttons - 
+    @IBAction func addPrivateChat(sender: AnyObject) {
+    }
+    
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return 1
     }
 
     

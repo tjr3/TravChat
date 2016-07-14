@@ -33,9 +33,9 @@ enum Region: Int {
             return UIImage(named: "NorthAmerica")
         case .SouthAmerica:
             return UIImage(named: "SouthAmerica")
-            
         }
     }
+    
     var name: String {
         switch self {
             
@@ -53,7 +53,6 @@ enum Region: Int {
             return "South America"
         }
     }
-    
 }
 
 

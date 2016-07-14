@@ -17,6 +17,8 @@ class createUsernameViewController: UIViewController {
     
     // MARK: - Outlets -
     
+    @IBOutlet weak var travChatLabel: UILabel!
+    
     @IBOutlet weak var signInLabel: UILabel!
     
     @IBOutlet weak var firstNameLabel: UILabel!

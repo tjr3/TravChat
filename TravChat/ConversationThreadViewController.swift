@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ConversationThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConversationTableViewCellDelegate {
     
     var conversationRegion: Region?
     var thread: Thread?
@@ -40,22 +40,11 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     // MARK: - Action Buttons -
     
-    @IBAction func sendButtonTapped(sender: AnyObject) {
-        
-//    guard let messageText = messageTextField.text,
-//       user = UserInformation.currentUser else { return }
-//        ThreadController.sharedController.addMessageToThread(messageText, thread: thread, displayName: user) { (success) in
-//            if success == true {
-//                print(messageText) 
-//            }
-//        }
-    }
-    
     @IBAction func nameTapped(sender: AnyObject) {
         presentAlertController()
         
         // TODO: if cancel, return else { return segue with identifier }, create segue if DM is selected.
-        performSegueWithIdentifier("toPrivateChat", sender: self)
+//        performSegueWithIdentifier("toPrivateChat", sender: self)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -69,11 +58,13 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath) as! ConversationThreadTableViewCell
+        cell.delegate = self
         
         let message = messages[indexPath.row]
-        cell.textLabel?.text = "    \(message.displayName ?? "")         \(message.timestamp.dateFormat())"
-        cell.detailTextLabel?.text = message.message
+        cell.displayNameLabel.text = message.displayName ?? ""
+        cell.timeLabel.text = message.timestamp.dateFormat()
+        cell.messageLabel.text = message.message
         
         return cell
     }
@@ -83,7 +74,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
         
         let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default, handler: nil) // Add code in the handler to set button functionalility
-        let reportAction = UIAlertAction(title: "Report", style: .Default, handler: nil) // Add code in the handler to set button functionalility
+        let reportAction = UIAlertAction(title: "Report", style: .Destructive, handler: nil) // Add code in the handler to set button functionalility
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         actionSheet.addAction(directMessageAction)
@@ -91,6 +82,14 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         actionSheet.addAction(cancelAction)
         
         presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    // MARK: - ConversationTableViewCellDelegate -
+
+    
+    func nameButtonTapped(cell: ConversationThreadTableViewCell) {
+        print(conversationTableView.indexPathForCell(cell))
+        presentAlertController()
     }
     
     /*
@@ -102,5 +101,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
      // Pass the selected object to the new view controller.
      }
      */
+    
+    
     
 }

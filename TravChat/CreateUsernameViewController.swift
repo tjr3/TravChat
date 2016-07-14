@@ -32,7 +32,7 @@ class createUsernameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         configureView()
     }
     

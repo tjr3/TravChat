@@ -28,7 +28,7 @@ class Message: SyncableObject, CloudKitManagedObject {
         self.thread = thread
         self.displayName = displayName
         self.timestamp = timestamp
-        self.recordName = recordName
+        self.recordName = self.nameForManagedObject()
         self.thread = thread
     }
     

@@ -24,14 +24,16 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         
         guard let region = conversationRegion else { return }
         self.title = region.name
-        thread = Thread(name: "Africa")
-        let firstMessage = Message(thread: thread!, message: "I love France.", displayName: "Alan", timestamp: NSDate())
-        thread = Thread(name: "Asia")
-        let secondMessage = Message(thread: thread!, message: "Go To Sendai!", displayName: "ty Rob", timestamp: NSDate())
-        messages.append(firstMessage)
-        messages.append(secondMessage)
         
+        for thread in ThreadController.sharedController.threads {
+            if thread.name == region.name {
+                self.thread = thread
+            }
+        }
         
+        for message in (thread?.messages)! {
+            messages.append(message as! Message)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,14 +45,21 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     @IBAction func nameTapped(sender: AnyObject) {
         presentAlertController()
         
-        // TODO: if cancel, return else { return segue with identifier }, create segue if DM is selected.
+//        TODO: if cancel { dismissViewController },
+//        if report { report },
+//        else (segue if DM is selected) { return segue with identifier }.
 //        performSegueWithIdentifier("toPrivateChat", sender: self)
     }
+    
+    @IBAction func sendButtonTapped(sender: AnyObject) {
+    
+    }
+    
+    // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
@@ -72,7 +81,6 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     func presentAlertController() {
         let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)
     
-        
         let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default, handler: nil) // Add code in the handler to set button functionalility
         let reportAction = UIAlertAction(title: "Report", style: .Destructive, handler: nil) // Add code in the handler to set button functionalility
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -86,7 +94,6 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     // MARK: - ConversationTableViewCellDelegate -
 
-    
     func nameButtonTapped(cell: ConversationThreadTableViewCell) {
         print(conversationTableView.indexPathForCell(cell))
         presentAlertController()
@@ -101,7 +108,5 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
      // Pass the selected object to the new view controller.
      }
      */
-    
-    
     
 }

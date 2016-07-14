@@ -47,7 +47,6 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
         
         if segue.identifier == "toRegionChatSegue" {
             if let destinationVC = segue.destinationViewController as? ConversationThreadViewController, let cell = sender as? RegionsCollectionViewCell, indexPath = collectionView?.indexPathForCell(cell) {
-//                destinationVC.thread = 
                 print(indexPath.item)
                 guard let region = Region(rawValue: indexPath.item) else {
                     print("Could not get region or image for indexPath --> \(#function)")
@@ -57,8 +56,6 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
                 destinationVC.conversationRegion = region
             }
         }
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
     }
     
     // MARK: UICollectionViewDataSource

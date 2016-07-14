@@ -27,12 +27,18 @@ class ThreadController {
     
     var regionsArray = ["Africa", "Asia", "Australia", "Europe", "North America", "South America"]
     
+    var threads: [Thread] {
+        let fetchRequest = NSFetchRequest(entityName: "Thread")
+        //Fix this later
+        return try! Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest) as? [Thread] ?? []
+    }
+    
     var messages: [Message] {
         let fetchRequest = NSFetchRequest(entityName: Message.typeKey)
         let sortDescriptor = NSSortDescriptor(key: Message.timestampKey, ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        let results = (try? Stack.sharedStack.managedObjectContext.executeRequest(fetchRequest)) as? [Message] ?? []
+        let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [Message] ?? []
         return results
     }
     
@@ -45,12 +51,17 @@ class ThreadController {
     //MARK: - Threads -
     
     func createRegions() {
-        self.africa = Thread(name: "Africa")
-        self.asia = Thread(name: "Asia")
-        self.australia = Thread(name: "Australia")
-        self.europe = Thread(name: "Europe")
-        self.northAmerica = Thread(name: "North America")
-        self.southAmerica = Thread(name: "South America")
+        if self.threads.count == 0 {
+            self.africa = Thread(name: "Africa")
+            self.asia = Thread(name: "Asia")
+            self.australia = Thread(name: "Australia")
+            self.europe = Thread(name: "Europe")
+            self.northAmerica = Thread(name: "North America")
+            self.southAmerica = Thread(name: "South America")
+            
+            addMessageToThread("Europe", thread: self.europe, displayName: "Alan", completion: nil)
+            saveContext()
+        }
     }
     
     // MARK: - Method Signatures -

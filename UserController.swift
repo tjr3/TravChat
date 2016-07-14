@@ -25,13 +25,13 @@ class UserController {
     
     var userInformation: UserInformation?
     
-    var currentUser: UserInformation? {
+    var currentUser: [UserInformation]? {
         let request = NSFetchRequest(entityName: "UserInformation")
-        do {
-            return try Stack.sharedStack.managedObjectContext.executeFetchRequest(request) as? UserInformation
-        } catch {
-            return nil
-        }
+        return try? Stack.sharedStack.managedObjectContext.executeFetchRequest(request) as? [UserInformation] ?? []
+//        do {
+//        } catch {
+//            return nil
+//        }
         
     }
     

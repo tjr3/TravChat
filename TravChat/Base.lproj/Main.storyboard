@@ -219,7 +219,7 @@
                                                     <color key="titleColor" red="0.14509803921568629" green="1" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="sendButtonTapped:" destination="76x-bE-9BE" eventType="touchUpInside" id="0kr-Vy-hnI"/>
+                                                    <action selector="sendButtonTapped:" destination="76x-bE-9BE" eventType="touchUpInside" id="2Hl-hL-TfU"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -247,20 +247,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sB-vL-tOR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sB-vL-tOR" userLabel="displayName Label">
                                                     <rect key="frame" x="15" y="4" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgh-6n-A0T" userLabel="Time">
-                                                    <rect key="frame" x="74" y="4" width="29" height="17"/>
+                                                    <rect key="frame" x="74" y="5" width="29" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYA-yU-y9d">
-                                                    <rect key="frame" x="15" y="26" width="50" height="23"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYA-yU-y9d" userLabel="message Label">
+                                                    <rect key="frame" x="15" y="26" width="50" height="27"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -276,9 +276,9 @@
                                                 <constraint firstItem="6sB-vL-tOR" firstAttribute="leading" secondItem="mNg-DQ-agR" secondAttribute="leading" constant="15" id="4pg-YS-ts4"/>
                                                 <constraint firstItem="aYA-yU-y9d" firstAttribute="leading" secondItem="mNg-DQ-agR" secondAttribute="leading" constant="15" id="8QZ-Mz-2YE"/>
                                                 <constraint firstItem="6sB-vL-tOR" firstAttribute="top" secondItem="mNg-DQ-agR" secondAttribute="top" constant="4" id="HAs-Dn-Qsx"/>
-                                                <constraint firstItem="Kgh-6n-A0T" firstAttribute="top" secondItem="mNg-DQ-agR" secondAttribute="top" constant="4" id="KE7-W9-NLb"/>
+                                                <constraint firstItem="Kgh-6n-A0T" firstAttribute="top" secondItem="mNg-DQ-agR" secondAttribute="top" constant="5" id="KE7-W9-NLb"/>
                                                 <constraint firstItem="aYA-yU-y9d" firstAttribute="top" secondItem="6sB-vL-tOR" secondAttribute="bottom" constant="2" id="chi-ly-Uaw"/>
-                                                <constraint firstAttribute="bottom" secondItem="aYA-yU-y9d" secondAttribute="bottom" constant="6" id="cuj-ay-vPW"/>
+                                                <constraint firstAttribute="bottom" secondItem="aYA-yU-y9d" secondAttribute="bottom" constant="2" id="cuj-ay-vPW"/>
                                                 <constraint firstItem="Kgh-6n-A0T" firstAttribute="leading" secondItem="6sB-vL-tOR" secondAttribute="trailing" constant="17" id="k4b-r8-Bb0"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -29,7 +29,8 @@ class Thread: SyncableObject, CloudKitManagedObject {
         self.name = name ?? ""
         self.userInformations = userInformation
         self.oneToOne = oneToOne
-        self.recordName = recordName
+        self.recordName = self.nameForManagedObject()
+        self.timestamp = NSDate()
         
     }
     

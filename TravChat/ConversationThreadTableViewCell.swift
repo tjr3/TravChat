@@ -10,7 +10,6 @@ import UIKit
 
 class ConversationThreadTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
@@ -28,7 +27,6 @@ class ConversationThreadTableViewCell: UITableViewCell {
     @IBAction func nameButtonTapped(sender: AnyObject) {
         delegate?.nameButtonTapped(self)
     }
-    
 }
 
 extension ConversationThreadTableViewCell {
@@ -38,7 +36,6 @@ extension ConversationThreadTableViewCell {
         timeLabel.text = message.timestamp.dateFormat()
         messageLabel.text = message.message
     }
-    
 }
 
 protocol ConversationTableViewCellDelegate {

@@ -16,7 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-tE-xuM">
+                                <rect key="frame" x="235" y="236" width="130" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="5ut-O6-Dl7"/>
+                                    <constraint firstAttribute="width" constant="130" id="7Nn-ll-Sa2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VFe-tE-xuM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-0.5" id="3Ce-0a-9G3"/>
+                            <constraint firstItem="VFe-tE-xuM" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="171" id="B3o-c7-Wnj"/>
+                            <constraint firstItem="VFe-tE-xuM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="br3-NB-JhX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="B3o-c7-Wnj"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +43,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Group 2" width="642" height="664"/>
+    </resources>
 </document>

@@ -30,11 +30,31 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
                 self.thread = thread
             }
         }
-        
         for message in (thread?.messages)! {
             messages.append(message as! Message)
         }
     }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            } else {
+            }
+        }
+    }
+    
+    func keyboardWillHide(notificaiton: NSNotification) {
+     
+        if let keyboardSize = (notificaiton.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            } else {
+            }
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,15 +65,26 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     @IBAction func nameTapped(sender: AnyObject) {
         presentAlertController()
         
-//        TODO: if cancel { dismissViewController },
-//        if report { report },
-//        else (segue if DM is selected) { return segue with identifier }.
-//        performSegueWithIdentifier("toPrivateChat", sender: self)
+        //        TODO: if cancel { dismissViewController },
+        //        if report { report },
+        //        else (segue if DM is selected) { return segue with identifier }.
+        //        performSegueWithIdentifier("toPrivateChat", sender: self)
     }
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-    
+        if let user = UserController.sharedController.currentUser,
+            let message = messageTextField.text {
+            if let thread = thread, let displayName = user.displayName {
+                ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (success) in
+                    
+                    if success == true {
+                        self.conversationTableView.reloadData()
+                    }
+                })
+            }
+        }
     }
+    
     
     // MARK: - Table view data source
     
@@ -80,7 +111,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     func presentAlertController() {
         let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)
-    
+        
         let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default, handler: nil) // Add code in the handler to set button functionalility
         let reportAction = UIAlertAction(title: "Report", style: .Destructive, handler: nil) // Add code in the handler to set button functionalility
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -93,7 +124,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     }
     
     // MARK: - ConversationTableViewCellDelegate -
-
+    
     func nameButtonTapped(cell: ConversationThreadTableViewCell) {
         print(conversationTableView.indexPathForCell(cell))
         presentAlertController()

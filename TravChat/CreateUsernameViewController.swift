@@ -29,11 +29,12 @@ class createUsernameViewController: UIViewController {
     
     @IBOutlet weak var lastNameTextField: UITextField!
     
+    @IBOutlet weak var beginChattingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         configureView()
+        buttonShadow()
     }
     
     
@@ -47,6 +48,13 @@ class createUsernameViewController: UIViewController {
         guard lastNameLabel != nil else {return }
         _ = (UIFont(name: "PingFangHK-UltraThin", size: 15.0))
         _ = UIColor.blackColor()
+    }
+    
+    func buttonShadow() {
+        travChatLabel.layer.shadowColor = UIColor.blackColor().CGColor
+        travChatLabel.layer.shadowOffset = CGSizeMake(5, 5)
+        travChatLabel.layer.shadowRadius = 5
+        travChatLabel.layer.shadowOpacity = 0.50
     }
     
     

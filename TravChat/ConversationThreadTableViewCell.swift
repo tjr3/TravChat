@@ -32,7 +32,10 @@ class ConversationThreadTableViewCell: UITableViewCell {
 extension ConversationThreadTableViewCell {
     func updateMessages(message: Message) {
        
-        displayNameLabel.text = message.displayName
+        if let displayName = message.displayName {
+            displayNameLabel.text = displayName
+        }
+        
         timeLabel.text = message.timestamp.dateFormat()
         messageLabel.text = message.message
     }

@@ -14,6 +14,7 @@ class createUsernameViewController: UIViewController {
     
     var displayName: String?
     var users = [NSManagedObject]()
+    var activeTextField: UITextField!
     
     // MARK: - Outlets -
     
@@ -31,10 +32,21 @@ class createUsernameViewController: UIViewController {
     
     @IBOutlet weak var beginChattingButton: UIButton!
     
+    
+    // MARK: - Method Signatures -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         buttonShadow()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(createUsernameViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(createUsernameViewController.keyboardWillHide(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
     }
     
     
@@ -50,6 +62,7 @@ class createUsernameViewController: UIViewController {
         _ = UIColor.blackColor()
     }
     
+    
     func buttonShadow() {
         travChatLabel.layer.shadowColor = UIColor.blackColor().CGColor
         travChatLabel.layer.shadowOffset = CGSizeMake(5, 5)
@@ -59,38 +72,68 @@ class createUsernameViewController: UIViewController {
     
     
     func createUser() {
-        let firstName = firstNameTextField.text
-        let lastName = lastNameTextField.text
-        
-        let displayName = ("\(firstName)" + " " + "\(lastName)")
-        
-        self.displayName = displayName
-        
-        UserController.sharedController.createUser(displayName)
+        if let firstName = firstNameTextField.text, lastName = lastNameTextField.text {
+            
+            let displayName = ("\(firstName)" + " " + "\(lastName)")
+            
+            self.displayName = displayName
+            
+            UserController.sharedController.createUser(displayName)
+        } else {
+            // TODO: Error handleing
+            print("Unable to create user name")
+        }
     }
-
-
+    
+    // MARK: - Keyboard -
+    
+    func keyboardWillShow(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y -= keyboardSize.height
+            })
+        } else {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
+        }
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
+    
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(text: UITextField) {
+        self.activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
     // MARK: - Action Button -
     
     @IBAction func createButtonTapped(sender: AnyObject) {
         
         if let displayName = displayName {
-        _ = UserInformation(displayName: displayName)
+            _ = UserInformation(displayName: displayName)
         }
         
         createUser()
         
         UserController.sharedController.saveContext()
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

@@ -102,13 +102,13 @@ class ThreadController {
     }
     
     
-    func addMessageToThread(message: String, thread: Thread, displayName: String, completion: ((success: Bool) -> Void)?) { // takes in message and thread, refer Timeline
+    func addMessageToThread(message: String, thread: Thread, displayName: String, completion: ((message: Message) -> Void)?) { // takes in message and thread, refer Timeline
         
         let message = Message(thread: thread, message: message, displayName: displayName)
         saveContext()
         
         if let completion = completion {
-            completion(success: true)
+            completion(message: message)
         }
         
         if let messageRecord = message.cloudKitRecord {

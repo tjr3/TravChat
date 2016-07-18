@@ -19,12 +19,7 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
         
         configureView()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        
     func configureView() {
         if let navBarFont = UIFont(name: "PingFangHK-Thin", size: 28.0) {
             let navBarAttributesDictionary: [NSObject: AnyObject]? = [

@@ -30,35 +30,56 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
                 self.thread = thread
             }
         }
+        
         for message in (thread?.messages)! {
             messages.append(message as! Message)
         }
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
+        self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
         
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            if view.frame.origin.y == 0 {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationThreadViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationThreadViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: self.view.window)
+        
+        scrollToBottomOfTableView()
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+    }
+    
+    // MARK: - Keyboard -
+
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
+
+    func keyboardWillShow(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
                 self.view.frame.origin.y -= keyboardSize.height
-            } else {
-            }
+            })
+        } else {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
         }
     }
     
-    func keyboardWillHide(notificaiton: NSNotification) {
-     
-        if let keyboardSize = (notificaiton.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            if view.frame.origin.y != 0 {
-                self.view.frame.origin.y += keyboardSize.height
-            } else {
-            }
-        }
+    func scrollToBottomOfTableView() {
+        let numberOfSections = conversationTableView.numberOfSections
+        let numberOfRows = conversationTableView.numberOfRowsInSection(numberOfSections-1)
+        
+        let indexPath = NSIndexPath(forRow: numberOfRows - 1, inSection: numberOfSections - 1)
+        conversationTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     // MARK: - Action Buttons -
     
@@ -73,13 +94,14 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let user = UserController.sharedController.currentUser,
-            let message = messageTextField.text {
+            let message = messageTextField.text where message.characters.count > 0 {
             if let thread = thread, let displayName = user.displayName {
-                ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (success) in
-                    
-                    if success == true {
-                        self.conversationTableView.reloadData()
-                    }
+                ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (message) in
+                    self.messages.append(message)
+                    self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
+                    self.conversationTableView.reloadData()
+                    self.scrollToBottomOfTableView()
+                    self.messageTextField.text = ""
                 })
             }
         }

@@ -31,13 +31,13 @@
                                 <rect key="frame" x="20" y="297" width="335" height="75"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QAz-ga-pPJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxj-Tb-HkJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -45,10 +45,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-7o-HIx">
-                                        <rect key="frame" x="0.0" y="40.5" width="335" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="41" width="335" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnp-MO-KPa">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a7-CT-ceG">
-                                <rect key="frame" x="112" y="452" width="150" height="30"/>
+                                <rect key="frame" x="112" y="467" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LUw-pT-fbl"/>
                                     <constraint firstAttribute="width" constant="150" id="qGk-bD-Ibr"/>
@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-kv-DYX">
-                                <rect key="frame" x="132.5" y="43" width="100" height="101"/>
+                                <rect key="frame" x="133" y="43" width="100" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="BI6-WA-vgf"/>
                                     <constraint firstAttribute="height" constant="101" id="BZJ-9w-K15"/>
@@ -105,7 +105,7 @@
                             <constraint firstItem="zMK-Zr-tgs" firstAttribute="centerX" secondItem="c7I-Wl-BM0" secondAttribute="centerX" id="box-pg-EMb"/>
                             <constraint firstItem="zMK-Zr-tgs" firstAttribute="centerY" secondItem="c7I-Wl-BM0" secondAttribute="centerY" constant="1" id="dfl-fY-xPV"/>
                             <constraint firstItem="ZER-su-djS" firstAttribute="top" secondItem="ZJk-kv-DYX" secondAttribute="bottom" constant="33" id="fVT-At-nNP"/>
-                            <constraint firstItem="1a7-CT-ceG" firstAttribute="top" secondItem="zMK-Zr-tgs" secondAttribute="bottom" constant="80" id="jI6-kB-ca7"/>
+                            <constraint firstItem="1a7-CT-ceG" firstAttribute="top" secondItem="zMK-Zr-tgs" secondAttribute="bottom" constant="95" id="jI6-kB-ca7"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -137,7 +137,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="regionCell" id="ywK-Iz-B8r" userLabel="Africa" customClass="RegionsCollectionViewCell" customModule="TravChat" customModuleProvider="target">
-                                <rect key="frame" x="97.5" y="89" width="180" height="180"/>
+                                <rect key="frame" x="98" y="89" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>

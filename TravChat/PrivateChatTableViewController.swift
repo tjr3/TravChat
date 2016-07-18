@@ -12,7 +12,6 @@ class PrivateChatTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureView()
 
         // Uncomment the following line to preserve selection between presentations
@@ -35,16 +34,11 @@ class PrivateChatTableViewController: UITableViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     // MARK: - Action Buttons - 
     @IBAction func addPrivateChat(sender: AnyObject) {
     }
     
     // MARK: - Table view data source
-
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

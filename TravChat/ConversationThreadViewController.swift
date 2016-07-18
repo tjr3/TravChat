@@ -34,6 +34,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         for message in (thread?.messages)! {
             messages.append(message as! Message)
         }
+        
         self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationThreadViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)

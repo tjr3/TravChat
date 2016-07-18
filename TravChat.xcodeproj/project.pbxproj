@@ -220,9 +220,9 @@
 				CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */,
 				CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */,
 				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
-				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
 				CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */,
 				CE8DB33D1D36C46F003B6126 /* ConversationThreadTableViewCell.swift */,
+				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

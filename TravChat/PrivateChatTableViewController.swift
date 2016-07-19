@@ -10,6 +10,9 @@ import UIKit
 
 class PrivateChatTableViewController: UITableViewController {
 
+    var messages: [Message] = []
+    var users: UserInformation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -41,14 +44,14 @@ class PrivateChatTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 1
+        return ThreadController.sharedController.oneToOneThreads?.count ?? 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("privateChatCell", forIndexPath: indexPath)
-
+        let user = UserController.sharedController.userInformation
+        cell.textLabel?.text = user?.displayName
 
         return cell
     }
@@ -89,14 +92,20 @@ class PrivateChatTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toPrivateChatSegue" {
+            let privateThreadVC = segue.destinationViewController as? PrivateChatConversationThreadViewController
+            if let selectedIndexPath = self.tableView.indexPathForSelectedRow?.row {
+            let pcThread = ThreadController.sharedController.messages[selectedIndexPath]
+                privateThreadVC?.messages = [pcThread]
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+    
+    }
 }

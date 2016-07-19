@@ -29,8 +29,19 @@ class ThreadController {
     
     var threads: [Thread] {
         let fetchRequest = NSFetchRequest(entityName: "Thread")
-        //Fix this later
+        let predicate = NSPredicate(format: "oneToOne == 0")
+        fetchRequest.predicate = predicate
+        
         return try! Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest) as? [Thread] ?? []
+    }
+    
+    var oneToOneThreads: [Thread]? {
+        let request = NSFetchRequest(entityName: "Thread")
+        let predicate = NSPredicate(format: "oneToOne == 1")
+        request.predicate = predicate
+        
+        return try! Stack.sharedStack.managedObjectContext.executeFetchRequest(request) as? [Thread] ?? nil
+        
     }
     
     var messages: [Message] {
@@ -46,6 +57,7 @@ class ThreadController {
         self.cloudKitManager = CloudKitManager()
         performFullSync()
         createRegions()
+        createOneToOne()
     }
     
     //MARK: - Threads -
@@ -68,6 +80,13 @@ class ThreadController {
             addMessageToThread("Bolivia", thread: self.southAmerica, displayName: "Prodg", completion: nil)
             saveContext()
         }
+    }
+    
+    func createOneToOne() {
+        _ = Thread.init(name: "Joe", oneToOne: true)
+        _ = Thread.init(name: "Steve", oneToOne: true)
+        _ = Thread.init(name: "Bob", oneToOne: true)
+        _ = Thread.init(name: "Kojack", oneToOne: true)
     }
     
     // MARK: - Method Signatures -

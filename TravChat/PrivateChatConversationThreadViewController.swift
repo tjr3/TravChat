@@ -12,26 +12,27 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     
     var conversationUser: UserInformation?
     var messages: [Message] = []
+    var thread: Thread?
      
     
     @IBOutlet weak var pcMessageTextField: UITextField!
     @IBOutlet weak var pcConversationTableView: UITableView!
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard let user = conversationUser else { return }
         self.title = user.displayName
         
+        for message in (thread?.messages)! {
+            messages.append(message as! Message)
+        }
         
+        self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
         
         scrollToBottomOfTableView()
     }
 
-    
     func scrollToBottomOfTableView() {
         let numberOfSections = pcConversationTableView.numberOfSections
         let numberOfRows = pcConversationTableView.numberOfRowsInSection(numberOfSections-1)
@@ -44,10 +45,22 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     // MARK: - Action Buttons
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
-        
+        if let user = UserController.sharedController.currentUser,
+            let message = pcMessageTextField.text where message.characters.count > 0 {
+            if let thread = thread, let displayName = user.displayName {
+                ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (message) in
+                    self.messages.append(message)
+                    self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
+                    self.pcConversationTableView.reloadData()
+                    self.scrollToBottomOfTableView()
+                    self.pcMessageTextField.text = ""
+                })
+            }
+        }
     }
     
     // MARK: - Table view data source
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -94,16 +107,5 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     func senderCell(cell: SenderConversationThreadCell) {
         print(pcConversationTableView.indexPathForCell(cell))
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

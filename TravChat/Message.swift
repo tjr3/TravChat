@@ -47,9 +47,9 @@ class Message: SyncableObject, CloudKitManagedObject {
         
         guard let thread = thread,
             let threadRecord = thread.cloudKitRecord else { fatalError("Message does not have a thread relationship") }
-        record[Message.threadKey] = thread.name
+//        record[Message.threadKey] = thread.name
         
-        record[Message.typeKey] = CKReference(record: threadRecord, action: .DeleteSelf)
+        record[Message.threadKey] = CKReference(record: threadRecord, action: .DeleteSelf)
         
             return record
         }

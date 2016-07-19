@@ -39,15 +39,15 @@ class createUsernameViewController: UIViewController {
         super.viewDidLoad()
         configureView()
         buttonShadow()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(createUsernameViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(createUsernameViewController.keyboardWillHide(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
+//        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(createUsernameViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(createUsernameViewController.keyboardWillHide(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
-    }
+//    override func viewWillDisappear(animated: Bool) {
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+//    }
     
     
     func configureView() {
@@ -74,7 +74,7 @@ class createUsernameViewController: UIViewController {
     func createUser() {
         if let firstName = firstNameTextField.text, lastName = lastNameTextField.text {
             
-            let displayName = ("\(firstName)" + " " + "\(lastName)")
+            let displayName = ("\(firstName)" + "\(lastName)")
             
             self.displayName = displayName
             
@@ -87,41 +87,41 @@ class createUsernameViewController: UIViewController {
     
     // MARK: - Keyboard -
     
-    func keyboardWillShow(sender: NSNotification) {
-        let userInfo: [NSObject : AnyObject] = sender.userInfo!
-        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
-        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
-        
-        if keyboardSize.height == offset.height {
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                self.view.frame.origin.y -= keyboardSize.height
-            })
-        } else {
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                self.view.frame.origin.y += keyboardSize.height - offset.height
-            })
-        }
-    }
-    
-    func keyboardWillHide(sender: NSNotification) {
-        let userInfo: [NSObject : AnyObject] = sender.userInfo!
-        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
-        self.view.frame.origin.y += keyboardSize.height
-    }
-    
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        self.activeTextField = textField
-    }
-    
-    func textFieldDidEndEditing(text: UITextField) {
-        self.activeTextField = nil
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+//    func keyboardWillShow(sender: NSNotification) {
+//        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+//        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+//        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+//        
+//        if keyboardSize.height == offset.height {
+//            UIView.animateWithDuration(0.1, animations: { () -> Void in
+//                self.view.frame.origin.y -= keyboardSize.height
+//            })
+//        } else {
+//            UIView.animateWithDuration(0.1, animations: { () -> Void in
+//                self.view.frame.origin.y += keyboardSize.height - offset.height
+//            })
+//        }
+//    }
+//    
+//    func keyboardWillHide(sender: NSNotification) {
+//        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+//        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+//        self.view.frame.origin.y += keyboardSize.height
+//    }
+//    
+//    
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        self.activeTextField = textField
+//    }
+//    
+//    func textFieldDidEndEditing(text: UITextField) {
+//        self.activeTextField = nil
+//    }
+//    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
     
     
     // MARK: - Action Button -

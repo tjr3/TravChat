@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/ConversationThreadViewController.swift"
-            timestampString = "490568975.451929"
+            timestampString = "490575898.661993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "sendButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/ConversationThreadViewController.swift"
-            timestampString = "490568975.451929"
+            timestampString = "490575898.661993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "sendButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>

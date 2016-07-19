@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-tE-xuM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-tE-xuM">
                                 <rect key="frame" x="248" y="247" width="105" height="105"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="105" id="5ut-O6-Dl7"/>
@@ -44,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 2" width="642" height="664"/>
+        <image name="Logo" width="642" height="664"/>
     </resources>
 </document>

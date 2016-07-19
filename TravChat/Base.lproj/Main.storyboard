@@ -75,7 +75,7 @@
                                     <segue destination="aXy-mG-wuo" kind="show" id="2YT-iG-awi"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-kv-DYX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-kv-DYX">
                                 <rect key="frame" x="133" y="43" width="100" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="BI6-WA-vgf"/>
@@ -137,7 +137,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="regionCell" id="ywK-Iz-B8r" userLabel="Africa" customClass="RegionsCollectionViewCell" customModule="TravChat" customModuleProvider="target">
-                                <rect key="frame" x="98" y="89" width="180" height="180"/>
+                                <rect key="frame" x="97.5" y="89" width="180" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
@@ -208,7 +208,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ExQ-YI-m0U">
                                                 <rect key="frame" x="0.0" y="5" width="321" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="send"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDP-kE-8OC">
                                                 <rect key="frame" x="326" y="3" width="42" height="34"/>
@@ -286,6 +286,48 @@
                                             <outlet property="displayNameLabel" destination="6sB-vL-tOR" id="x5c-S9-9Fb"/>
                                             <outlet property="messageLabel" destination="aYA-yU-y9d" id="sox-O9-pW9"/>
                                             <outlet property="timeLabel" destination="Kgh-6n-A0T" id="rxa-Yb-XIY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="senderCell" rowHeight="55" id="iQd-8z-IeV" userLabel="senderCell" customClass="SenderConversationThreadCell" customModule="TravChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="83" width="375" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iQd-8z-IeV" id="mHZ-9B-tdT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37a-wg-17H" userLabel="displayName Label">
+                                                    <rect key="frame" x="318" y="1" width="41.5" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDZ-UW-U6r" userLabel="Time">
+                                                    <rect key="frame" x="273" y="4" width="29" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rny-HN-xrr" userLabel="message Label">
+                                                    <rect key="frame" x="310" y="22" width="50" height="31"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eDZ-UW-U6r" firstAttribute="top" secondItem="mHZ-9B-tdT" secondAttribute="top" constant="4" id="4mO-Ev-d9X"/>
+                                                <constraint firstItem="37a-wg-17H" firstAttribute="leading" secondItem="eDZ-UW-U6r" secondAttribute="trailing" constant="16" id="6uV-pe-9HP"/>
+                                                <constraint firstAttribute="trailing" secondItem="37a-wg-17H" secondAttribute="trailing" constant="15" id="7lj-ov-ef8"/>
+                                                <constraint firstItem="rny-HN-xrr" firstAttribute="top" secondItem="37a-wg-17H" secondAttribute="bottom" constant="1" id="Npv-9X-zuu"/>
+                                                <constraint firstAttribute="trailing" secondItem="rny-HN-xrr" secondAttribute="trailing" constant="15" id="gDh-b3-72p"/>
+                                                <constraint firstAttribute="bottom" secondItem="rny-HN-xrr" secondAttribute="bottom" constant="2" id="j06-nV-Qyi"/>
+                                                <constraint firstItem="37a-wg-17H" firstAttribute="top" secondItem="mHZ-9B-tdT" secondAttribute="top" constant="1" id="j6L-tY-dDY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cuDisplayNameLabel" destination="37a-wg-17H" id="by9-k7-pDF"/>
+                                            <outlet property="cuMessageLabel" destination="rny-HN-xrr" id="oMt-la-m5P"/>
+                                            <outlet property="cuTimeLabel" destination="eDZ-UW-U6r" id="glE-hE-vWL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -458,7 +500,7 @@
     <resources>
         <image name="Chat" width="24" height="22"/>
         <image name="Grid" width="22" height="22"/>
-        <image name="Group 2" width="642" height="664"/>
+        <image name="Logo" width="642" height="664"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

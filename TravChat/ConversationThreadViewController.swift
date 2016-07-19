@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConversationThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConversationTableViewCellDelegate {
+class ConversationThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConversationTableViewCellDelegate, SenderConversationThreadCellDelegate {
     
     var conversationRegion: Region?
     var thread: Thread?
@@ -37,40 +37,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         
         self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationThreadViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: self.view.window)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ConversationThreadViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: self.view.window)
-        
         scrollToBottomOfTableView()
-    }
-    
-    
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
-    }
-    
-    // MARK: - Keyboard -
-
-    func keyboardWillHide(sender: NSNotification) {
-        let userInfo: [NSObject : AnyObject] = sender.userInfo!
-        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
-        self.view.frame.origin.y += keyboardSize.height
-    }
-
-    func keyboardWillShow(sender: NSNotification) {
-        let userInfo: [NSObject : AnyObject] = sender.userInfo!
-        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
-        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
-        
-        if keyboardSize.height == offset.height {
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                self.view.frame.origin.y -= keyboardSize.height
-            })
-        } else {
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                self.view.frame.origin.y += keyboardSize.height - offset.height
-            })
-        }
     }
     
     func scrollToBottomOfTableView() {
@@ -87,8 +54,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     @IBAction func nameTapped(sender: AnyObject) {
         presentAlertController()
         
-        //        TODO: if cancel { dismissViewController },
-        //        if report { report },
+        //        TODO: if report { report },
         //        else (segue if DM is selected) { return segue with identifier }.
         //        performSegueWithIdentifier("toPrivateChat", sender: self)
     }
@@ -120,16 +86,33 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath) as! ConversationThreadTableViewCell
-        cell.delegate = self
-        
         let message = messages[indexPath.row]
-        cell.displayNameLabel.text = message.displayName ?? ""
-        cell.timeLabel.text = message.timestamp.dateFormat()
-        cell.messageLabel.text = message.message
         
-        return cell
+        if message.displayName == UserController.sharedController.currentUser?.displayName{
+            let senderCell = tableView.dequeueReusableCellWithIdentifier("senderCell", forIndexPath: indexPath) as! SenderConversationThreadCell
+            senderCell.delegate = self
+            
+            let senderMessage = messages[indexPath.row]
+            senderCell.cuDisplayNameLabel.text = senderMessage.displayName ?? ""
+            senderCell.cuTimeLabel.text = senderMessage.timestamp.secondaryDateFormat()
+            senderCell.cuMessageLabel.text = senderMessage.message
+            
+            return senderCell
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath) as! ConversationThreadTableViewCell
+            cell.delegate = self
+            
+            
+            cell.displayNameLabel.text = message.displayName ?? ""
+            cell.timeLabel.text = message.timestamp.dateFormat()
+            cell.messageLabel.text = message.message
+            
+            
+            return cell
+        }
+        
     }
     
     func presentAlertController() {
@@ -149,6 +132,11 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     // MARK: - ConversationTableViewCellDelegate -
     
     func nameButtonTapped(cell: ConversationThreadTableViewCell) {
+        print(conversationTableView.indexPathForCell(cell))
+        presentAlertController()
+    }
+    
+    func senderCell(cell: SenderConversationThreadCell) {
         print(conversationTableView.indexPathForCell(cell))
         presentAlertController()
     }

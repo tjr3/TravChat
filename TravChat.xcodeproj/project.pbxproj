@@ -26,6 +26,8 @@
 		CE2615851D2C2531001098BF /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */; };
 		CE2615861D2C2531001098BF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2615841D2C2531001098BF /* Message.swift */; };
 		CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26158C1D2C3CC0001098BF /* UserInformation.swift */; };
+		CE28E1C01D3D8A8300A04009 /* SenderConversationThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28E1BF1D3D8A8300A04009 /* SenderConversationThreadCell.swift */; };
+		CE28E1C21D3DFA8C00A04009 /* SecondaryDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28E1C11D3DFA8C00A04009 /* SecondaryDateFormatter.swift */; };
 		CE8DB1C31D31E747003B6126 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */; };
 		CE8DB1C51D31E876003B6126 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB1C41D31E876003B6126 /* UserController.swift */; };
 		CE8DB2061D340934003B6126 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB2051D340934003B6126 /* DateFormatter.swift */; };
@@ -81,6 +83,8 @@
 		CE2615831D2C2531001098BF /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE2615841D2C2531001098BF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CE26158C1D2C3CC0001098BF /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		CE28E1BF1D3D8A8300A04009 /* SenderConversationThreadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderConversationThreadCell.swift; sourceTree = "<group>"; };
+		CE28E1C11D3DFA8C00A04009 /* SecondaryDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryDateFormatter.swift; sourceTree = "<group>"; };
 		CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		CE8DB1C41D31E876003B6126 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		CE8DB2051D340934003B6126 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
 				CE2615061D248A3A001098BF /* ConversationThreadViewController.swift */,
 				CE8DB33D1D36C46F003B6126 /* ConversationThreadTableViewCell.swift */,
+				CE28E1BF1D3D8A8300A04009 /* SenderConversationThreadCell.swift */,
 				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
 			);
 			name = "View Controllers";
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8DB2051D340934003B6126 /* DateFormatter.swift */,
+				CE28E1C11D3DFA8C00A04009 /* SecondaryDateFormatter.swift */,
 			);
 			name = "Other Controllers";
 			path = TravChat;
@@ -382,10 +388,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8DB1C31D31E747003B6126 /* CreateUsernameViewController.swift in Sources */,
+				CE28E1C21D3DFA8C00A04009 /* SecondaryDateFormatter.swift in Sources */,
 				CE8DB33E1D36C46F003B6126 /* ConversationThreadTableViewCell.swift in Sources */,
 				CE26158E1D2C3CC0001098BF /* UserInformation.swift in Sources */,
 				CE2614F61D247362001098BF /* Thread Controller.swift in Sources */,
 				CE2615861D2C2531001098BF /* Message.swift in Sources */,
+				CE28E1C01D3D8A8300A04009 /* SenderConversationThreadCell.swift in Sources */,
 				CE2615791D2C1CA8001098BF /* CloudKitManagedObject.swift in Sources */,
 				CEAC770E1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift in Sources */,
 				CEAC770C1D2DA0160064BDA1 /* Thread+CoreDataProperties.swift in Sources */,

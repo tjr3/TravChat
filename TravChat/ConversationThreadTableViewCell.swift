@@ -25,7 +25,7 @@ class ConversationThreadTableViewCell: UITableViewCell {
     }
 
     @IBAction func nameButtonTapped(sender: AnyObject) {
-        delegate?.nameButtonTapped(self)
+        delegate?.messageCell(self)
     }
 }
 
@@ -42,5 +42,5 @@ extension ConversationThreadTableViewCell {
 }
 
 protocol ConversationTableViewCellDelegate {
-    func nameButtonTapped(cell: ConversationThreadTableViewCell)
+    func messageCell(cell: ConversationThreadTableViewCell)
 }

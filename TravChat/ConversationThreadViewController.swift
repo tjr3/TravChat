@@ -129,16 +129,15 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         presentViewController(actionSheet, animated: true, completion: nil)
     }
     
-    // MARK: - ConversationTableViewCellDelegate -
+    // MARK: - ConversationTableViewCellDelegates -
     
-    func nameButtonTapped(cell: ConversationThreadTableViewCell) {
+    func messageCell(cell: ConversationThreadTableViewCell) {
         print(conversationTableView.indexPathForCell(cell))
         presentAlertController()
     }
     
     func senderCell(cell: SenderConversationThreadCell) {
         print(conversationTableView.indexPathForCell(cell))
-        presentAlertController()
     }
     
     /*

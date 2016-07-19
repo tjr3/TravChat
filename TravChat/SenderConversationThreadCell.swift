@@ -15,7 +15,6 @@ class SenderConversationThreadCell: UITableViewCell {
     @IBOutlet weak var cuMessageLabel: UILabel!
     
     var delegate: SenderConversationThreadCellDelegate?
-    
 }
 
 extension SenderConversationThreadCell {

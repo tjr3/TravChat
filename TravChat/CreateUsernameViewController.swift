@@ -24,8 +24,6 @@ class createUsernameViewController: UIViewController {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     
-    @IBOutlet weak var lastNameTextField: UITextField!
-    
     @IBOutlet weak var beginChattingButton: UIButton!
     
     
@@ -52,9 +50,9 @@ class createUsernameViewController: UIViewController {
     
     
     func createUser() {
-        if let firstName = firstNameTextField.text, lastName = lastNameTextField.text {
+        if let displayName = firstNameTextField.text {
             
-            let displayName = ("\(firstName)" + "\(lastName)")
+            let displayName = ("\(displayName)")
             
             self.displayName = displayName
             

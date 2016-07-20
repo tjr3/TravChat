@@ -39,6 +39,7 @@
 		CEAC770E1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */; };
 		CEAC77111D2DB4860064BDA1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAC77101D2DB4860064BDA1 /* CloudKit.framework */; };
 		CEAC77131D2DBF1B0064BDA1 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC77121D2DBF1B0064BDA1 /* Regions.swift */; };
+		CECADE131D400DC3000B6480 /* PrivateChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECADE121D400DC3000B6480 /* PrivateChatTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		CEAC770F1D2DB4220064BDA1 /* TravChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TravChat.entitlements; sourceTree = "<group>"; };
 		CEAC77101D2DB4860064BDA1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CEAC77121D2DBF1B0064BDA1 /* Regions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
+		CECADE121D400DC3000B6480 /* PrivateChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateChatTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +159,8 @@
 				CE2614F71D247366001098BF /* Controllers */,
 				CE2615031D2487F1001098BF /* View Controllers */,
 				CE26157A1D2C1CAE001098BF /* Protocols */,
-				CE2614CB1D24403E001098BF /* Main.storyboard */,
+				CECADE101D3FCB6B000B6480 /* Storyboards */,
 				CE2614CE1D24403E001098BF /* Assets.xcassets */,
-				CE2614D01D24403E001098BF /* LaunchScreen.storyboard */,
 				CE2614D31D24403E001098BF /* Info.plist */,
 			);
 			path = TravChat;
@@ -213,8 +214,8 @@
 				CE8DB2FC1D35F592003B6126 /* UserInformation+CoreDataProperties.swift */,
 				CE2615491D25B004001098BF /* SyncableObject.swift */,
 				CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */,
-				CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */,
 				CE2614FF1D248768001098BF /* Stack.swift */,
+				CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -226,7 +227,6 @@
 				CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */,
 				CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */,
 				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
-				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
 				CE68EDF01D3EA1C5006D18CB /* RegionThread */,
 				CE68EDEF1D3EA1B0006D18CB /* PrivateThread */,
 			);
@@ -244,6 +244,8 @@
 		CE68EDEF1D3EA1B0006D18CB /* PrivateThread */ = {
 			isa = PBXGroup;
 			children = (
+				CE2615041D24886A001098BF /* PrivateChatTableViewController.swift */,
+				CECADE121D400DC3000B6480 /* PrivateChatTableViewCell.swift */,
 				CE68EDEB1D3E9762006D18CB /* PrivateChatConversationThreadViewController.swift */,
 			);
 			name = PrivateThread;
@@ -267,6 +269,15 @@
 			);
 			name = "Other Controllers";
 			path = TravChat;
+			sourceTree = "<group>";
+		};
+		CECADE101D3FCB6B000B6480 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE2614CB1D24403E001098BF /* Main.storyboard */,
+				CE2614D01D24403E001098BF /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +436,7 @@
 				CE2614C81D24403E001098BF /* AppDelegate.swift in Sources */,
 				CEAC77081D2D9E690064BDA1 /* Thread.swift in Sources */,
 				CE2615021D2487EC001098BF /* RegionsCollectionViewController.swift in Sources */,
+				CECADE131D400DC3000B6480 /* PrivateChatTableViewCell.swift in Sources */,
 				CE8DB2061D340934003B6126 /* DateFormatter.swift in Sources */,
 				CE26154F1D25B004001098BF /* SyncableObject.swift in Sources */,
 				CE68EDEC1D3E9762006D18CB /* PrivateChatConversationThreadViewController.swift in Sources */,

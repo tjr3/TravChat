@@ -83,10 +83,16 @@ class ThreadController {
     }
     
     func createOneToOne() {
-        _ = Thread.init(name: "Joe", oneToOne: true)
-        _ = Thread.init(name: "Steve", oneToOne: true)
-        _ = Thread.init(name: "Bob", oneToOne: true)
-        _ = Thread.init(name: "Kojack", oneToOne: true)
+        let JCents = Thread.init(name: "JCents", oneToOne: true)
+        let steve  = Thread.init(name: "SteveO", oneToOne: true)
+        let bob = Thread.init(name: "Bob", oneToOne: true)
+        let kojack = Thread.init(name: "Kojack", oneToOne: true)
+        
+        addMessageToThread("If you go to Amsterdam, dont go to the red light district", thread: JCents, displayName: "JCents", completion: nil)
+        addMessageToThread("Go to Cafe Du Monde in NOLA", thread: bob, displayName: "Bob", completion: nil)
+        addMessageToThread("Get the beignets!", thread: bob, displayName: "Bob", completion: nil)
+        addMessageToThread("The Raiders Cafe in Oakland is dank!", thread: steve, displayName: "SteveO", completion: nil)
+        addMessageToThread("Big ben is overrated, go to the Camden Markets", thread: kojack, displayName: "Kojack", completion: nil)
     }
     
     // MARK: - Method Signatures -

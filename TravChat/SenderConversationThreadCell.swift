@@ -29,7 +29,6 @@ extension SenderConversationThreadCell {
     }
 }
 
-
 protocol SenderConversationThreadCellDelegate {
     func senderCell(cell: SenderConversationThreadCell)
 }

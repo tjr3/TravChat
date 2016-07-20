@@ -9,19 +9,15 @@
 import UIKit
 
 class PrivateChatTableViewController: UITableViewController {
-
+    
     var messages: [Message] = []
     var users: UserInformation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //        self.users.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
     }
     
     func configureView() {
@@ -36,76 +32,48 @@ class PrivateChatTableViewController: UITableViewController {
             navigationController?.navigationBar.titleTextAttributes = altributeDict
         }
     }
-
-    // MARK: - Action Buttons - 
-    @IBAction func addPrivateChat(sender: AnyObject) {
-    }
     
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ThreadController.sharedController.oneToOneThreads?.count ?? 0
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("privateChatCell", forIndexPath: indexPath)
-        let user = UserController.sharedController.userInformation
-        cell.textLabel?.text = user?.displayName
-
-        return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("privateChatCell", forIndexPath: indexPath) as? PrivateChatTableViewCell
+        if let thread = ThreadController.sharedController.oneToOneThreads?[indexPath.row] {
+            cell?.updateWith(thread)
+        }
+        
+        return cell ?? UITableViewCell()
     }
     
-
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     if editingStyle == .Delete {
+     // Delete the row from the data source
+     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+     } else if editingStyle == .Insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toPrivateChatSegue" {
             let privateThreadVC = segue.destinationViewController as? PrivateChatConversationThreadViewController
             if let selectedIndexPath = self.tableView.indexPathForSelectedRow?.row {
-            let pcThread = ThreadController.sharedController.messages[selectedIndexPath]
-                privateThreadVC?.messages = [pcThread]
+                if let pcThread = ThreadController.sharedController.oneToOneThreads?[selectedIndexPath], let messages = pcThread.messages?.allObjects as? [Message] {
+                    privateThreadVC?.messages = messages
+                }
+            }
         }
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
     }
 }

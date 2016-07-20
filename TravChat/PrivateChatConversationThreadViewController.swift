@@ -21,6 +21,9 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dynamicTableViewCellHeight()
+        
         guard let user = conversationUser else { return }
         self.title = user.displayName
         
@@ -31,6 +34,11 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
         
         scrollToBottomOfTableView()
+    }
+    
+    func dynamicTableViewCellHeight() {
+        pcConversationTableView.rowHeight = UITableViewAutomaticDimension
+        pcConversationTableView.estimatedRowHeight = 80
     }
 
     func scrollToBottomOfTableView() {
@@ -88,11 +96,9 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
             let cell = tableView.dequeueReusableCellWithIdentifier("pcMessageCell", forIndexPath: indexPath) as! ConversationThreadTableViewCell
             cell.delegate = self
             
-            
             cell.displayNameLabel.text = message.displayName ?? ""
             cell.timeLabel.text = message.timestamp.dateFormat()
             cell.messageLabel.text = message.message
-            
             
             return cell
         }

@@ -115,10 +115,18 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         
     }
     
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let message = messages[indexPath.row]
+//        if message.displayName != UserController.sharedController.currentUser?.displayName {
+//            presentAlertController()
+//        }
+//    }
+    
     func presentAlertController() {
         let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)
-        
-        let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default, handler: nil) // Add code in the handler to set button functionalility
+        let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default) { (_) in
+            self.performSegueWithIdentifier("threadToPrivateChat", sender: self)
+        } // Add code in the handler to set button functionalility
         let reportAction = UIAlertAction(title: "Report", style: .Destructive, handler: nil) // Add code in the handler to set button functionalility
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
@@ -139,15 +147,13 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     func senderCell(cell: SenderConversationThreadCell) {
         print(conversationTableView.indexPathForCell(cell))
     }
-    
-    /*
+
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "threadToPrivateChat", let indexPath = conversationTableView.indexPathForSelectedRow, privateChatTVC = segue.destinationViewController as? PrivateChatTableViewController {
+            let message = messages[indexPath.row]
+//            privateChatTVC.user = user
+        }
+    }
 }

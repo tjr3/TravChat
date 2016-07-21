@@ -330,6 +330,7 @@
                     <connections>
                         <outlet property="conversationTableView" destination="Itg-gs-6ce" id="0Aq-h4-l5e"/>
                         <outlet property="messageTextField" destination="ExQ-YI-m0U" id="eYN-Z8-KfN"/>
+                        <segue destination="GLY-i4-hg6" kind="show" identifier="threadToPrivateChat" id="Fqc-eA-vuY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGG-Kt-6MQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,7 +489,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SPI-OG-B9U" id="1iH-kw-i24">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-gB-cSw">
@@ -665,5 +666,8 @@
         <image name="Logo" width="642" height="664"/>
         <image name="rightArrow" width="156" height="156"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fqc-eA-vuY"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

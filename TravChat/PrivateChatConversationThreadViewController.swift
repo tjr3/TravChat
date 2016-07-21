@@ -50,6 +50,9 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         pcConversationTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
     }
     
+    override func viewDidLayoutSubviews() {
+        pcMessageTextView.setContentOffset(CGPoint.zero, animated: false)
+    }
     
     // MARK: - Action Buttons
     

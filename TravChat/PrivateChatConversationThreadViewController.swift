@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class PrivateChatConversationThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConversationTableViewCellDelegate, SenderConversationThreadCellDelegate {
     
@@ -14,8 +15,8 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     var messages: [Message] = []
     var thread: Thread?
      
-    
-    @IBOutlet weak var pcMessageTextField: UITextField!
+    // TODO: Round the edges on the TextView
+    @IBOutlet weak var pcMessageTextView: UITextView!
     @IBOutlet weak var pcConversationTableView: UITableView!
     
     
@@ -48,20 +49,20 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         let indexPath = NSIndexPath(forRow: numberOfRows - 1, inSection: numberOfSections - 1)
         pcConversationTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
     }
-
+    
     
     // MARK: - Action Buttons
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let user = UserController.sharedController.currentUser,
-            let message = pcMessageTextField.text where message.characters.count > 0 {
+            let message = pcMessageTextView.text where message.characters.count > 0 {
             if let thread = thread, let displayName = user.displayName {
                 ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (message) in
                     self.messages.append(message)
                     self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
                     self.pcConversationTableView.reloadData()
                     self.scrollToBottomOfTableView()
-                    self.pcMessageTextField.text = ""
+                    self.pcMessageTextView.text = ""
                 })
             }
         }

@@ -15,7 +15,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     var messages: [Message] = []
     
     
-    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var conversationTableView: UITableView!
     
     
@@ -61,14 +61,14 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let user = UserController.sharedController.currentUser,
-            let message = messageTextField.text where message.characters.count > 0 {
+            let message = messageTextView.text where message.characters.count > 0 {
             if let thread = thread, let displayName = user.displayName {
                 ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (message) in
                     self.messages.append(message)
                     self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
                     self.conversationTableView.reloadData()
                     self.scrollToBottomOfTableView()
-                    self.messageTextField.text = ""
+                    self.messageTextView.text = ""
                 })
             }
         }
@@ -115,6 +115,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         
     }
     
+    // Use to select entire cell for Alert Sheet DM / erase to keep the name as the selector
 //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //        let message = messages[indexPath.row]
 //        if message.displayName != UserController.sharedController.currentUser?.displayName {
@@ -126,7 +127,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)
         let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default) { (_) in
             self.performSegueWithIdentifier("threadToPrivateChat", sender: self)
-        } // Add code in the handler to set button functionalility
+        }
         let reportAction = UIAlertAction(title: "Report", style: .Destructive, handler: nil) // Add code in the handler to set button functionalility
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         

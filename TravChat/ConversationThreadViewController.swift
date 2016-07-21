@@ -52,7 +52,11 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     func dynamicTableViewCellHeight() {
         conversationTableView.rowHeight = UITableViewAutomaticDimension
-        conversationTableView.estimatedRowHeight = 80
+        conversationTableView.estimatedRowHeight = 75
+    }
+    
+    override func viewDidLayoutSubviews() {
+        messageTextView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     

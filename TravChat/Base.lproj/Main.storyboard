@@ -72,6 +72,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="1" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UMq-U6-Jhb" firstAttribute="top" secondItem="ZER-su-djS" secondAttribute="bottom" constant="33" id="3cV-IX-tvp"/>
                             <constraint firstItem="UMq-U6-Jhb" firstAttribute="centerX" secondItem="c7I-Wl-BM0" secondAttribute="centerX" constant="1" id="5Qw-72-1TW"/>
@@ -85,6 +86,9 @@
                             <constraint firstItem="ZER-su-djS" firstAttribute="top" secondItem="ZJk-kv-DYX" secondAttribute="bottom" constant="33" id="fVT-At-nNP"/>
                             <constraint firstItem="ZJk-kv-DYX" firstAttribute="centerX" secondItem="c7I-Wl-BM0" secondAttribute="centerX" id="ik5-84-3AU"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="1ec-Ca-D5u" appends="YES" id="qRZ-y1-5K7"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -95,6 +99,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1WN-1H-rdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1ec-Ca-D5u">
+                    <connections>
+                        <action selector="dismissKeyboardOnTouch:" destination="NSA-87-H2s" id="GNv-nm-GAn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1221.5" y="-513.5"/>
         </scene>
@@ -231,15 +240,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" rowHeight="70" id="7cJ-Vd-XHw" customClass="ConversationThreadTableViewCell" customModule="TravChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" rowHeight="75" id="7cJ-Vd-XHw" customClass="ConversationThreadTableViewCell" customModule="TravChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7cJ-Vd-XHw" id="mNg-DQ-agR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="a28-vz-76J">
-                                                    <rect key="frame" x="10" y="8" width="357" height="54"/>
+                                                    <rect key="frame" x="10" y="8" width="357" height="59"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIM-Sh-bDh">
                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="24"/>
@@ -279,7 +288,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYA-yU-y9d" userLabel="message Label">
-                                                            <rect key="frame" x="0.0" y="25" width="357" height="29"/>
+                                                            <rect key="frame" x="0.0" y="25" width="357" height="34"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -300,15 +309,15 @@
                                             <outlet property="timeLabel" destination="Kgh-6n-A0T" id="rxa-Yb-XIY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="senderCell" rowHeight="80" id="iQd-8z-IeV" userLabel="senderCell" customClass="SenderConversationThreadCell" customModule="TravChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="98" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="senderCell" rowHeight="75" id="iQd-8z-IeV" userLabel="senderCell" customClass="SenderConversationThreadCell" customModule="TravChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="103" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iQd-8z-IeV" id="mHZ-9B-tdT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-d6-tya">
-                                                    <rect key="frame" x="8" y="8" width="357" height="64"/>
+                                                    <rect key="frame" x="8" y="8" width="357" height="59"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-fD-VoL">
                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="24"/>
@@ -342,7 +351,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rny-HN-xrr" userLabel="message Label">
-                                                            <rect key="frame" x="0.0" y="25" width="357" height="39"/>
+                                                            <rect key="frame" x="0.0" y="25" width="357" height="34"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Ij9-F2-c3f"/>
                                                             </constraints>
@@ -568,15 +577,15 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcMessageCell" rowHeight="80" id="SPI-OG-B9U" customClass="ConversationThreadTableViewCell" customModule="TravChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcMessageCell" rowHeight="75" id="SPI-OG-B9U" customClass="ConversationThreadTableViewCell" customModule="TravChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SPI-OG-B9U" id="1iH-kw-i24">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-gB-cSw">
-                                                    <rect key="frame" x="10" y="8" width="357" height="64"/>
+                                                    <rect key="frame" x="10" y="8" width="357" height="59"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIR-sC-9jD">
                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="24"/>
@@ -610,7 +619,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-N8-qpO" userLabel="message Label">
-                                                            <rect key="frame" x="0.0" y="25" width="357" height="39"/>
+                                                            <rect key="frame" x="0.0" y="25" width="357" height="34"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -631,15 +640,15 @@
                                             <outlet property="timeLabel" destination="kYd-kY-eHh" id="QPp-R9-vZ0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcSenderCell" rowHeight="80" id="mJa-iH-SzY" userLabel="pcSenderCell" customClass="SenderConversationThreadCell" customModule="TravChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcSenderCell" rowHeight="75" id="mJa-iH-SzY" userLabel="pcSenderCell" customClass="SenderConversationThreadCell" customModule="TravChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="103" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJa-iH-SzY" id="BTx-0C-Btb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-p0-wvI">
-                                                    <rect key="frame" x="8" y="8" width="357" height="64"/>
+                                                    <rect key="frame" x="8" y="8" width="357" height="59"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1s-UN-xQj">
                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="24"/>
@@ -673,7 +682,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCv-rW-cS2" userLabel="message Label">
-                                                            <rect key="frame" x="0.0" y="25" width="357" height="39"/>
+                                                            <rect key="frame" x="0.0" y="25" width="357" height="34"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>

@@ -78,4 +78,7 @@ class createUsernameViewController: UIViewController {
         
         UserController.sharedController.saveContext()
     }
+    @IBAction func dismissKeyboardOnTouch(sender: AnyObject) {
+        firstNameTextField.resignFirstResponder()
+    }
 }

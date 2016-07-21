@@ -39,7 +39,7 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     
     func dynamicTableViewCellHeight() {
         pcConversationTableView.rowHeight = UITableViewAutomaticDimension
-        pcConversationTableView.estimatedRowHeight = 80
+        pcConversationTableView.estimatedRowHeight = 75
     }
 
     func scrollToBottomOfTableView() {

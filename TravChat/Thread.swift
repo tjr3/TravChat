@@ -56,6 +56,13 @@ class Thread: SyncableObject, CloudKitManagedObject {
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
+        guard let timestamp = record.creationDate,
+            let name = record[Thread.nameKey] as? String,
+            let oneToOne = record[Thread.oneToOneKey] as? NSNumber else { fatalError() }
+        
+        self.timestamp = timestamp
+        self.name = name
+        self.oneToOne = oneToOne
         self.recordName = record.recordID.recordName
         self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
         

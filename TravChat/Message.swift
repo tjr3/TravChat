@@ -16,6 +16,7 @@ class Message: SyncableObject, CloudKitManagedObject {
     static let displayNameKey = "displayName"
     static let threadKey = "thread"
     static let timestampKey = "timestamp"
+    static let messageKey = "message"
     // talk to parker about sender and reciever cell. Check on current user sending mesage. message is 
     
     convenience init(thread: Thread, message: String, displayName: String, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
@@ -43,6 +44,7 @@ class Message: SyncableObject, CloudKitManagedObject {
         
         record[Message.timestampKey] = timestamp
         record[Message.displayNameKey] = displayName
+        record[Message.messageKey] = message
 
         
         guard let thread = thread,
@@ -57,13 +59,22 @@ class Message: SyncableObject, CloudKitManagedObject {
     
     convenience required init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
-        guard let timestamp = record.creationDate else { return nil }
+        guard let timestamp = record.creationDate,
+            let message = record[Message.messageKey] as? String,
+            let displayName = record[Message.displayNameKey] as? String,
+            let threadReference = record[Message.threadKey] as? CKReference else { return nil }
         
         guard let entity = NSEntityDescription.entityForName(Message.typeKey, inManagedObjectContext: context) else { fatalError("Error: Core Data failed to create entity from entity description.") }
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.timestamp = timestamp
+        self.message = message
+        self.displayName = displayName
         self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
         self.recordName = record.recordID.recordName
+        
+        if let thread = ThreadController.sharedController.threadWithName(threadReference.recordID.recordName) {
+            self.thread = thread
+        }
     }
 }

@@ -59,13 +59,15 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let user = UserController.sharedController.currentUser,
             let message = pcMessageTextView.text where message.characters.count > 0 {
-            if let thread = thread, let displayName = user.displayName {
+            if let thread = thread,
+                let displayName = user.displayName {
                 ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (message) in
                     self.messages.append(message)
                     self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
                     self.pcConversationTableView.reloadData()
                     self.scrollToBottomOfTableView()
                     self.pcMessageTextView.text = ""
+                    self.pcConversationTableView.reloadData()
                 })
             }
         }

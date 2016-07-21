@@ -13,10 +13,12 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     var conversationRegion: Region?
     var thread: Thread?
     var messages: [Message] = []
-    
+    var keyboardShown = false
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var conversationTableView: UITableView!
+    @IBOutlet weak var messageStackView: UIStackView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -40,7 +42,36 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
         
         scrollToBottomOfTableView()
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name:UIKeyboardWillHideNotification, object: nil);
+        
     }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        if !keyboardShown {
+            if let keyboardSize = (sender.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                UIView.animateWithDuration(3.0, animations: {
+                    self.bottomConstraint.constant += keyboardSize.height - 50
+                    self.view.layoutIfNeeded()
+                })
+            }
+            keyboardShown = true
+        }
+    }
+    override func viewDidLayoutSubviews() {
+        messageTextView.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        if keyboardShown {
+            bottomConstraint.constant = 0
+            keyboardShown = false
+        }
+    }
+    
+    // MARK: - Table view positioning -
     
     func scrollToBottomOfTableView() {
         let numberOfSections = conversationTableView.numberOfSections
@@ -53,10 +84,6 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     func dynamicTableViewCellHeight() {
         conversationTableView.rowHeight = UITableViewAutomaticDimension
         conversationTableView.estimatedRowHeight = 75
-    }
-    
-    override func viewDidLayoutSubviews() {
-        messageTextView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     
@@ -127,12 +154,12 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     }
     
     // Use to select entire cell for Alert Sheet DM / erase to keep the name as the selector
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let message = messages[indexPath.row]
-//        if message.displayName != UserController.sharedController.currentUser?.displayName {
-//            presentAlertController()
-//        }
-//    }
+    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //        let message = messages[indexPath.row]
+    //        if message.displayName != UserController.sharedController.currentUser?.displayName {
+    //            presentAlertController()
+    //        }
+    //    }
     
     func presentAlertController() {
         let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)
@@ -159,13 +186,13 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     func senderCell(cell: SenderConversationThreadCell) {
         print(conversationTableView.indexPathForCell(cell))
     }
-
-     // MARK: - Navigation
     
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "threadToPrivateChat", let indexPath = conversationTableView.indexPathForSelectedRow, privateChatTVC = segue.destinationViewController as? PrivateChatTableViewController {
             let message = messages[indexPath.row]
-//            privateChatTVC.user = user
+            //            privateChatTVC.user = user
         }
     }
 }

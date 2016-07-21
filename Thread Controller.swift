@@ -112,6 +112,19 @@ class ThreadController {
         }
     }
     
+    func threadWithName(name: String) -> Thread? {
+        
+        if name.isEmpty { return nil }
+        
+        let fetchRequest = NSFetchRequest(entityName: "Thread")
+        let predicate = NSPredicate(format: "recordName == %@", argumentArray: [name])
+        fetchRequest.predicate = predicate
+        
+        let result = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest) as? [Thread]) ?? nil
+        
+        return result?.first
+    }
+    
     func deleteThread(thread: Thread) {
         
         if let recordID = thread.cloudKitRecordID {
@@ -224,7 +237,7 @@ class ThreadController {
                 
             case Message.typeKey:
                 let _ = Message(record: record)
-                
+            
             default:
                 return
             }
@@ -242,7 +255,7 @@ class ThreadController {
             }
         }
     }
-    
+
     func pushChangesToCloudKit(completion: ((success: Bool, error: NSError?) -> Void)?) {
         
         let unsavedManagedObjects = unsyncedRecords(Message.typeKey) + unsyncedRecords(Thread.typeKey)
@@ -266,7 +279,7 @@ class ThreadController {
             }
         }
     }
-    
+
     // MARK: - Save Content -
     
     func saveContext() {

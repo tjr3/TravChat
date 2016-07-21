@@ -548,46 +548,67 @@
                                             <outlet property="timeLabel" destination="kYd-kY-eHh" id="QPp-R9-vZ0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcSenderCell" rowHeight="57" id="mJa-iH-SzY" userLabel="pcSenderCell" customClass="SenderConversationThreadCell" customModule="TravChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="57"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcSenderCell" rowHeight="80" id="mJa-iH-SzY" userLabel="pcSenderCell" customClass="SenderConversationThreadCell" customModule="TravChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJa-iH-SzY" id="BTx-0C-Btb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRf-ky-Xv8" userLabel="displayName Label">
-                                                    <rect key="frame" x="290" y="1" width="42" height="20"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCv-rW-cS2" userLabel="message Label">
-                                                    <rect key="frame" x="310" y="23" width="50" height="30.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6iv-5S-Udq" userLabel="Time">
-                                                    <rect key="frame" x="342" y="3" width="28" height="17"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-p0-wvI">
+                                                    <rect key="frame" x="8" y="8" width="357" height="64"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1s-UN-xQj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="357" height="24"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRf-ky-Xv8" userLabel="displayName Label">
+                                                                    <rect key="frame" x="250" y="2" width="44" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="44" id="omW-RV-R0y"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaD-Ai-EEu" userLabel="Time">
+                                                                    <rect key="frame" x="309" y="3" width="40" height="17"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="4CE-KB-huu"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="KaD-Ai-EEu" firstAttribute="trailing" secondItem="Q1s-UN-xQj" secondAttribute="trailingMargin" id="4f1-Gr-ycM"/>
+                                                                <constraint firstAttribute="height" constant="24" id="8aQ-6t-1wP"/>
+                                                                <constraint firstItem="hRf-ky-Xv8" firstAttribute="centerY" secondItem="KaD-Ai-EEu" secondAttribute="centerY" id="9jb-Fi-FEx"/>
+                                                                <constraint firstItem="KaD-Ai-EEu" firstAttribute="leading" secondItem="Q1s-UN-xQj" secondAttribute="leading" constant="309" id="Pxp-sZ-Bx0"/>
+                                                                <constraint firstItem="hRf-ky-Xv8" firstAttribute="centerY" secondItem="Q1s-UN-xQj" secondAttribute="centerY" id="hIp-jZ-DQy"/>
+                                                                <constraint firstItem="KaD-Ai-EEu" firstAttribute="leading" secondItem="hRf-ky-Xv8" secondAttribute="trailing" constant="15" id="y84-oA-IZV"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCv-rW-cS2" userLabel="message Label">
+                                                            <rect key="frame" x="0.0" y="24" width="357" height="40"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6iv-5S-Udq" firstAttribute="top" secondItem="BTx-0C-Btb" secondAttribute="top" constant="3" id="04T-rt-enT"/>
-                                                <constraint firstAttribute="bottom" secondItem="bCv-rW-cS2" secondAttribute="bottom" constant="3" id="09G-nK-PkE"/>
-                                                <constraint firstAttribute="trailing" secondItem="6iv-5S-Udq" secondAttribute="trailing" constant="5" id="J1b-FY-Kn5"/>
-                                                <constraint firstItem="6iv-5S-Udq" firstAttribute="leading" secondItem="hRf-ky-Xv8" secondAttribute="trailing" constant="10" id="Rze-GG-hqW"/>
-                                                <constraint firstItem="bCv-rW-cS2" firstAttribute="top" secondItem="hRf-ky-Xv8" secondAttribute="bottom" constant="2" id="dJ5-18-9bF"/>
-                                                <constraint firstAttribute="trailing" secondItem="bCv-rW-cS2" secondAttribute="trailing" constant="15" id="lxL-Uq-0a2"/>
-                                                <constraint firstItem="hRf-ky-Xv8" firstAttribute="top" secondItem="BTx-0C-Btb" secondAttribute="top" constant="1" id="xbF-M7-PzM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wg6-p0-wvI" secondAttribute="bottom" id="WeO-AV-uLE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wg6-p0-wvI" secondAttribute="trailing" constant="2" id="dpU-KK-a4R"/>
+                                                <constraint firstItem="Wg6-p0-wvI" firstAttribute="top" secondItem="BTx-0C-Btb" secondAttribute="topMargin" id="ml2-QG-Jmd"/>
+                                                <constraint firstItem="Wg6-p0-wvI" firstAttribute="leading" secondItem="BTx-0C-Btb" secondAttribute="leadingMargin" id="s7S-Aa-qzo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cuDisplayNameLabel" destination="hRf-ky-Xv8" id="cX0-rn-Rqq"/>
                                             <outlet property="cuMessageLabel" destination="bCv-rW-cS2" id="rqk-wu-FiI"/>
-                                            <outlet property="cuTimeLabel" destination="6iv-5S-Udq" id="egW-vL-Kyu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

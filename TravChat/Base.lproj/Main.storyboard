@@ -182,11 +182,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Te2-Dm-hvo">
                                         <rect key="frame" x="3" y="0.0" width="368" height="40"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y6f-v4-wMe">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" maximumZoomScale="3" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y6f-v4-wMe">
                                                 <rect key="frame" x="0.0" y="5" width="321" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.10980392160000001" green="1" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -284,7 +286,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-d6-tya">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-d6-tya">
                                                     <rect key="frame" x="8" y="8" width="357" height="64"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-fD-VoL">
@@ -319,10 +321,18 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rny-HN-xrr" userLabel="message Label">
-                                                            <rect key="frame" x="0.0" y="24" width="357" height="40"/>
+                                                            <rect key="frame" x="0.0" y="25" width="357" height="39"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="Ij9-F2-c3f"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="Ij9-F2-c3f"/>
+                                                                </mask>
+                                                            </variation>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
@@ -473,13 +483,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="D3V-O5-09i">
                                         <rect key="frame" x="3" y="0.0" width="368" height="40"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0k5-M6-Fyo" userLabel="Message Text View">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" maximumZoomScale="3" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0k5-M6-Fyo" userLabel="Message Text View">
                                                 <rect key="frame" x="0.0" y="5" width="321" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" red="0.10980392160000001" green="1" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.">
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -542,7 +554,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-gB-cSw">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-gB-cSw">
                                                     <rect key="frame" x="10" y="8" width="357" height="64"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIR-sC-9jD">
@@ -577,7 +589,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-N8-qpO" userLabel="message Label">
-                                                            <rect key="frame" x="0.0" y="24" width="357" height="40"/>
+                                                            <rect key="frame" x="0.0" y="25" width="357" height="39"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -602,19 +614,19 @@
                                         <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJa-iH-SzY" id="BTx-0C-Btb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-p0-wvI">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-p0-wvI">
                                                     <rect key="frame" x="8" y="8" width="357" height="64"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1s-UN-xQj">
                                                             <rect key="frame" x="0.0" y="0.0" width="357" height="24"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRf-ky-Xv8" userLabel="displayName Label">
-                                                                    <rect key="frame" x="253" y="2" width="41" height="19"/>
+                                                                    <rect key="frame" x="252" y="2" width="42" height="19"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="omW-RV-R0y"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="omW-RV-R0y"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                     <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -640,7 +652,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCv-rW-cS2" userLabel="message Label">
-                                                            <rect key="frame" x="0.0" y="24" width="357" height="40"/>
+                                                            <rect key="frame" x="0.0" y="25" width="357" height="39"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>

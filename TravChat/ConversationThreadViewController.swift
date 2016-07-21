@@ -22,6 +22,8 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dynamicTableViewCellHeight()
+        
         guard let region = conversationRegion else { return }
         self.title = region.name
         
@@ -46,6 +48,11 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         
         let indexPath = NSIndexPath(forRow: numberOfRows - 1, inSection: numberOfSections - 1)
         conversationTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+    }
+    
+    func dynamicTableViewCellHeight() {
+        conversationTableView.rowHeight = UITableViewAutomaticDimension
+        conversationTableView.estimatedRowHeight = 80
     }
     
     

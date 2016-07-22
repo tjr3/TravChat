@@ -20,8 +20,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-tE-xuM">
                                 <rect key="frame" x="248" y="247" width="105" height="105"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="5ut-O6-Dl7"/>
-                                    <constraint firstAttribute="width" constant="105" id="7Nn-ll-Sa2"/>
+                                    <constraint firstAttribute="height" constant="105" id="Fkg-Mx-RNG"/>
+                                    <constraint firstAttribute="width" constant="105" id="R0K-yn-9Ws"/>
                                 </constraints>
                             </imageView>
                         </subviews>

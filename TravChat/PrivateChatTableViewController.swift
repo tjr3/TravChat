@@ -11,7 +11,7 @@ import UIKit
 class PrivateChatTableViewController: UITableViewController {
     
     var messages: [Message] = []
-    var users: UserInformation?
+    var user: UserInformation?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -71,13 +71,17 @@ class ThreadController {
             self.northAmerica = Thread(name: "North America")
             self.southAmerica = Thread(name: "South America")
             
+            guard let currentUser = UserController.sharedController.currentUser else {
+                return
+            }
+            
             // TODO: MockData - Delete when no longer needed.
-            addMessageToThread("Sendia is Amazing", thread: self.asia, displayName: "TLARbot", completion: nil)
-            addMessageToThread("Ghana", thread: self.africa, displayName: "RmackayAllDay", completion: nil)
-            addMessageToThread("Brisbane", thread: self.australia, displayName: "ShelbyFlen", completion: nil)
-            addMessageToThread("Genoa", thread: self.europe, displayName: "JWebb", completion: nil)
-            addMessageToThread("Lake Powell!! ", thread: self.northAmerica, displayName: "J_CENTS", completion: nil)
-            addMessageToThread("Bolivia", thread: self.southAmerica, displayName: "Prodg", completion: nil)
+            addMessageToThread("Sendia is Amazing", user: currentUser, thread: self.asia, displayName: "TLARbot", completion: nil)
+            addMessageToThread("Ghana", user: currentUser, thread: self.africa, displayName: "RmackayAllDay", completion: nil)
+            addMessageToThread("Brisbane", user: currentUser, thread: self.australia, displayName: "ShelbyFlen", completion: nil)
+            addMessageToThread("Genoa", user: currentUser, thread: self.europe, displayName: "JWebb", completion: nil)
+            addMessageToThread("Lake Powell!! ", user: currentUser, thread: self.northAmerica, displayName: "J_CENTS", completion: nil)
+            addMessageToThread("Bolivia", user: currentUser, thread: self.southAmerica, displayName: "Prodg", completion: nil)
             saveContext()
         }
     }
@@ -88,11 +92,15 @@ class ThreadController {
         let bob = Thread.init(name: "Bob", oneToOne: true)
         let kojack = Thread.init(name: "Kojack", oneToOne: true)
         
-        addMessageToThread("If you go to Amsterdam, dont go to the red light district", thread: JCents, displayName: "JCents", completion: nil)
-        addMessageToThread("Go to Cafe Du Monde in NOLA", thread: bob, displayName: "Bob", completion: nil)
-        addMessageToThread("Get the beignets!", thread: bob, displayName: "Bob", completion: nil)
-        addMessageToThread("The Raiders Cafe in Oakland is dank!", thread: steve, displayName: "SteveO", completion: nil)
-        addMessageToThread("Big ben is overrated, go to the Camden Markets", thread: kojack, displayName: "Kojack", completion: nil)
+        guard let currentUser = UserController.sharedController.currentUser else {
+            return
+        }
+        
+        addMessageToThread("If you go to Amsterdam, dont go to the red light district", user: currentUser, thread: JCents, displayName: "JCents", completion: nil)
+        addMessageToThread("Go to Cafe Du Monde in NOLA", user: currentUser, thread: bob, displayName: "Bob", completion: nil)
+        addMessageToThread("Get the beignets!", user: currentUser, thread: bob, displayName: "Bob", completion: nil)
+        addMessageToThread("The Raiders Cafe in Oakland is dank!", user: currentUser, thread: steve, displayName: "SteveO", completion: nil)
+        addMessageToThread("Big ben is overrated, go to the Camden Markets", user: currentUser, thread: kojack, displayName: "Kojack", completion: nil)
     }
     
     // MARK: - Method Signatures -
@@ -140,9 +148,9 @@ class ThreadController {
     }
     
     
-    func addMessageToThread(message: String, thread: Thread, displayName: String, completion: ((message: Message) -> Void)?) { // takes in message and thread, refer Timeline
+    func addMessageToThread(message: String, user: UserInformation, thread: Thread, displayName: String, completion: ((message: Message) -> Void)?) { // takes in message and thread, refer Timeline
         
-        let message = Message(thread: thread, message: message, displayName: displayName)
+        let message = Message(thread: thread, message: message, displayName: displayName, user: user)
         saveContext()
         
         if let completion = completion {

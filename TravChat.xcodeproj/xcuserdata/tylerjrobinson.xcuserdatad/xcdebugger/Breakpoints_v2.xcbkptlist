@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
             endingLineNumber = "155"
-            landmarkName = "addMessageToThread(_:thread:displayName:completion:)"
+            landmarkName = "addMessageToThread(_:user:thread:displayName:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

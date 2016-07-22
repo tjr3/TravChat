@@ -100,7 +100,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         if let user = UserController.sharedController.currentUser,
             let message = messageTextView.text where message.characters.count > 0 {
             if let thread = thread, let displayName = user.displayName {
-                ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (message) in
+                ThreadController.sharedController.addMessageToThread(message, user: user, thread: thread, displayName: displayName, completion: { (message) in
                     self.messages.append(message)
                     self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
                     self.conversationTableView.reloadData()
@@ -181,8 +181,9 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "threadToPrivateChat", let indexPath = conversationTableView.indexPathForSelectedRow, privateChatTVC = segue.destinationViewController as? PrivateChatTableViewController {
-            let message = messages[indexPath.row]
-            //            privateChatTVC.user = user
+            if let user = messages[indexPath.row].user {
+                privateChatTVC.user = user
+            }
         }
     }
 }

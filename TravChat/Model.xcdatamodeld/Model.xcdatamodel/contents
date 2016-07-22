@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Xcode 7.0">
     <entity name="Message" representedClassName=".Message" parentEntity="SyncableObject" syncable="YES">
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="message" attributeType="String" syncable="YES"/>
         <relationship name="thread" maxCount="1" deletionRule="Nullify" destinationEntity="Thread" inverseName="messages" inverseEntity="Thread" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInformation" syncable="YES"/>
     </entity>
     <entity name="SyncableObject" representedClassName=".SyncableObject" syncable="YES">
         <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -20,7 +21,7 @@
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="394" positionY="-193" width="128" height="88"/>
+        <element name="Message" positionX="394" positionY="-193" width="128" height="105"/>
         <element name="SyncableObject" positionX="-72" positionY="90" width="128" height="90"/>
         <element name="Thread" positionX="-90" positionY="-153" width="128" height="105"/>
         <element name="UserInformation" positionX="259" positionY="-18" width="128" height="60"/>

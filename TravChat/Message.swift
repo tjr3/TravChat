@@ -17,9 +17,9 @@ class Message: SyncableObject, CloudKitManagedObject {
     static let threadKey = "thread"
     static let timestampKey = "timestamp"
     static let messageKey = "message"
-    // talk to parker about sender and reciever cell. Check on current user sending mesage. message is
+    static let userKey = "user"
     
-    convenience init(thread: Thread, message: String, displayName: String, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    convenience init(thread: Thread, message: String, displayName: String, user: UserInformation?, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
         guard let entity = NSEntityDescription.entityForName(Message.typeKey, inManagedObjectContext: context) else { fatalError("Error: Core Data failed to create entity from entity description.") }
         
@@ -31,6 +31,7 @@ class Message: SyncableObject, CloudKitManagedObject {
         self.timestamp = timestamp
         self.recordName = self.nameForManagedObject()
         self.thread = thread
+        self.user = user
     }
     
     // MARK: CloudKitManagedObject
@@ -45,6 +46,8 @@ class Message: SyncableObject, CloudKitManagedObject {
         record[Message.timestampKey] = timestamp
         record[Message.displayNameKey] = displayName
         record[Message.messageKey] = message
+        
+//        record[Message.userKey] = user   see thread = thread below
         
         
         guard let thread = thread,

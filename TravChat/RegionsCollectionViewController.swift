@@ -37,7 +37,6 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
         self.performSegueWithIdentifier("toRegionChatSegue", sender: sender)
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "toRegionChatSegue" {
@@ -72,7 +71,7 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
         guard let region = Region(rawValue: indexPath.item), let image = region.image else {
             print("Could not convert to desired cell type")
             return UICollectionViewCell()
-        } // TODO: Fix Me
+        }
 
         print("Current Region's Image = \(region.image) @ index: \(indexPath.row)")
         print("Current Region's Name = \(region.name) @ index: \(indexPath.row)")

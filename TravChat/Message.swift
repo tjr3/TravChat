@@ -17,7 +17,7 @@ class Message: SyncableObject, CloudKitManagedObject {
     static let threadKey = "thread"
     static let timestampKey = "timestamp"
     static let messageKey = "message"
-    // talk to parker about sender and reciever cell. Check on current user sending mesage. message is 
+    // talk to parker about sender and reciever cell. Check on current user sending mesage. message is
     
     convenience init(thread: Thread, message: String, displayName: String, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         
@@ -45,17 +45,16 @@ class Message: SyncableObject, CloudKitManagedObject {
         record[Message.timestampKey] = timestamp
         record[Message.displayNameKey] = displayName
         record[Message.messageKey] = message
-
+        
         
         guard let thread = thread,
             let threadRecord = thread.cloudKitRecord else { fatalError("Message does not have a thread relationship") }
-//        record[Message.threadKey] = thread.name
         
         record[Message.threadKey] = CKReference(record: threadRecord, action: .DeleteSelf)
         
-            return record
-        }
-
+        return record
+    }
+    
     
     convenience required init?(record: CKRecord, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         

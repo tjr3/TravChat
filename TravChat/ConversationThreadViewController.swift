@@ -41,13 +41,13 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         
         self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name:UIKeyboardWillHideNotification, object: nil)
+        
         scrollToBottomOfTableView()
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name:UIKeyboardWillHideNotification, object: nil);
-        
     }
+    
+    // MARK: - Keyboard/TextView -
     
     func keyboardWillShow(sender: NSNotification) {
         if !keyboardShown {
@@ -60,15 +60,17 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
             keyboardShown = true
         }
     }
-    override func viewDidLayoutSubviews() {
-        messageTextView.setContentOffset(CGPoint.zero, animated: false)
-    }
     
     func keyboardWillHide(sender: NSNotification) {
         if keyboardShown {
             bottomConstraint.constant = 0
             keyboardShown = false
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        messageTextView.setContentOffset(CGPoint.zero, animated: false)
+        messageTextView.contentInset = UIEdgeInsetsZero
     }
     
     // MARK: - Table view positioning -
@@ -92,9 +94,6 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     @IBAction func nameTapped(sender: AnyObject) {
         presentAlertController()
         
-        //        TODO: if report { report },
-        //        else (segue if DM is selected) { return segue with identifier }.
-        //        performSegueWithIdentifier("toPrivateChat", sender: self)
     }
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
@@ -142,7 +141,6 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
             let cell = tableView.dequeueReusableCellWithIdentifier("messageCell", forIndexPath: indexPath) as! ConversationThreadTableViewCell
             cell.delegate = self
             
-            
             cell.displayNameLabel.text = message.displayName ?? ""
             cell.timeLabel.text = message.timestamp.dateFormat()
             cell.messageLabel.text = message.message
@@ -152,14 +150,6 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         }
         
     }
-    
-    // Use to select entire cell for Alert Sheet DM / erase to keep the name as the selector
-    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        let message = messages[indexPath.row]
-    //        if message.displayName != UserController.sharedController.currentUser?.displayName {
-    //            presentAlertController()
-    //        }
-    //    }
     
     func presentAlertController() {
         let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)

@@ -73,124 +73,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UserController.swift"
-            timestampString = "490653793.107781"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "fetchNewRecords(_:completion:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490832988.680986"
+            timestampString = "490913869.097568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "sendButtonTapped(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravChat.PrivateChatConversationThreadViewController.(sendButtonTapped (Swift.AnyObject) -&gt; ()).(closure #1)"
-                  moduleName = "TravChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490832988.689618"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "284">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravChat.PrivateChatConversationThreadViewController.(sendButtonTapped (Swift.AnyObject) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "TravChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490832988.689743"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490833002.743245"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "sendButtonTapped(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravChat.PrivateChatConversationThreadViewController.sendButtonTapped (Swift.AnyObject) -&gt; ()"
-                  moduleName = "TravChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490833002.745628"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravChat.PrivateChatConversationThreadViewController.sendButtonTapped (Swift.AnyObject) -&gt; ()"
-                  moduleName = "TravChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490833002.745761"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "135">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490833003.548144"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "sendButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490833004.096794"
+            timestampString = "490913869.097568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -218,12 +106,12 @@
                   moduleName = "TravChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490833004.099148"
+                  timestampString = "490912650.09349"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1140">
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "30">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -233,12 +121,12 @@
                   moduleName = "TravChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490833004.100358"
+                  timestampString = "490912650.093676"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1191">
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "100">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -250,11 +138,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490833026.786609"
+            timestampString = "490913869.097568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
+            landmarkName = "sendButtonTapped(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
+            timestampString = "490913869.097568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "sendButtonTapped(_:)"
             landmarkType = "5">
             <Locations>
@@ -266,29 +170,45 @@
                   moduleName = "TravChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490833026.788273"
+                  timestampString = "490912650.095242"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "1514">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1090">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TravChat.PrivateChatConversationThreadViewController.(sendButtonTapped (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  symbolName = "TravChat.PrivateChatConversationThreadViewController.sendButtonTapped (Swift.AnyObject) -&gt; ()"
                   moduleName = "TravChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490833026.788443"
+                  timestampString = "490912650.095369"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1126">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
+            timestampString = "490913869.097568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "sendButtonTapped(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

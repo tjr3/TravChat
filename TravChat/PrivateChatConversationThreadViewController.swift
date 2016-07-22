@@ -14,10 +14,11 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     var conversationUser: UserInformation?
     var messages: [Message] = []
     var thread: Thread?
-     
-    // TODO: Round the edges on the TextView
+    var keyboardShown = false
+    
     @IBOutlet weak var pcMessageTextView: UITextView!
     @IBOutlet weak var pcConversationTableView: UITableView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -33,15 +34,41 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         }
         
         self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
+       
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name:UIKeyboardWillHideNotification, object: nil)
         
         scrollToBottomOfTableView()
     }
     
-    func dynamicTableViewCellHeight() {
-        pcConversationTableView.rowHeight = UITableViewAutomaticDimension
-        pcConversationTableView.estimatedRowHeight = 75
-    }
+    // MARK: - Keyboard/TextView -
 
+    func keyboardWillShow(sender: NSNotification) {
+        if !keyboardShown {
+            if let keyboardSize = (sender.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                UIView.animateWithDuration(3.0, animations: {
+                    self.bottomConstraint.constant += keyboardSize.height - 50
+                    self.view.layoutIfNeeded()
+                })
+            }
+            keyboardShown = true
+        }
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        if keyboardShown {
+            bottomConstraint.constant = 0
+            keyboardShown = false
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        pcMessageTextView.setContentOffset(CGPoint.zero, animated: false)
+        pcMessageTextView.contentInset = UIEdgeInsetsZero
+    }
+    
+    // MARK: - Table view positioning -
+    
     func scrollToBottomOfTableView() {
         let numberOfSections = pcConversationTableView.numberOfSections
         let numberOfRows = pcConversationTableView.numberOfRowsInSection(numberOfSections-1)
@@ -50,8 +77,9 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         pcConversationTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
     }
     
-    override func viewDidLayoutSubviews() {
-        pcMessageTextView.setContentOffset(CGPoint.zero, animated: false)
+    func dynamicTableViewCellHeight() {
+        pcConversationTableView.rowHeight = UITableViewAutomaticDimension
+        pcConversationTableView.estimatedRowHeight = 75
     }
     
     // MARK: - Action Buttons
@@ -110,6 +138,7 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         }
     }
     
+   
     // MARK: - PrivateConversationTableViewCellDelegates - 
     
     func messageCell(cell: ConversationThreadTableViewCell) {

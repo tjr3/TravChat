@@ -31,19 +31,6 @@ class UserController {
         return users?.first
     }
     
-//    var saveCurrentUser: UserInformation? {
-//        get {
-//            let userDisplayName = NSFetchRequest(entityName: "UserInformation")
-//            let userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kDisplayName) as? [String : AnyObject]
-//            return UserInformation(displayName: userDictionary, context: Stack.sharedStack.managedObjectContext)
-//
-//            return UserInformation?
-//        }
-//        set {
-//            
-//        }
-//    }
-    
     // MARK: - Method Signatures -
     
     func createUser(displayName: String) {

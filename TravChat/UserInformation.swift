@@ -28,7 +28,6 @@ class UserInformation: SyncableObject, CloudKitManagedObject{
         self.recordName = self.nameForManagedObject()
     }
     
-  
     
     // MARK: CloudKitManagedObject
     

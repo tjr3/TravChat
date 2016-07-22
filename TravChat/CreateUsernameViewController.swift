@@ -63,8 +63,6 @@ class createUsernameViewController: UIViewController {
         }
     }
     
-    // MARK: - Keyboard -
-    
     
     // MARK: - Action Button -
     

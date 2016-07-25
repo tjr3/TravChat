@@ -105,18 +105,27 @@ class ThreadController {
     
     // MARK: - Method Signatures -
     
-    func createOneToOneChat(users: [UserInformation]) {
-        
-        let oneToOneThread = Thread(message: NSSet(), name: "", oneToOne: true, userInformation: NSSet(array: users))
-        saveContext()
-        
-        if let oneToOneThreadRecord = oneToOneThread.cloudKitRecord {
+    func createOneToOneChat(users: [UserInformation]) -> Thread? {
+        if let currentUser = UserController.sharedController.currentUser {
+            var threadName = "\(currentUser.displayName)"
+            for user in users {
+                threadName += ", \(user.displayName)"
+            }
             
-            cloudKitManager.saveRecord(oneToOneThreadRecord, completion: { (record, error) in
-                if let record = record {
-                    oneToOneThread.update(record)
-                }
-            })
+            let oneToOneThread = Thread(message: NSSet(), name: threadName, oneToOne: true, userInformation: NSSet(array: users))
+            saveContext()
+            
+            if let oneToOneThreadRecord = oneToOneThread.cloudKitRecord {
+                
+                cloudKitManager.saveRecord(oneToOneThreadRecord, completion: { (record, error) in
+                    if let record = record {
+                        oneToOneThread.update(record)
+                    }
+                })
+            }
+            return oneToOneThread
+        } else {
+            return nil
         }
     }
     
@@ -229,10 +238,10 @@ class ThreadController {
     func fetchNewRecords(type: String, completion: (() -> Void)?) {
         
         let referencesToExclude = syncedRecords(type).flatMap({ $0.cloudKitReference})
-//        var prediate = NSPredicate(format: "NOT(recordID IN %@", argumentArray: [referencesToExclude])
+        //        var prediate = NSPredicate(format: "NOT(recordID IN %@", argumentArray: [referencesToExclude])
         
         if referencesToExclude.isEmpty {
-//            prediate = NSPredicate(value: true)
+            //            prediate = NSPredicate(value: true)
         }
         
         cloudKitManager.fetchRecordsWithType(type, recordFetchedBlock: { (record) in
@@ -244,7 +253,7 @@ class ThreadController {
                 
             case Message.typeKey:
                 let _ = Message(record: record)
-            
+                
             default:
                 return
             }
@@ -262,7 +271,7 @@ class ThreadController {
             }
         }
     }
-
+    
     func pushChangesToCloudKit(completion: ((success: Bool, error: NSError?) -> Void)?) {
         
         let unsavedManagedObjects = unsyncedRecords(Message.typeKey) + unsyncedRecords(Thread.typeKey)
@@ -286,7 +295,7 @@ class ThreadController {
             }
         }
     }
-
+    
     // MARK: - Save Content -
     
     func saveContext() {

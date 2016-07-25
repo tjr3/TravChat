@@ -32,6 +32,4 @@ class RegionsCollectionViewCell: UICollectionViewCell {
         let attributedString = NSAttributedString(string: name, attributes: [ NSForegroundColorAttributeName: UIColor.blackColor(), NSParagraphStyleAttributeName: style ])
         regionButton.setAttributedTitle(attributedString, forState: .Normal)
     }
-    
-    
 }

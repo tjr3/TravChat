@@ -37,16 +37,11 @@
                                 <rect key="frame" x="0.0" y="85" width="375" height="357"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-kv-DYX">
-                                        <rect key="frame" x="138" y="0.0" width="99" height="101"/>
+                                        <rect key="frame" x="135" y="0.0" width="106" height="101"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="BI6-WA-vgf"/>
                                             <constraint firstAttribute="height" constant="101" id="BZJ-9w-K15"/>
+                                            <constraint firstAttribute="width" constant="106" id="suq-Zc-xXt"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="BI6-WA-vgf"/>
-                                            </mask>
-                                        </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TravChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZER-su-djS">
                                         <rect key="frame" x="68" y="155" width="240" height="43"/>
@@ -81,16 +76,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="oxj-Tb-HkJ" secondAttribute="trailing" constant="8" id="Jgr-cc-cZk"/>
-                                    <constraint firstItem="ZJk-kv-DYX" firstAttribute="centerX" secondItem="QDC-SK-4Vi" secondAttribute="centerX" id="OuR-oz-MwI"/>
-                                    <constraint firstItem="ZJk-kv-DYX" firstAttribute="leading" secondItem="QDC-SK-4Vi" secondAttribute="leading" constant="138" id="bDU-bN-fuf"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZJk-kv-DYX" secondAttribute="trailing" constant="138" id="mUA-PN-x7G"/>
                                     <constraint firstItem="oxj-Tb-HkJ" firstAttribute="leading" secondItem="QDC-SK-4Vi" secondAttribute="leading" constant="8" id="mcH-1r-3NP"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="OuR-oz-MwI"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="1" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,25 +115,25 @@
         <scene sceneID="3sD-PD-Hra">
             <objects>
                 <collectionViewController id="W0d-wP-F2d" customClass="RegionsCollectionViewController" customModule="TravChat" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3z2-Yr-YQa">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" maximumZoomScale="3" dataMode="prototypes" id="3z2-Yr-YQa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92287660256410253" green="0.92287660256410253" blue="0.92287660256410253" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="IPf-BR-iyE">
-                            <size key="itemSize" width="180" height="180"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IPf-BR-iyE">
+                            <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="15"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="18" minY="10" maxX="18" maxY="10"/>
+                            <size key="footerReferenceSize" width="0.0" height="15"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="regionCell" id="ywK-Iz-B8r" userLabel="Africa" customClass="RegionsCollectionViewCell" customModule="TravChat" customModuleProvider="target">
-                                <rect key="frame" x="98" y="89" width="180" height="180"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="regionCell" id="ywK-Iz-B8r" userLabel="Africa" customClass="RegionsCollectionViewCell" customModule="TravChat" customModuleProvider="target">
+                                <rect key="frame" x="10" y="89" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-dw-DwS">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-dw-DwS">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                             <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -171,8 +158,12 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionView" id="cgz-ar-faG">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" reuseIdentifier="collectionView" id="cgz-ar-faG">
                             <rect key="frame" x="0.0" y="64" width="375" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fSR-Ne-J0Z">
+                            <rect key="frame" x="0.0" y="249" width="375" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
@@ -455,7 +446,7 @@
             </objects>
             <point key="canvasLocation" x="754.5" y="332.5"/>
         </scene>
-        <!--Private Chats-->
+        <!--Private Chat-->
         <scene sceneID="baC-cY-4ZB">
             <objects>
                 <tableViewController id="aOj-bu-MVF" customClass="PrivateChatTableViewController" customModule="TravChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -507,7 +498,7 @@
                             <outlet property="delegate" destination="aOj-bu-MVF" id="nPQ-fe-uw9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Private Chats" id="pPn-gY-Gpj"/>
+                    <navigationItem key="navigationItem" title="Private Chat" id="pPn-gY-Gpj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yv3-CK-zXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -792,7 +783,7 @@
         <image name="rightArrow" width="156" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CGQ-Nl-u2H"/>
+        <segue reference="Fqc-eA-vuY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

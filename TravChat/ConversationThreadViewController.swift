@@ -14,6 +14,8 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     var thread: Thread?
     var messages: [Message] = []
     var keyboardShown = false
+    var selectedUser: UserInformation?
+    var newPrivateChat: Thread?
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var conversationTableView: UITableView!
@@ -93,7 +95,6 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     @IBAction func nameTapped(sender: AnyObject) {
         presentAlertController()
-        
     }
     
     @IBAction func sendButtonTapped(sender: AnyObject) {
@@ -152,9 +153,12 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     }
     
     func presentAlertController() {
-        let actionSheet = UIAlertController(title: "\(UserInformation.displayNameKey)", message: "What would you like to do?", preferredStyle: .ActionSheet)
+        let actionSheet = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .ActionSheet)
         let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default) { (_) in
-            self.performSegueWithIdentifier("threadToPrivateChat", sender: self)
+            if let selectedUser = self.selectedUser, currentUser = UserController.sharedController.currentUser {
+                self.newPrivateChat = ThreadController.sharedController.createOneToOneChat([selectedUser, currentUser])
+                self.performSegueWithIdentifier("threadToPrivateChat", sender: self)
+            }
         }
         let reportAction = UIAlertAction(title: "Report", style: .Destructive, handler: nil) // Add code in the handler to set button functionalility
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -169,7 +173,10 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     // MARK: - ConversationTableViewCellDelegates -
     
     func messageCell(cell: ConversationThreadTableViewCell) {
-        print(conversationTableView.indexPathForCell(cell))
+        if let indexPath = conversationTableView.indexPathForCell(cell), let user = messages[indexPath.row].user {
+            selectedUser = user
+        }
+        
         presentAlertController()
     }
     
@@ -181,8 +188,9 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "threadToPrivateChat", let indexPath = conversationTableView.indexPathForSelectedRow, privateChatTVC = segue.destinationViewController as? PrivateChatTableViewController {
-            if let user = messages[indexPath.row].user {
+            if let user = messages[indexPath.row].user, privateChat = newPrivateChat {
                 privateChatTVC.user = user
+                privateChatTVC.thread = privateChat
             }
         }
     }

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/ConversationThreadViewController.swift"
-            timestampString = "490919842.395719"
+            timestampString = "491164792.295285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "sendButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/ConversationThreadViewController.swift"
-            timestampString = "490919842.395719"
+            timestampString = "491164792.295285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "sendButtonTapped(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Thread Controller.swift"
-            timestampString = "490919842.395719"
+            timestampString = "491164792.295285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "addMessageToThread(_:user:thread:displayName:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490919842.395719"
+            timestampString = "491171904.342863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -90,45 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490919842.395719"
+            timestampString = "491171904.342863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
             landmarkName = "sendButtonTapped(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravChat.PrivateChatConversationThreadViewController.sendButtonTapped (Swift.AnyObject) -&gt; ()"
-                  moduleName = "TravChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490912650.09349"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "30">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravChat.PrivateChatConversationThreadViewController.sendButtonTapped (Swift.AnyObject) -&gt; ()"
-                  moduleName = "TravChat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490912650.093676"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490919842.395719"
+            timestampString = "491171904.342863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -154,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490919842.395719"
+            timestampString = "491171904.342863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -170,12 +138,12 @@
                   moduleName = "TravChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490912650.095242"
+                  timestampString = "491171905.40695"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1090">
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1133">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -185,30 +153,14 @@
                   moduleName = "TravChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tylerjrobinson/Desktop/DevMountain/Projects/TravChat/TravChat/PrivateChatConversationThreadViewController.swift"
-                  timestampString = "490912650.095369"
+                  timestampString = "491171905.407073"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1126">
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1346">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravChat/PrivateChatConversationThreadViewController.swift"
-            timestampString = "490919842.395719"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "sendButtonTapped(_:)"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

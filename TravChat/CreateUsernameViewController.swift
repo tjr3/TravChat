@@ -26,7 +26,6 @@ class createUsernameViewController: UIViewController {
     
     @IBOutlet weak var beginChattingButton: UIButton!
     
-    
     // MARK: - Method Signatures -
     
     override func viewDidLoad() {
@@ -64,7 +63,7 @@ class createUsernameViewController: UIViewController {
     }
     
     
-    // MARK: - Action Button -
+    // MARK: - Action Buttons -
     
     @IBAction func createButtonTapped(sender: AnyObject) {
         
@@ -76,6 +75,7 @@ class createUsernameViewController: UIViewController {
         
         UserController.sharedController.saveContext()
     }
+    
     @IBAction func dismissKeyboardOnTouch(sender: AnyObject) {
         firstNameTextField.resignFirstResponder()
     }

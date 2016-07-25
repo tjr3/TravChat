@@ -546,7 +546,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGg-b0-5fH">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGg-b0-5fH">
                                                 <rect key="frame" x="326" y="3" width="42" height="34"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -736,8 +736,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="oPc-gW-Y8p" id="XEQ-Tn-YPg"/>
-                        <outlet property="nPCMessageTextView" destination="WMK-yb-fke" id="VUQ-ma-8WF"/>
                         <outlet property="pcConversationTableView" destination="gRa-qx-Dxk" id="Ytw-fh-GGV"/>
+                        <outlet property="pcMessageTextView" destination="WMK-yb-fke" id="SSH-Ae-NK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xhx-K0-jvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -792,7 +792,7 @@
         <image name="rightArrow" width="156" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fqc-eA-vuY"/>
+        <segue reference="CGQ-Nl-u2H"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

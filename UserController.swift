@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import CloudKit
 
 class UserController {
     
@@ -32,15 +31,16 @@ class UserController {
     }
     
     // MARK: - Method Signatures -
-    
+   
     func createUser(displayName: String) {
         
+         // CoreData Records
         let newUser = UserInformation(displayName: displayName, context: Stack.sharedStack.managedObjectContext)
         saveContext()
         
         if let displayNameRecord = newUser.cloudKitRecord {
             
-            
+            // CloudKit Record
             cloudKitManager.saveRecord(displayNameRecord, completion: { (record, error) in
                 if let record = record {
                     newUser.update(record)
@@ -92,7 +92,6 @@ class UserController {
         let results = (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(fetchRequest)) as? [CloudKitManagedObject] ?? []
         return results
     }
-    
     
     func performFullSync(completion: (() -> Void)? = nil) {
         
@@ -154,6 +153,7 @@ class UserController {
         }
     }
     
+    // MARK: Pushing changes to CloudKit
     
     func pushChangesToCloudKit(completion: ((success: Bool, error: NSError?) -> Void)?) {
         
@@ -179,10 +179,10 @@ class UserController {
         }
     }
     
-    
     // MARK: - Save Context -
     
     func saveContext() {
+        
         do {
             try Stack.sharedStack.managedObjectContext.save()
         } catch {

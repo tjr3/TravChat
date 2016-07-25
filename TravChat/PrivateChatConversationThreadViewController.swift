@@ -11,7 +11,7 @@ import QuartzCore
 
 class PrivateChatConversationThreadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ConversationTableViewCellDelegate, SenderConversationThreadCellDelegate {
     
-    var conversationUser: UserInformation?
+    var user: UserInformation?
     var messages: [Message] = []
     var thread: Thread?
     var keyboardShown = false
@@ -26,7 +26,7 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         
         dynamicTableViewCellHeight()
         
-        guard let user = conversationUser else { return }
+        guard let user = user else { return }
         self.title = user.displayName
         
         for message in (thread?.messages)! {
@@ -89,7 +89,7 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
             let message = pcMessageTextView.text where message.characters.count > 0 {
             if let thread = thread,
                 let displayName = user.displayName {
-                ThreadController.sharedController.addMessageToThread(message, thread: thread, displayName: displayName, completion: { (message) in
+                ThreadController.sharedController.addMessageToThread(message, user: user, thread: thread, displayName: displayName, completion: { (message) in
                     self.messages.append(message)
                     self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
                     self.pcConversationTableView.reloadData()

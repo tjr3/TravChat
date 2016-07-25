@@ -147,7 +147,6 @@ class ThreadController {
         saveContext()
     }
     
-    
     func addMessageToThread(message: String, user: UserInformation, thread: Thread, displayName: String, completion: ((message: Message) -> Void)?) { // takes in message and thread, refer Timeline
         
         let message = Message(thread: thread, message: message, displayName: displayName, user: user)

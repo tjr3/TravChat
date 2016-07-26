@@ -26,15 +26,15 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         
         dynamicTableViewCellHeight()
         
-//        guard let user = user else { return }
-//        self.title = user.displayName
-        
+        if let user = user {
+            self.title = user.displayName
+        }
         for message in (thread?.messages)! {
             messages.append(message as! Message)
         }
         
         self.messages.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
-       
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow), name:UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide), name:UIKeyboardWillHideNotification, object: nil)
         
@@ -42,7 +42,7 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     }
     
     // MARK: - Keyboard/TextView -
-
+    
     func keyboardWillShow(sender: NSNotification) {
         if !keyboardShown {
             if let keyboardSize = (sender.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
@@ -70,10 +70,16 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     // MARK: - Table view positioning -
     
     func scrollToBottomOfTableView() {
+        guard pcConversationTableView.numberOfSections > 0 else {
+            return
+        }
         let numberOfSections = pcConversationTableView.numberOfSections
         let numberOfRows = pcConversationTableView.numberOfRowsInSection(numberOfSections-1)
         
         let indexPath = NSIndexPath(forRow: numberOfRows - 1, inSection: numberOfSections - 1)
+        guard indexPath.row >= 0 else {
+            return
+        }
         pcConversationTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
     }
     
@@ -138,8 +144,8 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         }
     }
     
-   
-    // MARK: - PrivateConversationTableViewCellDelegates - 
+    
+    // MARK: - PrivateConversationTableViewCellDelegates -
     
     func messageCell(cell: ConversationThreadTableViewCell) {
         print(pcConversationTableView.indexPathForCell(cell))
@@ -148,5 +154,5 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     func senderCell(cell: SenderConversationThreadCell) {
         print(pcConversationTableView.indexPathForCell(cell))
     }
-
+    
 }

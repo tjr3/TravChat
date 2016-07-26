@@ -71,7 +71,12 @@ class PrivateChatTableViewController: UITableViewController {
         if segue.identifier == "toPrivateChatSegue" {
             let privateThreadVC = segue.destinationViewController as? PrivateChatConversationThreadViewController
             if let selectedIndexPath = self.tableView.indexPathForSelectedRow?.row {
-                if let pcThread = ThreadController.sharedController.oneToOneThreads?[selectedIndexPath], let messages = pcThread.messages?.allObjects as? [Message] {
+                if let pcThread = ThreadController.sharedController.oneToOneThreads?[selectedIndexPath], let messages = pcThread.messages?.allObjects as? [Message], let usersSet = pcThread.userInformations, let currentUser = UserController.sharedController.currentUser, let users = usersSet.allObjects as? [UserInformation] {
+                    let user = users.filter { $0 != currentUser }.first
+                    if let user = user {
+                        privateThreadVC?.user = user
+                    }
+                    print(currentUser)
                     privateThreadVC?.messages = messages
                     privateThreadVC?.thread = pcThread
                 }

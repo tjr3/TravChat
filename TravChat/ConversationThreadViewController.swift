@@ -187,7 +187,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "threadToPrivateChat", let indexPath = conversationTableView.indexPathForSelectedRow, privateChatTVC = segue.destinationViewController as? PrivateChatTableViewController {
+        if segue.identifier == "threadToPrivateChat", let indexPath = conversationTableView.indexPathForSelectedRow, privateChatTVC = segue.destinationViewController as? PrivateChatConversationThreadViewController {
             if let user = messages[indexPath.row].user, privateChat = newPrivateChat {
                 privateChatTVC.user = user
                 privateChatTVC.thread = privateChat

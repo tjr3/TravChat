@@ -106,10 +106,12 @@ class ThreadController {
     // MARK: - Method Signatures -
     
     func createOneToOneChat(users: [UserInformation]) -> Thread? {
-        if let currentUser = UserController.sharedController.currentUser {
+        if let currentUser = UserController.sharedController.currentUser{
             var threadName = "\(currentUser.displayName)"
             for user in users {
-                threadName += ", \(user.displayName)"
+                if let displayName = user.displayName {
+                    threadName += ", \(displayName)"
+                }
             }
             
             let oneToOneThread = Thread(message: NSSet(), name: threadName, oneToOne: true, userInformation: NSSet(array: users))

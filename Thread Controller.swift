@@ -110,7 +110,7 @@ class ThreadController {
             var threadName = "\(currentUser.displayName)"
             for user in users {
                 if let displayName = user.displayName {
-                    threadName += ", \(displayName)"
+                    threadName += "\(displayName)"
                 }
             }
             

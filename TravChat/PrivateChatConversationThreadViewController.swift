@@ -87,7 +87,7 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
     @IBAction func sendButtonTapped(sender: AnyObject) {
         if let user = UserController.sharedController.currentUser,
             let message = pcMessageTextView.text where message.characters.count > 0 {
-            if let thread = ThreadController.sharedController.createOneToOneChat([user]),
+            if let thread = thread,
                 let displayName = user.displayName {
                 ThreadController.sharedController.addMessageToThread(message, user: user, thread: thread, displayName: displayName, completion: { (message) in
                     self.messages.append(message)

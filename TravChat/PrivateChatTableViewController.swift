@@ -73,6 +73,7 @@ class PrivateChatTableViewController: UITableViewController {
             if let selectedIndexPath = self.tableView.indexPathForSelectedRow?.row {
                 if let pcThread = ThreadController.sharedController.oneToOneThreads?[selectedIndexPath], let messages = pcThread.messages?.allObjects as? [Message] {
                     privateThreadVC?.messages = messages
+                    privateThreadVC?.thread = pcThread
                 }
             }
         }

@@ -472,7 +472,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1x-Re-nLg">
                                             <rect key="frame" x="8" y="10" width="324" height="40"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -576,7 +576,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRa-qx-Dxk" userLabel="Private Conversation Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gRa-qx-Dxk" userLabel="Private Conversation Table View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -701,8 +701,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cuDisplayNameLabel" destination="hRf-ky-Xv8" id="cX0-rn-Rqq"/>
-                                            <outlet property="cuMessageLabel" destination="bCv-rW-cS2" id="rqk-wu-FiI"/>
+                                            <outlet property="cuDisplayNameLabel" destination="hRf-ky-Xv8" id="3dr-I3-1lc"/>
+                                            <outlet property="cuMessageLabel" destination="bCv-rW-cS2" id="lLn-y5-wvj"/>
+                                            <outlet property="cuTimeLabel" destination="KaD-Ai-EEu" id="OkS-Uk-acx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

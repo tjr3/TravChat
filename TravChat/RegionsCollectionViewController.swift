@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class RegionsCollectionViewController: UICollectionViewController, PerformRegionSegueDelegate {
+class RegionsCollectionViewController: UICollectionViewController, PerformRegionSegueDelegate, UICollectionViewDelegateFlowLayout {
     
     let imageDictionary = ["Africa": UIImage(named: "Africa")!, "Asia": UIImage(named: "Asia")!, "Australia": UIImage(named: "Australia")!, "Europe": UIImage(named: "Europe")!, "North America": UIImage(named: "NorthAmerica")!, "South America": UIImage(named: "SouthAmerica")!]
     
@@ -31,7 +31,16 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
         }
     }
     
-//    -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+    // MARK: - Dynamic cell size - 
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSizeMake(self.view.frame.width, 8)
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(self.view.frame.width/2 - 10, self.view.frame.width/2 - 10)
+    }
    
     
     // MARK: - Navigation
@@ -75,13 +84,18 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
             print("Could not convert to desired cell type")
             return UICollectionViewCell()
         }
+        
+        if indexPath.row == 2 {
+            cell.updateWithButtonImage(image, name: region.name, fontSize: 27)
+        } else {
+            cell.updateWithButtonImage(image, name: region.name, fontSize: 30)
+        }
 
         print("Current Region's Image = \(region.image) @ index: \(indexPath.row)")
         print("Current Region's Name = \(region.name) @ index: \(indexPath.row)")
         
         cell.regionSegueDelegate = self
         
-        cell.updateWithButtonImage(image, name: region.name)
         
         return cell
     }

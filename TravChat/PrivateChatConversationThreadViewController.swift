@@ -26,8 +26,8 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         
         dynamicTableViewCellHeight()
         
-        guard let user = user else { return }
-        self.title = user.displayName
+//        guard let user = user else { return }
+//        self.title = user.displayName
         
         for message in (thread?.messages)! {
             messages.append(message as! Message)

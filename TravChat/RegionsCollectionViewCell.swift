@@ -24,12 +24,14 @@ class RegionsCollectionViewCell: UICollectionViewCell {
         regionSegueDelegate?.performRegionSegue(self)
     }
     
-    func updateWithButtonImage(image: UIImage, name: String) {
+    func updateWithButtonImage(image: UIImage, name: String, fontSize: CGFloat) {
         self.name = name
-        regionButton.setBackgroundImage(image, forState: .Normal)
         let style = NSMutableParagraphStyle()
         style.alignment = NSTextAlignment.Center
-        let attributedString = NSAttributedString(string: name, attributes: [ NSForegroundColorAttributeName: UIColor.blackColor(), NSParagraphStyleAttributeName: style ])
+        let attributedString = NSAttributedString(string: name, attributes: [NSFontAttributeName: UIFont(name: "CourierNewPSMT", size: fontSize)!, NSForegroundColorAttributeName: UIColor.blackColor(), NSParagraphStyleAttributeName: style ])
+        regionButton.setAttributedTitle(attributedString, forState: .Normal)
+        regionButton.setBackgroundImage(image, forState: .Normal)
+        
         regionButton.setAttributedTitle(attributedString, forState: .Normal)
     }
 }

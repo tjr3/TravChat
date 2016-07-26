@@ -223,8 +223,8 @@
 		CE2615031D2487F1001098BF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEAC77121D2DBF1B0064BDA1 /* Regions.swift */,
 				CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */,
+				CEAC77121D2DBF1B0064BDA1 /* Regions.swift */,
 				CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */,
 				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
 				CE68EDF01D3EA1C5006D18CB /* RegionThread */,
@@ -586,24 +586,26 @@
 		CE2614ED1D24403F001098BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = TravChat/TravChat.entitlements;
 				INFOPLIST_FILE = TravChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CE2614EE1D24403F001098BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = TravChat/TravChat.entitlements;
 				INFOPLIST_FILE = TravChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bottomlinecode.TravChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

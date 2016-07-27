@@ -32,6 +32,10 @@ class PrivateChatTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
 //    func filterTableView() {
 //        if let user = UserInformation {
 //            let userArray = user as? [UserInformation] ?? {

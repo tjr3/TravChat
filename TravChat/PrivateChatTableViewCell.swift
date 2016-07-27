@@ -27,6 +27,8 @@ class PrivateChatTableViewCell: UITableViewCell {
     }
     
     func updateWith(thread: Thread) {
-        displayNameLabel.text = thread.name!
+        if let name = thread.name {
+            displayNameLabel.text = name
+        }
     }
 }

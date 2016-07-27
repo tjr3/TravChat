@@ -62,6 +62,16 @@ class ThreadController {
     
     //MARK: - Threads -
     
+    let tlarUser = UserInformation(displayName: "TLARbot")
+    let rMackayUser = UserInformation(displayName: "RmackayAllDay")
+    let shelbyUser  = UserInformation(displayName: "ShelbyFlen")
+    let jWebbUser = UserInformation(displayName: "JWebb")
+    let jCentsUser = UserInformation(displayName: "J_CENTS")
+    let prodgUser = UserInformation(displayName: "PRodg")
+    let bobUser = UserInformation(displayName: "Bob")
+    let steveUser = UserInformation(displayName: "Steve0")
+    let kojackUser = UserInformation(displayName: "Kojack")
+    
     func createRegions() {
         if self.threads.count == 0 {
             self.africa = Thread(name: "Africa")
@@ -71,18 +81,13 @@ class ThreadController {
             self.northAmerica = Thread(name: "North America")
             self.southAmerica = Thread(name: "South America")
             
-            guard let currentUser = UserController.sharedController.currentUser else {
+            guard UserController.sharedController.currentUser != nil else {
                 return
             }
             
             // TODO: MockData - Delete when no longer needed.
             
-            let tlarUser = UserInformation(displayName: "TLARbot")
-            let rMackayUser = UserInformation(displayName: "RmackayAllDay")
-            let shelbyUser  = UserInformation(displayName: "ShelbyFlen")
-            let jWebbUser = UserInformation(displayName: "JWebb")
-            let jCentsUser = UserInformation(displayName: "J_CENTS")
-            let prodgUser = UserInformation(displayName: "PRodg")
+           
             
             addMessageToThread("Sendia is Amazing", user: tlarUser, thread: self.asia, displayName: "TLARbot", completion: nil)
             addMessageToThread("Ghana", user: rMackayUser, thread: self.africa, displayName: "RmackayAllDay", completion: nil)
@@ -100,26 +105,31 @@ class ThreadController {
         let bob = Thread.init(name: "Bob", oneToOne: true)
         let kojack = Thread.init(name: "Kojack", oneToOne: true)
         
-        guard let currentUser = UserController.sharedController.currentUser else {
+        guard UserController.sharedController.currentUser != nil else {
             return
         }
         
-        addMessageToThread("If you go to Amsterdam, dont go to the red light district", user: currentUser, thread: JCents, displayName: "JCents", completion: nil)
-        addMessageToThread("Go to Cafe Du Monde in NOLA", user: currentUser, thread: bob, displayName: "Bob", completion: nil)
-        addMessageToThread("Get the beignets!", user: currentUser, thread: bob, displayName: "Bob", completion: nil)
-        addMessageToThread("The Raiders Cafe in Oakland is dank!", user: currentUser, thread: steve, displayName: "SteveO", completion: nil)
-        addMessageToThread("Big ben is overrated, go to the Camden Markets", user: currentUser, thread: kojack, displayName: "Kojack", completion: nil)
+        addMessageToThread("If you go to Amsterdam, dont go to the red light district", user: jCentsUser, thread: JCents, displayName: "JCents", completion: nil)
+        addMessageToThread("Go to Cafe Du Monde in NOLA", user: bobUser, thread: bob, displayName: "Bob", completion: nil)
+        addMessageToThread("Get the beignets!", user: bobUser, thread: bob, displayName: "Bob", completion: nil)
+        addMessageToThread("The Raiders Cafe in Oakland is dank!", user: steveUser, thread: steve, displayName: "SteveO", completion: nil)
+        addMessageToThread("Big ben is overrated, go to the Camden Markets", user: kojackUser, thread: kojack, displayName: "Kojack", completion: nil)
     }
     
     // MARK: - Method Signatures -
     
-//    func checkOneToOneThread(selectedUser: , currentUser: UserController.sharedController.currentUser) {
-//        
-//        
-//        
-//        
-//        
-//    }
+    func checkOneToOneThread(selectedUser: UserInformation, currentUser: UserInformation) -> Thread? {
+        
+        for thread in currentUser.thread! {
+            
+            guard let thread = thread as? Thread else { fatalError() }
+            if ((selectedUser.thread?.containsObject(thread)) != nil) {
+                return thread
+            }
+        }
+        
+        return createOneToOneChat([selectedUser])
+    }
     
     func createOneToOneChat(users: [UserInformation]) -> Thread? {
         if let currentUser = UserController.sharedController.currentUser{

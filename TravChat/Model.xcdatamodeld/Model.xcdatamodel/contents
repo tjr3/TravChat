@@ -15,15 +15,16 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="oneToOne" attributeType="Boolean" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Message" inverseName="thread" inverseEntity="Message" syncable="YES"/>
-        <relationship name="userInformations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserInformation" syncable="YES"/>
+        <relationship name="userInformations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserInformation" inverseName="thread" inverseEntity="UserInformation" syncable="YES"/>
     </entity>
     <entity name="UserInformation" representedClassName=".UserInformation" parentEntity="SyncableObject" syncable="YES">
         <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="thread" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Thread" inverseName="userInformations" inverseEntity="Thread" syncable="YES"/>
     </entity>
     <elements>
         <element name="Message" positionX="394" positionY="-193" width="128" height="105"/>
         <element name="SyncableObject" positionX="-72" positionY="90" width="128" height="90"/>
         <element name="Thread" positionX="-90" positionY="-153" width="128" height="105"/>
-        <element name="UserInformation" positionX="259" positionY="-18" width="128" height="60"/>
+        <element name="UserInformation" positionX="259" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

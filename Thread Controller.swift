@@ -38,7 +38,9 @@ class ThreadController {
     var oneToOneThreads: [Thread]? {
         let request = NSFetchRequest(entityName: "Thread")
         let predicate = NSPredicate(format: "oneToOne == 1")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         request.predicate = predicate
+        request.sortDescriptors = [sortDescriptor]
         
         return try! Stack.sharedStack.managedObjectContext.executeFetchRequest(request) as? [Thread] ?? nil
         
@@ -87,8 +89,6 @@ class ThreadController {
             
             // TODO: MockData - Delete when no longer needed.
             
-           
-            
             addMessageToThread("Sendia is Amazing", user: tlarUser, thread: self.asia, displayName: "TLARbot", completion: nil)
             addMessageToThread("Ghana", user: rMackayUser, thread: self.africa, displayName: "RmackayAllDay", completion: nil)
             addMessageToThread("Brisbane", user: shelbyUser, thread: self.australia, displayName: "ShelbyFlen", completion: nil)
@@ -119,7 +119,6 @@ class ThreadController {
     // MARK: - Method Signatures -
     
     func checkOneToOneThread(selectedUser: UserInformation, currentUser: UserInformation) -> Thread? {
-        
         for thread in currentUser.thread! {
             
             guard let thread = thread as? Thread else { fatalError() }

@@ -36,14 +36,6 @@ class PrivateChatTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-//    func filterTableView() {
-//        if let user = UserInformation {
-//            let userArray = user as? [UserInformation] ?? {
-//                userArray?.sort() { $0.displayName > $1.displayName}
-//                tableView.reloadData()
-//            }
-//        }
-//    }
     
     // MARK: - Table view data source
     
@@ -60,7 +52,6 @@ class PrivateChatTableViewController: UITableViewController {
         
         return cell ?? UITableViewCell()
     }
-    
     
     // MARK: - Navigation
     

@@ -76,12 +76,20 @@ class ThreadController {
             }
             
             // TODO: MockData - Delete when no longer needed.
-            addMessageToThread("Sendia is Amazing", user: currentUser, thread: self.asia, displayName: "TLARbot", completion: nil)
-            addMessageToThread("Ghana", user: currentUser, thread: self.africa, displayName: "RmackayAllDay", completion: nil)
-            addMessageToThread("Brisbane", user: currentUser, thread: self.australia, displayName: "ShelbyFlen", completion: nil)
-            addMessageToThread("Genoa", user: currentUser, thread: self.europe, displayName: "JWebb", completion: nil)
-            addMessageToThread("Lake Powell!! ", user: currentUser, thread: self.northAmerica, displayName: "J_CENTS", completion: nil)
-            addMessageToThread("Bolivia", user: currentUser, thread: self.southAmerica, displayName: "Prodg", completion: nil)
+            
+            let tlarUser = UserInformation(displayName: "TLARbot")
+            let rMackayUser = UserInformation(displayName: "RmackayAllDay")
+            let shelbyUser  = UserInformation(displayName: "ShelbyFlen")
+            let jWebbUser = UserInformation(displayName: "JWebb")
+            let jCentsUser = UserInformation(displayName: "J_CENTS")
+            let prodgUser = UserInformation(displayName: "PRodg")
+            
+            addMessageToThread("Sendia is Amazing", user: tlarUser, thread: self.asia, displayName: "TLARbot", completion: nil)
+            addMessageToThread("Ghana", user: rMackayUser, thread: self.africa, displayName: "RmackayAllDay", completion: nil)
+            addMessageToThread("Brisbane", user: shelbyUser, thread: self.australia, displayName: "ShelbyFlen", completion: nil)
+            addMessageToThread("Genoa", user: jWebbUser, thread: self.europe, displayName: "JWebb", completion: nil)
+            addMessageToThread("Lake Powell!! ", user: jCentsUser, thread: self.northAmerica, displayName: "J_CENTS", completion: nil)
+            addMessageToThread("Bolivia", user: prodgUser, thread: self.southAmerica, displayName: "PRodg", completion: nil)
             saveContext()
         }
     }
@@ -104,6 +112,14 @@ class ThreadController {
     }
     
     // MARK: - Method Signatures -
+    
+//    func checkOneToOneThread(selectedUser: , currentUser: UserController.sharedController.currentUser) {
+//        
+//        
+//        
+//        
+//        
+//    }
     
     func createOneToOneChat(users: [UserInformation]) -> Thread? {
         if let currentUser = UserController.sharedController.currentUser{

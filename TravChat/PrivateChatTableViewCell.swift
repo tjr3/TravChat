@@ -28,7 +28,5 @@ class PrivateChatTableViewCell: UITableViewCell {
     
     func updateWith(thread: Thread) {
         displayNameLabel.text = thread.name!
-        
     }
-
 }

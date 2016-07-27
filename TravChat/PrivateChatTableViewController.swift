@@ -17,8 +17,6 @@ class PrivateChatTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        
-        //        self.users.sortInPlace { $0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970 }
     }
     
     func configureView() {
@@ -33,6 +31,15 @@ class PrivateChatTableViewController: UITableViewController {
             navigationController?.navigationBar.titleTextAttributes = altributeDict
         }
     }
+    
+//    func filterTableView() {
+//        if let user = UserInformation {
+//            let userArray = user as? [UserInformation] ?? {
+//                userArray?.sort() { $0.displayName > $1.displayName}
+//                tableView.reloadData()
+//            }
+//        }
+//    }
     
     // MARK: - Table view data source
     
@@ -49,19 +56,6 @@ class PrivateChatTableViewController: UITableViewController {
         
         return cell ?? UITableViewCell()
     }
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
     
     
     // MARK: - Navigation

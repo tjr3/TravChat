@@ -29,6 +29,7 @@ class PrivateChatConversationThreadViewController: UIViewController, UITableView
         if let user = user {
             self.title = user.displayName
         }
+        
         for message in (thread?.messages)! {
             messages.append(message as! Message)
         }

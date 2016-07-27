@@ -156,6 +156,7 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         let actionSheet = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .ActionSheet)
         let directMessageAction = UIAlertAction(title: "Direct Message", style: .Default) { (_) in
             if let selectedUser = self.selectedUser, currentUser = UserController.sharedController.currentUser {
+                
                 self.newPrivateChat = ThreadController.sharedController.createOneToOneChat([selectedUser, currentUser])
                 self.performSegueWithIdentifier("threadToPrivateChat", sender: self)
             }
@@ -187,10 +188,12 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "threadToPrivateChat", let indexPath = conversationTableView.indexPathForSelectedRow, privateChatTVC = segue.destinationViewController as? PrivateChatConversationThreadViewController {
-            if let user = messages[indexPath.row].user, privateChat = newPrivateChat {
-                privateChatTVC.user = user
-                privateChatTVC.thread = privateChat
+        if segue.identifier == "threadToPrivateChat" {
+            if let privateChatTVC = segue.destinationViewController as? PrivateChatConversationThreadViewController {
+                if let selectedUser = self.selectedUser, privateChat = newPrivateChat {
+                    privateChatTVC.user = selectedUser
+                    privateChatTVC.thread = privateChat
+                }
             }
         }
     }

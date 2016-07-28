@@ -18,30 +18,36 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
         super.viewDidLoad()
         
         configureView()
+        
     }
         
     func configureView() {
+        
         if let navBarFont = UIFont(name: "PingFangHK-Thin", size: 28.0) {
             let navBarAttributesDictionary: [NSObject: AnyObject]? = [
                 NSForegroundColorAttributeName: UIColor.blackColor(),
                 NSFontAttributeName: navBarFont
             ]
-            guard let attributeDict = navBarAttributesDictionary as? [String: AnyObject] else { return }
-            navigationController?.navigationBar.titleTextAttributes = attributeDict
+            
+            guard let altributeDict = navBarAttributesDictionary as? [String: AnyObject] else { return }
+            navigationController?.navigationBar.titleTextAttributes = altributeDict
+            
+            self.parentViewController?.tabBarItem.image = UIImage(named: "Grid")?.imageWithRenderingMode(.Automatic)
+            self.parentViewController?.tabBarItem.selectedImage = UIImage(named: "Grid")?.imageWithRenderingMode(.AlwaysOriginal)
         }
     }
+
     
-    // MARK: - Dynamic cell size - 
+    // MARK: - Dynamic cell size -
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSizeMake(self.view.frame.width, 8)
-        
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSizeMake(self.view.frame.width/2 - 10, self.view.frame.width/2 - 10)
     }
-   
+
     
     // MARK: - Navigation
     
@@ -69,7 +75,6 @@ class RegionsCollectionViewController: UICollectionViewController, PerformRegion
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-    
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

@@ -423,7 +423,13 @@
         <scene sceneID="eB9-1c-Su1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rFA-kK-HBC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Regions" image="Grid" id="Dyp-mr-Flq"/>
+                    <tabBarItem key="tabBarItem" title="Regions" image="Grid" id="Dyp-mr-Flq">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4XA-P1-cse">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -434,6 +440,7 @@
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="esm-wn-yd1">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <outlet property="delegate" destination="rFA-kK-HBC" id="A1t-N6-hYj"/>
                         </connections>
@@ -460,7 +467,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZQ7-KE-0m1" id="Id4-xE-Yoh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="vcv-Dz-emr">
@@ -576,7 +583,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SPI-OG-B9U" id="1iH-kw-i24">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3TH-gB-cSw">
@@ -639,7 +646,7 @@
                                         <rect key="frame" x="0.0" y="103" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mJa-iH-SzY" id="BTx-0C-Btb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-p0-wvI">
@@ -734,7 +741,8 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="RuJ-tk-Bb7">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
@@ -750,7 +758,13 @@
         <scene sceneID="Zjd-rV-vDv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uUe-gm-WdL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Private Chat" image="Chat" id="BeH-xb-yS2"/>
+                    <tabBarItem key="tabBarItem" title="Private Chat" image="Chat" id="BeH-xb-yS2">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BIP-f6-rGS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -769,8 +783,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Chat" width="24" height="22"/>
-        <image name="Grid" width="22" height="22"/>
+        <image name="Chat" width="24" height="24"/>
+        <image name="Grid" width="25" height="25"/>
         <image name="Logo" width="642" height="664"/>
         <image name="rightArrow" width="156" height="156"/>
     </resources>

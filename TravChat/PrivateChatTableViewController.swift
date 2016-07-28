@@ -29,6 +29,9 @@ class PrivateChatTableViewController: UITableViewController {
             
             guard let altributeDict = navBarAttributesDicitonary as? [String: AnyObject] else { return }
             navigationController?.navigationBar.titleTextAttributes = altributeDict
+            
+            self.parentViewController?.tabBarItem.image = UIImage(named: "Chat")?.imageWithRenderingMode(.Automatic)
+            self.parentViewController?.tabBarItem.selectedImage = UIImage(named: "Chat")?.imageWithRenderingMode(.AlwaysOriginal)
         }
     }
     
@@ -42,7 +45,6 @@ class PrivateChatTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ThreadController.sharedController.oneToOneThreads?.count ?? 0
     }
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("privateChatCell", forIndexPath: indexPath) as? PrivateChatTableViewCell

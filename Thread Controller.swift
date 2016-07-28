@@ -75,6 +75,7 @@ class ThreadController {
     let kojackUser = UserInformation(displayName: "Kojack")
     
     func createRegions() {
+        
         if self.threads.count == 0 {
             self.africa = Thread(name: "Africa")
             self.asia = Thread(name: "Asia")
@@ -86,6 +87,10 @@ class ThreadController {
             guard UserController.sharedController.currentUser != nil else {
                 return
             }
+            
+            self.subscribeToThreads({ (success, error) in
+                print(success)
+            })
             
             // TODO: MockData - Delete when no longer needed.
             
@@ -312,6 +317,60 @@ class ThreadController {
             if let completion = completion {
                 
                 let success = records != nil
+                completion(success: success, error: error)
+            }
+        }
+    }
+    
+    // MARK: - Subcriptions -
+    
+    func subscribeToThreads(completion: ((success: Bool, error: NSError?) -> Void)?) {
+        let predicate = NSPredicate(value: true)
+        
+        cloudKitManager.subscribe(Thread.typeKey, predicate: predicate, subscriptionID: "allThreads", contentAvailable: true, options: .FiresOnRecordCreation) { (subscription, error) in
+            
+            if let completion = completion {
+                
+                let success = subscription != nil
+                completion(success: success, error: error)
+            }
+        }
+    }
+    
+    func checkSubscriptionToThreadMessages(thread: Thread, completion: ((subscribed: Bool) -> Void)?) {
+        
+        cloudKitManager.fetchSubscription(thread.recordName) { (subscription, error) in
+            if let completion = completion {
+                
+                let subscribed = subscription != nil
+                completion(subscribed: subscribed)
+            }
+        }
+    }
+    
+    func addSubscriptionToThreadMessages(thread: Thread, alertBody: String?, completion: ((success: Bool, error: NSError?) -> Void)?) {
+        
+        guard let recordID = thread.cloudKitRecordID else { fatalError("Uable to create CloudKit reference for subscription.") }
+        
+        let predicate = NSPredicate(format: "thread == %@", argumentArray: [recordID])
+        
+        cloudKitManager.subscribe(Message.typeKey, predicate: predicate, subscriptionID: thread.recordName, contentAvailable: true, alertBody: alertBody, desiredKeys: [Message.messageKey, Message.threadKey], options: .FiresOnRecordCreation, completion: { (subscription, error) in
+            if let completion = completion {
+                let success = subscription != nil
+                completion(success: success, error: error)
+            }
+        })
+    }
+    
+    func removeSubscriptionToThreadMessages(thread: Thread, completion: ((success: Bool, error: NSError?) -> Void)?) {
+        
+        let subscriptionID = thread.recordName
+        
+        cloudKitManager.unsubscribe(subscriptionID) { (subscriptionID, error) in
+            
+            if let completion = completion {
+                
+                let success = subscriptionID != nil && error == nil
                 completion(success: success, error: error)
             }
         }

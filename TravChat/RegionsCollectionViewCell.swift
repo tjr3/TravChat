@@ -18,10 +18,34 @@ class RegionsCollectionViewCell: UICollectionViewCell {
     
     var name: String = ""
     
+    
+    
     weak var regionSegueDelegate: PerformRegionSegueDelegate?
     
     @IBAction func regionButtonTapped() {
-        regionSegueDelegate?.performRegionSegue(self)
+        runAnimations { 
+            self.regionSegueDelegate?.performRegionSegue(self)
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    func runAnimations(completion: () -> Void) {
+        
+        UIView.animateWithDuration(0.1, animations: {
+            self.transform = CGAffineTransformMakeScale(0.92, 0.92)
+            
+            }, completion: { (finish) in
+                UIView.animateWithDuration(0.2, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: {
+                    self.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    
+                    }, completion: { (finish) in
+                        completion()
+                })
+        })
     }
     
     func updateWithButtonImage(image: UIImage, name: String, fontSize: CGFloat) {

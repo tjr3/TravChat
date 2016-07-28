@@ -179,6 +179,12 @@ class UserController {
         }
     }
     
+    // MARK: - Subscriptions - 
+    
+    func subscribeToNewMessages(completion: ((success: Bool, error: NSError?) -> Void)?) {
+        
+    }
+    
     // MARK: - Save Context -
     
     func saveContext() {

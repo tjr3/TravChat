@@ -55,6 +55,18 @@ class PrivateChatTableViewController: UITableViewController {
         return cell ?? UITableViewCell()
     }
     
+    // MARK: - Delete Thread -
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let thread = ThreadController.sharedController.threads[indexPath.row]
+            ThreadController.sharedController.deleteThread(thread)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+        
+        // TODO: CloudKit & CoreData Deletion
+    }
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

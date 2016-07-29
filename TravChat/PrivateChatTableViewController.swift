@@ -59,12 +59,13 @@ class PrivateChatTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let thread = ThreadController.sharedController.threads[indexPath.row]
-            ThreadController.sharedController.deleteThread(thread)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            if let threads = ThreadController.sharedController.oneToOneThreads {
+                let thread = threads[indexPath.row]
+                ThreadController.sharedController.deleteThread(thread)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
         }
-        
-        // TODO: CloudKit & CoreData Deletion
     }
     
     // MARK: - Navigation

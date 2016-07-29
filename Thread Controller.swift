@@ -171,8 +171,10 @@ class ThreadController {
     func deleteThread(thread: Thread) {
         
         if let recordID = thread.cloudKitRecordID {
+            print(recordID)
             cloudKitManager.deleteRecordWithID(recordID, completion: { (recordID, error) in
                 
+                print(recordID!)
                 if let error = error {
                     print("\(error.localizedDescription)")
                 }

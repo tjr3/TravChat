@@ -214,6 +214,7 @@
 				CE8DB2FC1D35F592003B6126 /* UserInformation+CoreDataProperties.swift */,
 				CE2615491D25B004001098BF /* SyncableObject.swift */,
 				CE26156C1D2727A8001098BF /* SyncableObject+CoreDataProperties.swift */,
+				CEAC77121D2DBF1B0064BDA1 /* Regions.swift */,
 				CE2614FF1D248768001098BF /* Stack.swift */,
 				CE2614FA1D2486FB001098BF /* Model.xcdatamodeld */,
 			);
@@ -224,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				CE8DB1C21D31E747003B6126 /* CreateUsernameViewController.swift */,
-				CEAC77121D2DBF1B0064BDA1 /* Regions.swift */,
 				CE2615011D2487EC001098BF /* RegionsCollectionViewController.swift */,
 				CEAC770D1D2DA53F0064BDA1 /* RegionsCollectionViewCell.swift */,
 				CE68EDF01D3EA1C5006D18CB /* RegionThread */,

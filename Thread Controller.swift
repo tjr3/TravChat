@@ -78,11 +78,17 @@ class ThreadController {
         
         if self.threads.count == 0 {
             self.africa = Thread(name: "Africa")
+            ThreadController.sharedController.addSubscriptionToThreadMessages(self.africa, alertBody: "", completion: nil)
             self.asia = Thread(name: "Asia")
+            ThreadController.sharedController.addSubscriptionToThreadMessages(self.asia, alertBody: "", completion: nil)
             self.australia = Thread(name: "Australia")
+            ThreadController.sharedController.addSubscriptionToThreadMessages(self.australia, alertBody: "", completion: nil)
             self.europe = Thread(name: "Europe")
+            ThreadController.sharedController.addSubscriptionToThreadMessages(self.europe, alertBody: "", completion: nil)
             self.northAmerica = Thread(name: "North America")
+            ThreadController.sharedController.addSubscriptionToThreadMessages(self.northAmerica, alertBody: "", completion: nil)
             self.southAmerica = Thread(name: "South America")
+            ThreadController.sharedController.addSubscriptionToThreadMessages(self.southAmerica, alertBody: "", completion: nil)
             
             guard UserController.sharedController.currentUser != nil else {
                 return
@@ -149,6 +155,9 @@ class ThreadController {
                     }
                 })
             }
+            
+            ThreadController.sharedController.addSubscriptionToThreadMessages(oneToOneThread, alertBody: "", completion: nil)
+            
             return oneToOneThread
         } else {
             return nil

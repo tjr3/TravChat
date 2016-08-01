@@ -49,6 +49,17 @@ class ConversationThreadViewController: UIViewController, UITableViewDelegate, U
         scrollToBottomOfTableView()
     }
     
+    // TODO: FINISH THIS WITH ALAN
+    func updateWithThread(thread: Thread) {
+        
+        ThreadController.sharedController.checkSubscriptionToThreadMessages(thread) { (subscribed) in
+            
+            dispatch_async(dispatch_get_main_queue(), {
+            
+            })
+        }
+    }
+    
     // MARK: - Keyboard/TextView -
     
     func keyboardWillShow(sender: NSNotification) {

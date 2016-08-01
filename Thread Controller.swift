@@ -60,6 +60,12 @@ class ThreadController {
         performFullSync()
         createRegions()
         createOneToOne()
+        subscribeToThreads({ (success, error) in
+            
+            if success {
+                print("Successfully subscribed to new posts.")
+            }
+        })
     }
     
     //MARK: - Threads -
@@ -386,6 +392,21 @@ class ThreadController {
             }
         }
     }
+    
+//    func subscribeForPushNotifications(completion: ((NSError?) -> Void)? = nil) {
+//        cloudKitManager.subscribe(Message.typeKey,
+//                                  subscriptionID: "MessagesSubscription",
+//                                  contentAvailable: false,
+//                                  alertBody: "Theres a new message on the bulletin board!",
+//                                  options: .FiresOnRecordCreation) { (subscription, error) in
+//                                    
+//                                    if let error = error {
+//                                        NSLog("Error saving subscription: \(error)")
+//                                    }
+//                                    completion?(error)
+//        }
+//    }
+
     
     // MARK: - Save Content -
     

@@ -37,10 +37,11 @@ class UserController {
          // CoreData Records
         let newUser = UserInformation(displayName: displayName, context: Stack.sharedStack.managedObjectContext)
         saveContext()
+       
         
+        // CloudKit Record
         if let displayNameRecord = newUser.cloudKitRecord {
             
-            // CloudKit Record
             cloudKitManager.saveRecord(displayNameRecord, completion: { (record, error) in
                 if let record = record {
                     newUser.update(record)

@@ -42,9 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         cloudKitManager.fetchRecordWithID(recordID) { (record, error) in
             
             guard let record = record else { print("Unable to fetch CKRecord from Record ID"); return }
-            
             switch record.recordType {
-                
             case Thread.typeKey:
                 let _ = Thread(record: record)
             case Message.typeKey:

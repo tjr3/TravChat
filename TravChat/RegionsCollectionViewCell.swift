@@ -31,8 +31,6 @@ class RegionsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.borderColor = UIColor(red: 0.184, green: 0.184, blue: 0.184, alpha: 0.65).CGColor
-//        self.layer.borderColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.00).CGColor
-//        self.layer.borderColor = UIColor(red: 0.482, green: 0.482, blue: 0.482, alpha: 0.75).CGColor
         self.layer.borderWidth = 3
         self.layer.cornerRadius = 35
         self.layer.masksToBounds = true

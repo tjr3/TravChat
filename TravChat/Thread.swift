@@ -64,7 +64,7 @@ class Thread: SyncableObject, CloudKitManagedObject {
         self.name = name
         self.oneToOne = oneToOne
         self.recordName = record.recordID.recordName
-        self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
+        self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
         
     }
 }

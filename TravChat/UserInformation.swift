@@ -50,7 +50,7 @@ class UserInformation: SyncableObject, CloudKitManagedObject{
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.recordName = record.recordID.recordName
-        self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
+        self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
     }
 }
 

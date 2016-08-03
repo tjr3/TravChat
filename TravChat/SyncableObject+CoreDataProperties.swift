@@ -2,7 +2,7 @@
 //  SyncableObject+CoreDataProperties.swift
 //  TravChat
 //
-//  Created by Tyler on 7/5/16.
+//  Created by Tyler on 8/3/16.
 //  Copyright © 2016 Tyler. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,8 +14,8 @@ import CoreData
 
 extension SyncableObject {
 
-    @NSManaged var timestamp: NSDate
-    @NSManaged var recordID: NSData?
+    @NSManaged var recordIDData: NSData?
     @NSManaged var recordName: String
+    @NSManaged var timestamp: NSDate
 
 }

@@ -72,7 +72,7 @@ class Message: SyncableObject, CloudKitManagedObject {
         self.timestamp = timestamp
         self.message = message
         self.displayName = displayName
-        self.recordID = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
+        self.recordIDData = NSKeyedArchiver.archivedDataWithRootObject(record.recordID)
         self.recordName = record.recordID.recordName
         
         if let thread = ThreadController.sharedController.threadWithName(threadReference.recordID.recordName) {

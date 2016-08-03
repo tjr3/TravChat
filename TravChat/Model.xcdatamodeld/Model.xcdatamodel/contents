@@ -7,7 +7,7 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInformation" syncable="YES"/>
     </entity>
     <entity name="SyncableObject" representedClassName=".SyncableObject" syncable="YES">
-        <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recordIDData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="recordName" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" attributeType="Date" syncable="YES"/>
     </entity>

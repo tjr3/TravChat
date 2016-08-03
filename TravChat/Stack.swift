@@ -21,7 +21,8 @@ class Stack {
             else { fatalError("model not found") }
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
         try! persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil,
-                                                                   URL: storeURL(), options: nil)
+                                                                   URL: storeURL(), options: [NSMigratePersistentStoresAutomaticallyOption: true,
+                                                                    NSInferMappingModelAutomaticallyOption: true])
         let context = NSManagedObjectContext(
             concurrencyType: .MainQueueConcurrencyType)
         context.persistentStoreCoordinator = persistentStoreCoordinator
@@ -33,5 +34,4 @@ class Stack {
         
         return documentsDirectory?.URLByAppendingPathComponent("db.sqlite")
     }
-    
 }
